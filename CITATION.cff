@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: If you use this project, please cite it as below.
+title: "Viet Nam Knowledge Commons (VNKC)"
+abstract: >-
+  Verified, versioned, and machine-ready knowledge about Viet Nam:
+  an open, provenance-first foundation of legal, administrative, and
+  public-life knowledge, with strictly separated source, canonical,
+  and ML dataset layers.
+authors:
+  - name: "The Resonance Team"
+type: dataset
+license: Apache-2.0
+url: "https://github.com/The-Resonance-Team/vietnam-knowledge-commons"
+repository-code: "https://github.com/The-Resonance-Team/vietnam-knowledge-commons"
+keywords:
+  - vietnam
+  - open-data
+  - legal-informatics
+  - knowledge-commons
+  - datasets
+notes: >-
+  Code is Apache-2.0; collected data carries a per-source license manifest
+  (see DATA_LICENSES.md). Cite the specific dataset release and version you use.

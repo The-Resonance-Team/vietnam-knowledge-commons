@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source.schema.json",
+  "title": "Source",
+  "description": "A candidate or accepted data source in the VNKC registry. Field names are snake_case to match registry/sources.yaml.",
+  "type": "object",
+  "required": [
+    "id",
+    "name_vi",
+    "publisher",
+    "authority",
+    "url",
+    "tier",
+    "domains",
+    "jurisdiction",
+    "access_method",
+    "license_status",
+    "pii_risk",
+    "stability",
+    "last_verified",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "name_vi": {
+      "type": "string",
+      "description": "Original Vietnamese name. Never replaced by a translation."
+    },
+    "name_en": { "type": "string", "description": "English translation, metadata only." },
+    "publisher": { "type": "string" },
+    "authority": { "type": "string", "description": "Responsible authority, English." },
+    "url": { "type": "string", "format": "uri" },
+    "tier": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"],
+      "description": "A = authoritative primary; B = official first-party explanatory; C = academic/curated open dataset; D = secondary discovery (never ground truth)."
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "law",
+          "tax",
+          "land",
+          "labor",
+          "social-insurance",
+          "civil-status",
+          "admin-procedures",
+          "forms",
+          "business",
+          "health",
+          "education",
+          "transport",
+          "statistics",
+          "geography",
+          "environment",
+          "agriculture",
+          "culture",
+          "history"
+        ]
+      },
+      "minItems": 1
+    },
+    "jurisdiction": { "type": "string", "description": "e.g. 'national' or 'province:<name>'." },
+    "document_types": { "type": "array", "items": { "type": "string" } },
+    "access_method": {
+      "type": "string",
+      "enum": ["html", "api", "feed", "bulk", "download", "mixed", "unknown"]
+    },
+    "api": {
+      "type": "object",
+      "required": ["status"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string", "enum": ["yes", "no", "unknown"] },
+        "url": { "type": ["string", "null"], "format": "uri" },
+        "notes": { "type": "string" }
+      }
+    },
+    "update_frequency": {
+      "type": "string",
+      "enum": ["daily", "weekly", "monthly", "irregular", "unknown"]
+    },
+    "tos_url": { "type": ["string", "null"], "format": "uri" },
+    "robots_txt": {
+      "type": "object",
+      "required": ["reviewed"],
+      "additionalProperties": false,
+      "properties": {
+        "reviewed": { "type": "boolean" },
+        "allows_scraping": { "type": "string", "enum": ["yes", "no", "partial", "unknown"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "license_status": {
+      "type": "string",
+      "enum": [
+        "verified-open",
+        "permission-required",
+        "metadata-only",
+        "reference-only",
+        "unknown",
+        "prohibited"
+      ]
+    },
+    "attribution": { "type": "string" },
+    "pii_risk": { "type": "string", "enum": ["none", "low", "medium", "high"] },
+    "stability": { "type": "string", "enum": ["high", "medium", "low"] },
+    "last_verified": { "type": "string", "format": "date" },
+    "confidence": { "type": "string", "enum": ["verified", "partial", "unverified"] },
+    "notes": { "type": "string" }
+  }
+}

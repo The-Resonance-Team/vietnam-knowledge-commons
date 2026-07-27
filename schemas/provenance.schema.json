@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "provenance.schema.json",
+  "title": "ProvenanceRecord",
+  "description": "Traceability record linking any VNKC record to its authoritative source. Every record in the project carries one.",
+  "type": "object",
+  "required": [
+    "source_id",
+    "source_url",
+    "retrieved_at",
+    "retrieval_method",
+    "license_status",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "description": "Stable source ID from registry/sources.yaml, or 'manual' for hand-curated records pending a registry entry."
+    },
+    "source_url": { "type": "string", "format": "uri" },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "retrieval_method": {
+      "type": "string",
+      "enum": ["manual", "html", "api", "feed", "bulk", "download"]
+    },
+    "content_checksum": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "description": "SHA-256 of the retrieved byte content, when available."
+    },
+    "license_status": {
+      "type": "string",
+      "enum": [
+        "verified-open",
+        "permission-required",
+        "metadata-only",
+        "reference-only",
+        "unknown",
+        "prohibited"
+      ],
+      "description": "Redistribution status of the source material. Default reference-only when unknown."
+    },
+    "attribution": {
+      "type": "string",
+      "description": "Attribution string required by the source, if any."
+    },
+    "confidence": { "type": "string", "enum": ["verified", "partial", "unverified"] },
+    "notes": { "type": "string" }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jurisdiction.schema.json",
+  "title": "Jurisdiction",
+  "description": "An administrative unit (đơn vị hành chính) with temporal validity. Models the 2025 province mergers via valid_from/valid_to and predecessor/successor links.",
+  "type": "object",
+  "required": ["code", "name_vi", "level", "valid_from", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Official administrative unit code (mã đơn vị hành chính)."
+    },
+    "name_vi": { "type": "string" },
+    "name_en": { "type": "string" },
+    "level": { "type": "string", "enum": ["national", "province", "district", "commune"] },
+    "parent_code": { "type": ["string", "null"] },
+    "valid_from": { "type": "string", "format": "date" },
+    "valid_to": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "null while the unit exists."
+    },
+    "predecessor_codes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Codes of units merged into this one."
+    },
+    "successor_codes": { "type": "array", "items": { "type": "string" } },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "legal-document.schema.json",
+  "title": "LegalDocument",
+  "description": "A versioned Vietnamese legal or administrative instrument with full temporal and relationship metadata.",
+  "type": "object",
+  "required": [
+    "canonical_id",
+    "document_number",
+    "title",
+    "document_type",
+    "issuing_authority",
+    "jurisdiction",
+    "issue_date",
+    "status",
+    "language",
+    "official_url",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "canonical_id": {
+      "type": "string",
+      "pattern": "^vnkc:legal-doc:[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "VNKC canonical identifier, e.g. vnkc:legal-doc:luat-dat-dai-2024."
+    },
+    "document_number": { "type": "string", "description": "Official number, e.g. 45/2024/QH15." },
+    "title": { "type": "string", "description": "Original Vietnamese title." },
+    "title_en": { "type": "string", "description": "English translation, metadata only." },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "constitution",
+        "code",
+        "law",
+        "ordinance",
+        "resolution",
+        "decree",
+        "decision",
+        "circular",
+        "joint-circular",
+        "directive",
+        "official-dispatch",
+        "treaty",
+        "other"
+      ]
+    },
+    "issuing_authority": { "type": "string" },
+    "jurisdiction": { "type": "string", "description": "e.g. 'national' or 'province:<name>'." },
+    "issue_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of promulgation (ngày ban hành)."
+    },
+    "publication_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Official Gazette publication date."
+    },
+    "effective_from": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Ngày hiệu lực."
+    },
+    "effective_to": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Expiry/repeal date; null while in force."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in-force",
+        "not-yet-in-force",
+        "partially-effective",
+        "amended",
+        "repealed",
+        "expired",
+        "unknown"
+      ]
+    },
+    "language": { "type": "string", "enum": ["vi", "en", "vi+en"] },
+    "official_url": { "type": "string", "format": "uri" },
+    "attachment_urls": { "type": "array", "items": { "type": "string", "format": "uri" } },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "content_checksum": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "VNKC record version; increments on every change, never overwrites."
+    },
+    "legal_basis": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Citations of instruments this one is based on (căn cứ)."
+    },
+    "related_documents": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Canonical IDs."
+    },
+    "amends": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Canonical IDs this document amends."
+    },
+    "amended_by": { "type": "array", "items": { "type": "string" } },
+    "replaces": { "type": "array", "items": { "type": "string" } },
+    "replaced_by": { "type": "array", "items": { "type": "string" } },
+    "repeals": { "type": "array", "items": { "type": "string" } },
+    "repealed_by": { "type": "array", "items": { "type": "string" } },
+    "guides": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Canonical IDs of instruments this one guides the implementation of (hướng dẫn thi hành)."
+    },
+    "validity_confidence": { "type": "string", "enum": ["verified", "partial", "unverified"] },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

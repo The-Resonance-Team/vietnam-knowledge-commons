@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dataset-release.schema.json",
+  "title": "DatasetRelease",
+  "description": "Release manifest for a versioned VNKC dataset package. Carries the source-level license manifest — a blanket license on collected data is prohibited.",
+  "type": "object",
+  "required": [
+    "name",
+    "version",
+    "schema_version",
+    "build_timestamp",
+    "license_manifest",
+    "row_counts",
+    "checksums",
+    "intended_uses",
+    "prohibited_uses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^vnkc/[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "e.g. vnkc/legal-documents."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-z0-9.]+)?$",
+      "description": "Semantic dataset version."
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Version of the schemas/ directory used to validate this release."
+    },
+    "build_timestamp": { "type": "string", "format": "date-time" },
+    "description": { "type": "string" },
+    "source_snapshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "snapshot"],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": { "type": "string" },
+          "snapshot": {
+            "type": "string",
+            "description": "Snapshot version or retrieval range, e.g. '2026-07-01..2026-07-27'."
+          },
+          "checksum": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "license_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "license_status"],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": { "type": "string" },
+          "license_status": {
+            "type": "string",
+            "enum": [
+              "verified-open",
+              "permission-required",
+              "metadata-only",
+              "reference-only",
+              "unknown",
+              "prohibited"
+            ]
+          },
+          "license": {
+            "type": "string",
+            "description": "SPDX identifier where one applies; omit otherwise."
+          },
+          "attribution": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "row_counts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+    "quality_metrics": {
+      "type": "object",
+      "description": "Keys defined in DATA_POLICY.md quality checks.",
+      "additionalProperties": { "type": ["number", "string"] }
+    },
+    "checksums": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      },
+      "minItems": 1
+    },
+    "formats": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["jsonl", "parquet", "csv", "markdown"] }
+    },
+    "known_limitations": { "type": "array", "items": { "type": "string" } },
+    "intended_uses": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "prohibited_uses": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Must always include the no-legal-advice clause."
+    },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

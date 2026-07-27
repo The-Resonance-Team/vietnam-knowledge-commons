@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-registry.schema.json",
+  "title": "SourceRegistry",
+  "description": "The registry/sources.yaml file: all candidate and accepted VNKC data sources.",
+  "type": "object",
+  "required": ["version", "generated", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "generated": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "source.schema.json" },
+      "minItems": 1
+    }
+  }
+}

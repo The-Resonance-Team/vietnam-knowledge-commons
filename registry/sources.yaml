@@ -1,0 +1,1213 @@
+version: 1
+generated: "2026-07-27"
+sources:
+  # ===================== TIER A — authoritative primary =====================
+  - id: moj-vbpl
+    name_vi: Cơ sở dữ liệu quốc gia về văn bản quy phạm pháp luật (vbpl.vn)
+    name_en: National Database of Legal Normative Documents
+    publisher: Bộ Tư pháp
+    authority: Ministry of Justice
+    url: https://vbpl.vn/
+    tier: A
+    domains:
+      - law
+    jurisdiction: national
+    document_types:
+      - constitution
+      - law
+      - ordinance
+      - resolution
+      - decree
+      - decision
+      - circular
+      - joint-circular
+      - treaty
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found. api.vbpl.vn unreachable. Sitemap index at /sitemap.xml (per-collection sitemaps) enables systematic crawl.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200, 2 Disallow lines, declares Sitemap: https://vbpl.vn/sitemap.xml"
+    license_status: reference-only
+    attribution: Bộ Tư pháp nước CHXHCN Việt Nam — vbpl.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Official national legal DB mandated by the Law on Promulgation of Legal Normative Documents. Live 200 on 2026-07-27.
+  - id: gov-congbao
+    name_vi: Công báo Chính phủ
+    name_en: Official Gazette of the Government
+    publisher: Văn phòng Chính phủ
+    authority: Government Office
+    url: https://congbao.chinhphu.vn/
+    tier: A
+    domains:
+      - law
+    jurisdiction: national
+    document_types:
+      - gazette-issue
+      - law
+      - ordinance
+      - decree
+      - resolution
+      - circular
+      - decision
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: irregular
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines, no sitemap declared.
+    license_status: reference-only
+    attribution: Văn phòng Chính phủ — congbao.chinhphu.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Official gazette; the legally authentic published version of national instruments. Live 200.
+  - id: gov-vanban
+    name_vi: Cổng thông tin văn bản Chính phủ
+    name_en: Government Document Portal
+    publisher: Văn phòng Chính phủ
+    authority: Government Office
+    url: https://vanban.chinhphu.vn/
+    tier: A
+    domains:
+      - law
+      - admin-procedures
+    jurisdiction: national
+    document_types:
+      - decree
+      - resolution
+      - decision
+      - directive
+      - official-dispatch
+      - notice
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: irregular
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Văn phòng Chính phủ — vanban.chinhphu.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Publishes Government/Prime Minister instruments (Nghị định, Nghị quyết, Quyết định, Chỉ thị, Công điện). Live 200.
+  - id: na-quochoi
+    name_vi: Cổng thông tin điện tử Quốc hội
+    name_en: National Assembly Portal
+    publisher: Văn phòng Quốc hội
+    authority: National Assembly of Viet Nam
+    url: https://quochoi.vn/
+    tier: A
+    domains:
+      - law
+    jurisdiction: national
+    document_types:
+      - constitution
+      - law
+      - ordinance
+      - resolution
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Quốc hội nước CHXHCN Việt Nam — quochoi.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Issuing authority for laws/ordinances/resolutions. Live 200.
+  - id: nso-statistics
+    name_vi: Cục Thống kê (Cổng thông tin điện tử Thống kê Việt Nam)
+    name_en: National Statistics Office (formerly General Statistics Office)
+    publisher: Cục Thống kê — Bộ Tài chính
+    authority: National Statistics Office, Ministry of Finance
+    url: https://www.nso.gov.vn/
+    tier: A
+    domains:
+      - statistics
+    jurisdiction: national
+    document_types:
+      - statistical-report
+      - statistical-yearbook
+      - census
+      - indicator-dataset
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found on portal surface.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: HTTP 200, 23 Disallow lines.
+    license_status: reference-only
+    attribution: Cục Thống kê — nso.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: "MAJOR MOVE: gso.gov.vn now redirects (via www.gso.gov.vn) to https://www.nso.gov.vn/ (title: General Statistics Office of Vietnam). Bare nso.gov.vn did not resolve from test resolver; use www.nso.gov.vn. NSO sits under Ministry of Finance since 2025 restructuring."
+  - id: mof-dkkd
+    name_vi: Cổng thông tin quốc gia về đăng ký doanh nghiệp
+    name_en: National Business Registration Portal
+    publisher: "Bộ Tài chính (trước đây: Bộ Kế hoạch và Đầu tư)"
+    authority: Ministry of Finance (business registration function moved from ex-Ministry of Planning and Investment, 2025)
+    url: https://dangkykinhdoanh.gov.vn/
+    tier: A
+    domains:
+      - business
+    jurisdiction: national
+    document_types:
+      - business-registration-record
+      - enterprise-announcement
+      - registration-form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API confirmed.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 404 (no file).
+    license_status: reference-only
+    attribution: Bộ Tài chính — dangkykinhdoanh.gov.vn
+    pii_risk: low
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Official enterprise registry lookup. Live 200. Records name legal representatives — handle PII with care.
+
+  # ===================== TIER B — official explanatory =====================
+  - id: npsp-dichvucong
+    name_vi: Cổng Dịch vụ công Quốc gia
+    name_en: National Public Service Portal
+    publisher: Văn phòng Chính phủ
+    authority: Government of Viet Nam (operating authority to re-confirm post-2025 restructuring)
+    url: https://dichvucong.gov.vn/
+    tier: B
+    domains:
+      - admin-procedures
+      - forms
+    jurisdiction: national
+    document_types:
+      - administrative-procedure
+      - public-service
+      - form
+      - guidance
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: Homepage is a JS app; no public API documentation found.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines, no sitemap declared.
+    license_status: reference-only
+    attribution: Cổng Dịch vụ công Quốc gia — dichvucong.gov.vn
+    pii_risk: low
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: VERIFIED still canonical at dichvucong.gov.vn as of 2026-07-27. Hosts the National Administrative Procedures Database (CSDL quốc gia về TTHC); former standalone thutuchanhchinh.vn is NXDOMAIN.
+  - id: gov-chinhphu
+    name_vi: Cổng thông tin điện tử Chính phủ
+    name_en: Government Portal
+    publisher: Văn phòng Chính phủ
+    authority: Government Office
+    url: https://chinhphu.vn/
+    tier: B
+    domains:
+      - law
+      - admin-procedures
+    jurisdiction: national
+    document_types:
+      - news
+      - guidance
+      - resolution-summary
+      - policy-explanation
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Cổng TTĐT Chính phủ — chinhphu.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: "Explanatory/news layer, not a source of authentic text. Ministry list page: chinhphu.vn/cac-bo-co-quan-ngang-bo-co-quan-thuoc-chinh-phu."
+  - id: mof-finance
+    name_vi: Cổng thông tin điện tử Bộ Tài chính
+    name_en: Ministry of Finance Portal
+    publisher: Bộ Tài chính
+    authority: Ministry of Finance
+    url: https://mof.gov.vn/
+    tier: B
+    domains:
+      - tax
+      - business
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Bộ Tài chính — mof.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Absorbed Ministry of Planning and Investment in 2025 merger (mpi.gov.vn now failing). Parent of tax, customs, statistics, business-registration bodies.
+  - id: gdt-tax
+    name_vi: Cổng thông tin điện tử ngành Thuế
+    name_en: Tax Administration Portal
+    publisher: "Cơ quan quản lý thuế — Bộ Tài chính (tên gọi sau sắp xếp 2025 cần xác nhận: Tổng cục Thuế hay Cục Thuế)"
+    authority: Tax administration under Ministry of Finance (exact unit name post-2025 to confirm)
+    url: https://gdt.gov.vn/
+    tier: B
+    domains:
+      - tax
+    jurisdiction: national
+    document_types:
+      - official-dispatch
+      - guidance
+      - tax-policy
+      - faq
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found. tracuu.gdt.gov.vn unreachable from test environment.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Ngành Thuế — gdt.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200 (redirects to /wps/portal). Official tax guidance (công văn hướng dẫn).
+  - id: gdt-etax
+    name_vi: Cổng Thuế điện tử (doanh nghiệp)
+    name_en: eTax Portal (corporate)
+    publisher: Cơ quan quản lý thuế — Bộ Tài chính
+    authority: Tax administration under Ministry of Finance
+    url: https://thuedientu.gdt.gov.vn/
+    tier: B
+    domains:
+      - tax
+      - forms
+    jurisdiction: national
+    document_types:
+      - tax-return-form
+      - e-filing-service
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: Session-based web application; no public API found.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 404 (WebSphere SRVE0255E vhost error) on 2026-07-27 — no robots policy published.
+    license_status: reference-only
+    attribution: Ngành Thuế — thuedientu.gdt.gov.vn
+    pii_risk: low
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200 (session-establishment redirect). Transactional; metadata/reference use only.
+  - id: gdt-etax-canhan
+    name_vi: Cổng Thuế điện tử (cá nhân)
+    name_en: eTax Portal (individual)
+    publisher: Cơ quan quản lý thuế — Bộ Tài chính
+    authority: Tax administration under Ministry of Finance
+    url: https://canhan.gdt.gov.vn/
+    tier: B
+    domains:
+      - tax
+      - forms
+    jurisdiction: national
+    document_types:
+      - tax-return-form
+      - e-filing-service
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: Session-based web application; no public API found.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 404 (WebSphere SRVE0255E vhost error) on 2026-07-27 — no robots policy published.
+    license_status: reference-only
+    attribution: Ngành Thuế — canhan.gdt.gov.vn
+    pii_risk: low
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200. Login-gated taxpayer data — do not collect beyond public pages.
+  - id: mof-haiquan
+    name_vi: Cổng thông tin điện tử Tổng cục Hải quan
+    name_en: Viet Nam Customs Portal
+    publisher: Tổng cục Hải quan — Bộ Tài chính (tên gọi sau sắp xếp 2025 cần xác nhận)
+    authority: Viet Nam Customs, Ministry of Finance
+    url: https://www.customs.gov.vn/
+    tier: B
+    domains:
+      - tax
+      - business
+    jurisdiction: national
+    document_types:
+      - guidance
+      - tariff-schedule
+      - customs-procedure
+      - official-dispatch
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Tổng cục Hải quan — customs.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200. Import/export duties, HS codes, customs procedures.
+  - id: bhxh-vss
+    name_vi: Cổng thông tin điện tử Bảo hiểm xã hội Việt Nam
+    name_en: Viet Nam Social Security Portal
+    publisher: Bảo hiểm xã hội Việt Nam
+    authority: Viet Nam Social Security (special unit under Ministry of Finance since 12/9/2025)
+    url: https://baohiemxahoi.gov.vn/
+    tier: B
+    domains:
+      - social-insurance
+      - labor
+    jurisdiction: national
+    document_types:
+      - guidance
+      - policy-news
+      - official-dispatch
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found. dichvu.baohiemxahoi.gov.vn unreachable from test environment.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 404 (no file).
+    license_status: reference-only
+    attribution: Bảo hiểm xã hội Việt Nam — baohiemxahoi.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200. Since 12/9/2025 VSS is a special unit under the Ministry of Finance (per VSS and press coverage).
+  - id: moha-noivu
+    name_vi: Cổng thông tin điện tử Bộ Nội vụ
+    name_en: Ministry of Home Affairs Portal
+    publisher: Bộ Nội vụ
+    authority: Ministry of Home Affairs
+    url: https://moha.gov.vn/
+    tier: B
+    domains:
+      - labor
+      - admin-procedures
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Bộ Nội vụ — moha.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Absorbed labour/employment functions of the dissolved MOLISA from 1/3/2025 (molisa.gov.vn cert expired; www.molisa.gov.vn serves a legacy archive). Also oversees local government / administrative boundaries under the 2-tier model.
+  - id: moh-yte
+    name_vi: Cổng thông tin điện tử Bộ Y tế
+    name_en: Ministry of Health Portal
+    publisher: Bộ Y tế
+    authority: Ministry of Health
+    url: https://moh.gov.vn/
+    tier: B
+    domains:
+      - health
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: Bộ Y tế — moh.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200.
+  - id: moet-giaoduc
+    name_vi: Cổng thông tin điện tử Bộ Giáo dục và Đào tạo
+    name_en: Ministry of Education and Training Portal
+    publisher: Bộ Giáo dục và Đào tạo
+    authority: Ministry of Education and Training
+    url: https://moet.gov.vn/
+    tier: B
+    domains:
+      - education
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: HTTP 200, 23 Disallow lines.
+    license_status: reference-only
+    attribution: Bộ Giáo dục và Đào tạo — moet.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200.
+  - id: mae-nnmt
+    name_vi: Cổng thông tin điện tử Bộ Nông nghiệp và Môi trường
+    name_en: Ministry of Agriculture and Environment Portal
+    publisher: Bộ Nông nghiệp và Môi trường
+    authority: Ministry of Agriculture and Environment
+    url: https://mae.gov.vn/
+    tier: B
+    domains:
+      - land
+      - environment
+      - agriculture
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 404 (no file).
+    license_status: reference-only
+    attribution: Bộ Nông nghiệp và Môi trường — mae.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: NEW 2025 merger ministry (MARD + MONRE). mae.gov.vn live 200; mard.gov.vn NXDOMAIN; www.monre.gov.vn 404. Land administration, environment, agriculture now under one ministry.
+  - id: moc-xaydung
+    name_vi: Cổng thông tin điện tử Bộ Xây dựng
+    name_en: Ministry of Construction Portal
+    publisher: Bộ Xây dựng
+    authority: Ministry of Construction
+    url: https://moc.gov.vn/
+    tier: B
+    domains:
+      - transport
+      - land
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 404 (no file).
+    license_status: reference-only
+    attribution: Bộ Xây dựng — moc.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Absorbed Ministry of Transport in 2025 (mot.gov.vn NXDOMAIN; mt.gov.vn SSL errors). xaydung.gov.vn returns 404 — moc.gov.vn is canonical.
+  - id: moit-congthuong
+    name_vi: Cổng thông tin điện tử Bộ Công Thương
+    name_en: Ministry of Industry and Trade Portal
+    publisher: Bộ Công Thương
+    authority: Ministry of Industry and Trade
+    url: https://moit.gov.vn/
+    tier: B
+    domains:
+      - business
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: HTTP 200, 7 Disallow lines.
+    license_status: reference-only
+    attribution: Bộ Công Thương — moit.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200.
+  - id: moj-tuphap
+    name_vi: Cổng thông tin điện tử Bộ Tư pháp
+    name_en: Ministry of Justice Portal
+    publisher: Bộ Tư pháp
+    authority: Ministry of Justice
+    url: https://moj.gov.vn/
+    tier: B
+    domains:
+      - law
+      - civil-status
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - legal-news
+      - civil-registration-guidance
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200, 3 Disallow lines, declares Sitemap: https://moj.gov.vn/sitemap.xml"
+    license_status: reference-only
+    attribution: Bộ Tư pháp — moj.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200. Oversees hộ tịch (civil registration), legal document review, vbpl.vn.
+  - id: bvhttdl-vanhoa
+    name_vi: Cổng thông tin điện tử Bộ Văn hóa, Thể thao và Du lịch
+    name_en: Ministry of Culture, Sports and Tourism Portal
+    publisher: Bộ Văn hóa, Thể thao và Du lịch
+    authority: Ministry of Culture, Sports and Tourism
+    url: https://bvhttdl.gov.vn/
+    tier: B
+    domains:
+      - culture
+      - history
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, 1 Disallow line.
+    license_status: reference-only
+    attribution: Bộ Văn hóa, Thể thao và Du lịch — bvhttdl.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200.
+  - id: bocongan-mps
+    name_vi: Cổng thông tin điện tử Bộ Công an
+    name_en: Ministry of Public Security Portal
+    publisher: Bộ Công an
+    authority: Ministry of Public Security
+    url: https://bocongan.gov.vn/
+    tier: B
+    domains:
+      - civil-status
+    jurisdiction: national
+    document_types:
+      - circular
+      - guidance
+      - policy-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: "HTTP 200, no Disallow lines, declares Sitemap: https://bocongan.gov.vn/sitemap.xml"
+    license_status: reference-only
+    attribution: Bộ Công an — bocongan.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Manages national population database, CCCD identity cards, residence (cư trú), VNeID.
+  - id: mps-dvc
+    name_vi: Cổng Dịch vụ công Bộ Công an
+    name_en: Ministry of Public Security Public Service Portal
+    publisher: Bộ Công an
+    authority: Ministry of Public Security
+    url: https://dichvucong.bocongan.gov.vn/
+    tier: B
+    domains:
+      - civil-status
+      - admin-procedures
+    jurisdiction: national
+    document_types:
+      - public-service
+      - administrative-procedure
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200 on 2026-07-27. Disallow: /tttl/ (scoped to Googlebot/AdsBot-Google); no general disallow."
+    license_status: reference-only
+    attribution: Bộ Công an — dichvucong.bocongan.gov.vn
+    pii_risk: low
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200. ID cards, passports, residence registration services.
+  - id: mofa-ngoaigiao
+    name_vi: Cổng thông tin điện tử Bộ Ngoại giao
+    name_en: Ministry of Foreign Affairs Portal
+    publisher: Bộ Ngoại giao
+    authority: Ministry of Foreign Affairs
+    url: https://mofa.gov.vn/
+    tier: B
+    domains:
+      - civil-status
+    jurisdiction: national
+    document_types:
+      - guidance
+      - consular-service
+      - treaty-news
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: "HTTP 200, 1 Disallow line, declares Sitemap: https://mofa.gov.vn:443/sitemap.xml"
+    license_status: reference-only
+    attribution: Bộ Ngoại giao — mofa.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Consular legalization (hợp pháp hóa lãnh sự) of civil-status documents.
+  - id: opendata-quocgia
+    name_vi: Cổng dữ liệu mở thuộc Cổng dữ liệu quốc gia
+    name_en: National Open Data Portal (under National Data Portal)
+    publisher: "Bộ Khoa học và Công nghệ (trước đây: Bộ Thông tin và Truyền thông)"
+    authority: Ministry of Science and Technology
+    url: https://open.data.gov.vn
+    tier: B
+    domains:
+      - statistics
+      - geography
+    jurisdiction: national
+    document_types:
+      - open-dataset
+    access_method: unknown
+    api:
+      status: unknown
+      url: null
+      notes: CKAN-style /api/3/action/status_show probe failed — host did not resolve.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: false
+      allows_scraping: "unknown"
+      notes: Not fetchable — DNS NXDOMAIN from test resolver.
+    license_status: reference-only
+    attribution: Cổng dữ liệu quốc gia — open.data.gov.vn
+    pii_risk: none
+    stability: low
+    last_verified: 2026-07-27
+    confidence: unverified
+    notes: UNVERIFIED. MIC-era announcement gives open.data.gov.vn as open data portal under Cổng dữ liệu quốc gia (data.gov.vn). Both data.gov.vn and open.data.gov.vn returned NXDOMAIN from the test resolver on 2026-07-27 — may be resolver-specific or genuinely down. Re-check from another network.
+  - id: hanoi-portal
+    name_vi: Cổng thông tin điện tử Thành phố Hà Nội
+    name_en: Ha Noi City Portal
+    publisher: UBND Thành phố Hà Nội
+    authority: People's Committee of Ha Noi
+    url: https://hanoi.gov.vn/
+    tier: B
+    domains:
+      - admin-procedures
+      - forms
+    jurisdiction: province:Hà Nội
+    document_types:
+      - local-decision
+      - administrative-procedure
+      - guidance
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "yes"
+      notes: HTTP 200, no Disallow lines.
+    license_status: reference-only
+    attribution: UBND TP Hà Nội — hanoi.gov.vn
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Live 200.
+  - id: hcmc-portal
+    name_vi: Cổng thông tin điện tử Thành phố Hồ Chí Minh
+    name_en: Ho Chi Minh City Portal
+    publisher: UBND Thành phố Hồ Chí Minh
+    authority: People's Committee of Ho Chi Minh City
+    url: https://hochiminhcity.gov.vn/
+    tier: B
+    domains:
+      - admin-procedures
+      - forms
+    jurisdiction: province:Thành phố Hồ Chí Minh
+    document_types:
+      - local-decision
+      - administrative-procedure
+      - guidance
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200, 1 Disallow line, declares Sitemap: http://hochiminhcity.gov.vn:8080/sitemap.xml"
+    license_status: reference-only
+    attribution: UBND TP Hồ Chí Minh — hochiminhcity.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Post-merger HCMC (HCMC + Bình Dương + Bà Rịa–Vũng Tàu from 1/7/2025). hochiminhcity.gov.vn live 200; legacy tphcm.gov.vn unreachable.
+  - id: danang-portal
+    name_vi: Cổng thông tin điện tử Thành phố Đà Nẵng
+    name_en: Da Nang City Portal
+    publisher: UBND Thành phố Đà Nẵng
+    authority: People's Committee of Da Nang
+    url: https://danang.gov.vn/
+    tier: B
+    domains:
+      - admin-procedures
+      - forms
+    jurisdiction: province:Thành phố Đà Nẵng
+    document_types:
+      - local-decision
+      - administrative-procedure
+      - guidance
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200, 1 Disallow line, declares Sitemap: http://danang.gov.vn:8080/sitemap.xml"
+    license_status: reference-only
+    attribution: UBND TP Đà Nẵng — danang.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Post-merger Đà Nẵng (Đà Nẵng + Quảng Nam from 1/7/2025). Live 200.
+  - id: phutho-portal
+    name_vi: Cổng thông tin điện tử Tỉnh Phú Thọ
+    name_en: Phu Tho Province Portal
+    publisher: UBND Tỉnh Phú Thọ
+    authority: People's Committee of Phu Tho Province
+    url: https://phutho.gov.vn/
+    tier: B
+    domains:
+      - admin-procedures
+      - forms
+    jurisdiction: province:Phú Thọ
+    document_types:
+      - local-decision
+      - administrative-procedure
+      - guidance
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200, 30 Disallow lines, declares Sitemap: https://phutho.gov.vn/files/sitemap.xml"
+    license_status: reference-only
+    attribution: UBND tỉnh Phú Thọ — phutho.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Post-merger Phú Thọ (Phú Thọ + Vĩnh Phúc + Hòa Bình from 1/7/2025). Live 200.
+  - id: bacninh-portal
+    name_vi: Cổng thông tin điện tử Tỉnh Bắc Ninh
+    name_en: Bac Ninh Province Portal
+    publisher: UBND Tỉnh Bắc Ninh
+    authority: People's Committee of Bac Ninh Province
+    url: https://bacninh.gov.vn/
+    tier: B
+    domains:
+      - admin-procedures
+      - forms
+    jurisdiction: province:Bắc Ninh
+    document_types:
+      - local-decision
+      - administrative-procedure
+      - guidance
+      - form
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: "HTTP 200, 1 Disallow line, declares Sitemap: https://bacninh.gov.vn:443/sitemap.xml"
+    license_status: reference-only
+    attribution: UBND tỉnh Bắc Ninh — bacninh.gov.vn
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Post-merger Bắc Ninh (Bắc Ninh + Bắc Giang from 1/7/2025). Live 200.
+
+  # ===================== TIER C — academic/curated open data =====================
+  - id: odm-vietnam
+    name_vi: Open Development Vietnam
+    name_en: Open Development Vietnam (Open Development Mekong)
+    publisher: Open Development Mekong / East-West Management Institute
+    authority: Open Development Mekong (independent curated open data platform)
+    url: https://vietnam.opendevelopmentmekong.net/
+    tier: C
+    domains:
+      - land
+      - environment
+      - geography
+    jurisdiction: national
+    document_types:
+      - curated-dataset
+      - map-layer
+      - briefing
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: CKAN-style /api/3/action/status_show returned HTML, not JSON — API endpoint not confirmed on this domain.
+    update_frequency: irregular
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt returns HTTP 404 on 2026-07-27 — no robots policy published; site-wide fetch policy defaults to allowed but undocumented.
+    license_status: reference-only
+    attribution: Open Development Vietnam — vietnam.opendevelopmentmekong.net
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Curated open datasets on land, environment, development. License terms not captured in this pass — verify per-dataset license before reuse.
+  - id: gadm-boundaries
+    name_vi: GADM (cơ sở dữ liệu ranh giới hành chính toàn cầu)
+    name_en: GADM Global Administrative Areas Database
+    publisher: GADM project (University of California, Berkeley / gadm.org)
+    authority: GADM project
+    url: https://gadm.org/
+    tier: C
+    domains:
+      - geography
+    jurisdiction: national
+    document_types:
+      - administrative-boundary-dataset
+      - shapefile
+      - geopackage
+    access_method: bulk
+    api:
+      status: unknown
+      url: null
+      notes: Bulk file downloads; API not investigated.
+    update_frequency: irregular
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt returns HTTP 403 (edge block) on 2026-07-27 — cannot determine policy; treat as unknown.
+    license_status: reference-only
+    attribution: GADM — gadm.org
+    pii_risk: none
+    stability: medium
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: "Live 200. Academic-use terms historically restrict commercial reuse — verify current license. NOTE: post-2025 Vietnamese boundary updates may lag the 34-province map."
+
+  # ===================== TIER D — secondary discovery (never ground truth) =====================
+  - id: tvpl-thuvienphapluat
+    name_vi: Thư viện Pháp luật
+    name_en: Thu Vien Phap Luat (commercial legal database)
+    publisher: Công ty Luatsoft (Thư viện Pháp luật)
+    authority: Commercial aggregator — NOT an authority
+    url: https://thuvienphapluat.vn/
+    tier: D
+    domains:
+      - law
+    jurisdiction: national
+    document_types:
+      - law
+      - decree
+      - circular
+      - guidance-article
+      - bilingual-translation
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "partial"
+      notes: robots.txt HTTP 200, 9 Disallow lines, declares two sitemaps. Homepage returns HTTP 403 to default curl UA (bot filtering).
+    license_status: permission-required
+    attribution: "Thư viện Pháp luật — thuvienphapluat.vn (Tier D: never ground truth)"
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Discovery/lookup only. Excellent change-tracking and English translations, but a paid commercial service — always resolve citations back to Tier A.
+  - id: lawnet
+    name_vi: LawNet (đang chuyển hướng sang Thư viện Nhà Đất)
+    name_en: LawNet (commercial legal database)
+    publisher: LawNet / Thư viện Nhà Đất (quan hệ chưa xác minh)
+    authority: Commercial aggregator — NOT an authority
+    url: https://lawnet.vn/
+    tier: D
+    domains:
+      - law
+    jurisdiction: national
+    document_types:
+      - law
+      - decree
+      - circular
+      - guidance-article
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: unknown
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt returns HTTP 301 (whole domain redirects).
+    license_status: permission-required
+    attribution: "LawNet — lawnet.vn (Tier D: never ground truth)"
+    pii_risk: none
+    stability: low
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: "OBSERVED MOVE: lawnet.vn now 301-redirects to https://thuviennhadat.vn/van-ban-phap-luat-viet-nam (land-focused portal). Brand appears absorbed/retired; treat legacy LawNet citations with caution."
+  - id: luatvietnam
+    name_vi: Luật Việt Nam
+    name_en: LuatVietnam (commercial legal database)
+    publisher: Công ty cổ phần LuatVietnam
+    authority: Commercial aggregator — NOT an authority
+    url: https://luatvietnam.vn/
+    tier: D
+    domains:
+      - law
+    jurisdiction: national
+    document_types:
+      - law
+      - decree
+      - circular
+      - guidance-article
+      - bilingual-translation
+    access_method: html
+    api:
+      status: unknown
+      url: null
+      notes: No public API found.
+    update_frequency: daily
+    tos_url: null
+    robots_txt:
+      reviewed: true
+      allows_scraping: "unknown"
+      notes: robots.txt HTTP 403 (bot filtering); homepage HTTP 200.
+    license_status: permission-required
+    attribution: "Luật Việt Nam — luatvietnam.vn (Tier D: never ground truth)"
+    pii_risk: none
+    stability: high
+    last_verified: 2026-07-27
+    confidence: verified
+    notes: Discovery/lookup only; commercial service.

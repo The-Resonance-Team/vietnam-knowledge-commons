@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "administrative-procedure.schema.json",
+  "title": "AdministrativeProcedure",
+  "description": "A public administrative procedure (thủ tục hành chính) as structured data. Never contains filled forms or personal data.",
+  "type": "object",
+  "required": [
+    "name",
+    "domain",
+    "responsible_authority",
+    "implementing_authority",
+    "jurisdiction",
+    "steps",
+    "submission_channels",
+    "official_url",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "procedure_code": {
+      "type": "string",
+      "description": "National TTHC code (mã thủ tục hành chính). Optional in Phase 0 — never invent one; omit until verified against the national TTHC database."
+    },
+    "name": { "type": "string", "description": "Original Vietnamese procedure name." },
+    "name_en": { "type": "string", "description": "English translation, metadata only." },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "law",
+        "tax",
+        "land",
+        "labor",
+        "social-insurance",
+        "civil-status",
+        "admin-procedures",
+        "forms",
+        "business",
+        "health",
+        "education",
+        "transport",
+        "statistics",
+        "geography",
+        "environment",
+        "agriculture",
+        "culture",
+        "history"
+      ]
+    },
+    "target_audience": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["individual", "household", "organization", "business", "foreigner"]
+      }
+    },
+    "responsible_authority": { "type": "string", "description": "Cơ quan có thẩm quyền." },
+    "implementing_authority": { "type": "string", "description": "Cơ quan thực hiện." },
+    "jurisdiction": { "type": "string" },
+    "eligibility": { "type": "string" },
+    "prerequisites": { "type": "array", "items": { "type": "string" } },
+    "required_documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "copies": { "type": "integer", "minimum": 1 },
+          "form_code": {
+            "type": "string",
+            "description": "Reference to an OfficialForm form_code, if a form is required."
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["order", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "order": { "type": "integer", "minimum": 1 },
+          "name": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "submission_channels": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["in-person", "postal", "online", "mixed"] },
+      "minItems": 1
+    },
+    "processing_time": { "type": "string", "description": "e.g. '05 ngày làm việc'." },
+    "fees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string" },
+          "amount_vnd": { "type": ["number", "null"], "minimum": 0 },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "official_forms": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "OfficialForm form_codes used in this procedure."
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Kết quả thực hiện, e.g. giấy phép."
+    },
+    "legal_basis": { "type": "array", "items": { "type": "string" } },
+    "valid_from": { "type": ["string", "null"], "format": "date" },
+    "valid_to": { "type": ["string", "null"], "format": "date" },
+    "official_url": { "type": "string", "format": "uri" },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

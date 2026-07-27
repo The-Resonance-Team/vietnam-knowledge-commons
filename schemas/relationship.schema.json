@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "relationship.schema.json",
+  "title": "Relationship",
+  "description": "A typed, effective-dated edge between two VNKC records (documents, procedures, organizations, jurisdictions).",
+  "type": "object",
+  "required": ["type", "from_id", "to_id", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "amends",
+        "amended-by",
+        "replaces",
+        "replaced-by",
+        "repeals",
+        "repealed-by",
+        "guides",
+        "implements",
+        "merged-into",
+        "split-from",
+        "renamed-to",
+        "related"
+      ]
+    },
+    "from_id": { "type": "string", "description": "Canonical ID of the subject record." },
+    "to_id": { "type": "string", "description": "Canonical ID of the object record." },
+    "effective_date": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "When the relationship took/takes legal effect."
+    },
+    "citation": {
+      "type": "string",
+      "description": "Exact citation down to article/clause/point where the relationship is established, e.g. 'Điều 4, Luật 57/2024/QH15'."
+    },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

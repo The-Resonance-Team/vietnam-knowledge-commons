@@ -1,0 +1,12 @@
+{
+  "name": "@vnkc/sdk",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "dependencies": {
+    "@vnkc/schemas": "workspace:*",
+    "yaml": "^2.6.1"
+  }
+}

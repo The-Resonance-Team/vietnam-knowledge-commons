@@ -1,0 +1,63 @@
+name: Release
+
+# Manual release for now — packages are marked private and will be skipped
+# until a maintainer deliberately flips them to public (ROADMAP: first public
+# dataset release). Publishing uses Changesets-shaped versions without the
+# changesets machinery: bump versions in package.json / pyproject.toml, tag,
+# dispatch.
+on:
+  workflow_dispatch:
+    inputs:
+      publish_npm:
+        description: "Publish public npm packages (@vnkc/*)"
+        type: boolean
+        default: false
+      publish_pypi:
+        description: "Publish vnkc to PyPI (trusted publishing)"
+        type: boolean
+        default: false
+
+env:
+  NODE_VERSION: "22"
+  PYTHON_VERSION: "3.12"
+  PNPM_VERSION: "10.13.1"
+
+jobs:
+  npm:
+    if: inputs.publish_npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+          registry-url: "https://registry.npmjs.org"
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
+      # ponytail: publishes every non-private workspace package; per-package
+      # build/bundling is a publish-readiness task, not a Phase 0 one (ADR-0002).
+      - run: pnpm -r publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  pypi:
+    if: inputs.publish_pypi
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # PyPI trusted publishing
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv python install ${{ env.PYTHON_VERSION }}
+      - working-directory: packages/sdk-python
+        run: |
+          uv sync --frozen
+          uv run pytest
+          uv build
+      - run: uvx pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: packages/sdk-python/dist/

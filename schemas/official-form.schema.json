@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "official-form.schema.json",
+  "title": "OfficialForm",
+  "description": "Metadata for an official blank form (biểu mẫu). NEVER the filled form itself — no personal data, ever.",
+  "type": "object",
+  "required": [
+    "form_code",
+    "name",
+    "issuing_authority",
+    "domain",
+    "language",
+    "file_url",
+    "official_url",
+    "provenance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "form_code": { "type": "string", "description": "Official form code, e.g. 01/ĐK, 03/TCT." },
+    "name": { "type": "string", "description": "Original Vietnamese form name." },
+    "name_en": { "type": "string", "description": "English translation, metadata only." },
+    "issuing_authority": { "type": "string" },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "law",
+        "tax",
+        "land",
+        "labor",
+        "social-insurance",
+        "civil-status",
+        "admin-procedures",
+        "forms",
+        "business",
+        "health",
+        "education",
+        "transport",
+        "statistics",
+        "geography",
+        "environment",
+        "agriculture",
+        "culture",
+        "history"
+      ]
+    },
+    "language": { "type": "string", "enum": ["vi", "en", "vi+en"] },
+    "file_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the blank form file (doc/xls/pdf)."
+    },
+    "file_format": {
+      "type": "string",
+      "enum": ["doc", "docx", "xls", "xlsx", "pdf", "html", "other"]
+    },
+    "version": { "type": "string", "description": "Version or revision identifier, if any." },
+    "issued_with": {
+      "type": "string",
+      "description": "Canonical ID or number of the instrument that issued this form (ban hành kèm theo)."
+    },
+    "valid_from": { "type": ["string", "null"], "format": "date" },
+    "valid_to": { "type": ["string", "null"], "format": "date" },
+    "official_url": { "type": "string", "format": "uri" },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

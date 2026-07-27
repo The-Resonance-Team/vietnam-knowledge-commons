@@ -1,0 +1,16 @@
+{
+  "name": "@vnkc/cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "bin": {
+    "vnkc": "./index.ts"
+  },
+  "dependencies": {
+    "@vnkc/schemas": "workspace:*",
+    "@vnkc/sdk": "workspace:*",
+    "commander": "^12.1.0"
+  }
+}

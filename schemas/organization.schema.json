@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "organization.schema.json",
+  "title": "Organization",
+  "description": "A state body or public organization. Designed to survive re-organizations (e.g. the 2025 ministry mergers) via predecessor/successor links.",
+  "type": "object",
+  "required": ["org_id", "name_vi", "org_type", "level", "official_url", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "org_id": { "type": "string", "pattern": "^vnkc:org:[a-z0-9]+(-[a-z0-9]+)*$" },
+    "name_vi": { "type": "string" },
+    "name_en": { "type": "string" },
+    "org_type": {
+      "type": "string",
+      "enum": [
+        "ministry",
+        "ministerial-agency",
+        "government-agency",
+        "provincial",
+        "district",
+        "commune",
+        "public-service",
+        "other"
+      ]
+    },
+    "level": { "type": "string", "enum": ["central", "province", "commune"] },
+    "parent_id": {
+      "type": ["string", "null"],
+      "description": "org_id of the parent organization."
+    },
+    "jurisdiction": { "type": "string" },
+    "established_date": { "type": ["string", "null"], "format": "date" },
+    "dissolved_date": { "type": ["string", "null"], "format": "date" },
+    "predecessor_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "org_ids merged into or renamed to form this org."
+    },
+    "successor_ids": { "type": "array", "items": { "type": "string" } },
+    "official_url": { "type": "string", "format": "uri" },
+    "provenance": { "$ref": "provenance.schema.json" },
+    "notes": { "type": "string" }
+  }
+}
