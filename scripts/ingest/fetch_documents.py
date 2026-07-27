@@ -5,8 +5,11 @@ Read-only, polite: rate-limited, checksummed, provenance-tracked.
 Input: document_urls.json (from fetch_sitemap.py)
 Output: source_records.json (list of source-layer records)
 
+Resume mode: skips URLs already in source_records.json. Run repeatedly
+until all URLs are processed.
+
 Usage:
-    python scripts/ingest/fetch_documents.py [--limit 50] [--output-dir scripts/ingest/output]
+    python scripts/ingest/fetch_documents.py [--limit 500] [--output-dir scripts/ingest/output]
 """
 
 import argparse
@@ -25,7 +28,7 @@ USER_AGENT = (
 )
 RATE_LIMIT_DELAY = 1.5
 REQUEST_TIMEOUT = 30.0
-MAX_PAGES = 50
+MAX_PAGES = 500
 
 
 def sha256_hex(data: bytes) -> str:
@@ -100,13 +103,23 @@ def extract_metadata(html: str, url: str) -> dict:
     return record
 
 
+def load_existing(output_dir: Path) -> tuple[list[dict], set[str]]:
+    """Load existing records and set of fetched URLs."""
+    path = output_dir / "source_records.json"
+    if not path.exists():
+        return [], set()
+    records = json.loads(path.read_text(encoding="utf-8"))
+    urls = {r["source_url"] for r in records if "source_url" in r}
+    return records, urls
+
+
 def main():
     parser = argparse.ArgumentParser(description="Fetch vbpl.vn documents")
     parser.add_argument(
         "--limit",
         type=int,
         default=MAX_PAGES,
-        help=f"Max pages to fetch (default: {MAX_PAGES})",
+        help=f"Max pages to fetch this run (default: {MAX_PAGES})",
     )
     parser.add_argument(
         "--output-dir", default="scripts/ingest/output", help="Output directory"
@@ -120,12 +133,24 @@ def main():
         print(f"Error: {doc_urls_path} not found. Run fetch_sitemap.py first.")
         raise SystemExit(1)
 
-    doc_urls = json.loads(doc_urls_path.read_text(encoding="utf-8"))
-    to_fetch = doc_urls[: args.limit]
-    print(f"Fetching {len(to_fetch)} documents (limit: {args.limit})")
+    all_urls = json.loads(doc_urls_path.read_text(encoding="utf-8"))
+    existing_records, fetched_urls = load_existing(output_dir)
+
+    # Filter to unfetched URLs
+    remaining = [u for u in all_urls if u["url"] not in fetched_urls]
+    to_fetch = remaining[: args.limit]
+
+    print(f"Total URLs: {len(all_urls)}")
+    print(f"Already fetched: {len(fetched_urls)}")
+    print(f"Remaining: {len(remaining)}")
+    print(f"This run: {len(to_fetch)}")
+
+    if not to_fetch:
+        print("\nNothing to fetch — all URLs processed.")
+        return
 
     headers = {"User-Agent": USER_AGENT}
-    records = []
+    new_records = []
     errors = []
 
     with httpx.Client(
@@ -144,23 +169,27 @@ def main():
                 record = extract_metadata(html, url)
                 record["content_checksum"] = f"sha256:{checksum}"
                 record["status_code"] = resp.status_code
-                records.append(record)
+                new_records.append(record)
 
             except Exception as e:
                 print(f"    Error: {e}")
                 errors.append({"url": url, "error": str(e)})
 
-    # Save results
+    # Merge with existing records
+    all_records = existing_records + new_records
     (output_dir / "source_records.json").write_text(
-        json.dumps(records, indent=2, ensure_ascii=False), encoding="utf-8"
+        json.dumps(all_records, indent=2, ensure_ascii=False), encoding="utf-8"
     )
     if errors:
         (output_dir / "fetch_errors.json").write_text(
             json.dumps(errors, indent=2, ensure_ascii=False), encoding="utf-8"
         )
 
-    print(f"\nFetched {len(records)} documents, {len(errors)} errors")
-    print(f"Output: {output_dir}/source_records.json")
+    print(f"\nFetched {len(new_records)} new documents, {len(errors)} errors")
+    print(f"Total records now: {len(all_records)}")
+    print(f"Remaining URLs: {len(remaining) - len(to_fetch)}")
+    if remaining and len(to_fetch) < len(remaining):
+        print("Run again to continue fetching.")
 
 
 if __name__ == "__main__":

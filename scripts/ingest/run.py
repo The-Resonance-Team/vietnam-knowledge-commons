@@ -2,10 +2,10 @@
 """Orchestrate the vbpl.vn ingestion pipeline.
 
 Runs all steps in sequence: sitemap → documents → build records.
-Resumable: skips steps whose output already exists.
+Each step handles resume internally (skips already-processed data).
 
 Usage:
-    python scripts/ingest/run.py [--force] [--limit 50] [--output-dir scripts/ingest/output]
+    python scripts/ingest/run.py [--limit 500] [--output-dir scripts/ingest/output]
 """
 
 import argparse
@@ -14,14 +14,8 @@ import sys
 from pathlib import Path
 
 
-def run_step(
-    name: str, script: str, args: list[str], output_file: Path, force: bool
-) -> bool:
-    """Run a pipeline step, skip if output exists (unless force)."""
-    if output_file.exists() and not force:
-        print(f"✓ {name} — output exists, skipping")
-        return True
-
+def run_step(name: str, script: str, args: list[str]) -> bool:
+    """Run a pipeline step."""
     print(f"\n{'=' * 60}")
     print(f"  STEP: {name}")
     print(f"{'=' * 60}")
@@ -40,10 +34,10 @@ def run_step(
 def main():
     parser = argparse.ArgumentParser(description="Run vbpl.vn ingestion pipeline")
     parser.add_argument(
-        "--force", action="store_true", help="Re-run all steps even if output exists"
-    )
-    parser.add_argument(
-        "--limit", type=int, default=50, help="Max documents to fetch (default: 50)"
+        "--limit",
+        type=int,
+        default=500,
+        help="Max documents to fetch per run (default: 500)",
     )
     parser.add_argument(
         "--output-dir", default="scripts/ingest/output", help="Output directory"
@@ -54,28 +48,29 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     steps = [
-        ("Fetch sitemap", "fetch_sitemap.py", [], output_dir / "sitemap_index.json"),
+        ("Fetch sitemap", "fetch_sitemap.py", []),
         (
             "Fetch documents",
             "fetch_documents.py",
-            ["--limit", str(args.limit)],
-            output_dir / "source_records.json",
+            ["--limit", str(args.limit), "--output-dir", str(output_dir)],
         ),
-        ("Build records", "build_records.py", [], output_dir / "legal_documents.json"),
+        ("Build records", "build_records.py", ["--output-dir", str(output_dir)]),
     ]
 
-    for name, script, extra_args, output_file in steps:
-        if not run_step(name, script, extra_args, output_file, args.force):
+    for name, script, extra_args in steps:
+        if not run_step(name, script, extra_args):
             print(f"\nPipeline stopped at: {name}")
             raise SystemExit(1)
 
-    print(f"\n{'=' * 60}")
-    print("  PIPELINE COMPLETE")
-    print(f"{'=' * 60}")
-    print(f"Output directory: {output_dir}")
-    print("Files:")
-    for f in sorted(output_dir.iterdir()):
-        print(f"  {f.name} ({f.stat().st_size:,} bytes)")
+    # Final stats
+    records_path = output_dir / "legal_documents.json"
+    if records_path.exists():
+        import json
+
+        records = json.loads(records_path.read_text(encoding="utf-8"))
+        print(f"\n{'=' * 60}")
+        print(f"  PIPELINE COMPLETE — {len(records)} legal documents")
+        print(f"{'=' * 60}")
 
 
 if __name__ == "__main__":

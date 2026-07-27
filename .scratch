@@ -1,0 +1,39 @@
+# Scratchpad — ingestion notes
+
+## Pipeline status
+
+- **Sitemap**: 166K URLs discovered (36 sub-sitemaps)
+- **Fetched**: ~10 docs (test run), pipeline supports resume
+- **Remaining**: ~166K URLs, fetch 500 per run
+
+## Run commands
+
+```bash
+# Full pipeline (sitemap + fetch + build)
+uv run --project packages/sdk-python python scripts/ingest/run.py --limit 500
+
+# Resume fetching (runs forever until done)
+uv run --project packages/sdk-python python scripts/ingest/fetch_documents.py --limit 500
+
+# Just rebuild records from existing source_records.json
+uv run --project packages/sdk-python python scripts/ingest/build_records.py
+```
+
+## Filter strategy
+
+- **Phase 0**: Fetch everything, filter later
+- **Phase 1**: Filter to document pages only (skip `/van-ban/trung-uong` listing pages)
+- **Phase 2**: Filter by document type (law, decree, circular) for MVP domains
+
+## Known issues
+
+- Document type detection is URL-based, needs refinement
+- Issue dates picking up page dates, not document dates
+- No content extraction yet (metadata only)
+- Sitemap listing pages (`/van-ban/trung-uong`) included in fetch — should be filtered
+
+## Rate limiting
+
+- 1.5s between requests (vbpl.vn is tolerant but polite)
+- ~500 docs = ~12.5 minutes per run
+- ~166K docs = ~55 hours total (not blocking, run in background)
