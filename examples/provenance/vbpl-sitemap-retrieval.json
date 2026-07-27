@@ -1,0 +1,11 @@
+{
+  "source_id": "moj-vbpl",
+  "source_url": "https://vbpl.vn/sitemap_index.xml",
+  "retrieved_at": "2026-07-27T00:00:00Z",
+  "retrieval_method": "html",
+  "content_checksum": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "license_status": "reference-only",
+  "attribution": "Bộ Tư pháp nước CHXHCN Việt Nam — vbpl.vn",
+  "confidence": "partial",
+  "notes": "Phase 0 example. Sitemap index retrieved for initial ingestion planning. Checksum is illustrative."
+}

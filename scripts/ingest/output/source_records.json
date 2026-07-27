@@ -1,0 +1,122 @@
+[
+  {
+    "source_url": "https://vbpl.vn/van-ban/trung-uong",
+    "title": "Cơ sở dữ liệu quốc gia về pháp luật",
+    "document_number": "91/2015/QH13",
+    "document_type": "law",
+    "issue_date": "2026-07-27",
+    "effective_date": null,
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:26.920981+00:00",
+    "content_checksum": "sha256:7a1fb4172872e30e13990e115a549d1f8c02ecf34b461025c10171b1d53da2f8",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/dia-phuong",
+    "title": "Cơ sở dữ liệu quốc gia về pháp luật",
+    "document_number": "91/2015/QH13",
+    "document_type": "law",
+    "issue_date": "2026-07-27",
+    "effective_date": null,
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:28.565521+00:00",
+    "content_checksum": "sha256:0d5f223a3b9321dafa00fbdc3d8d6662bbfa3671965b6b85bb9a2e3a9b023256",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-ban-hanh-danh-muc-thuoc-hoa-duoc-thuoc-duoc-lieu-vac-xin-sinh-pham-nguyen-lieu-lam-thuoc-ban-thanh-pham-thuoc-va-ban-thanh-pham-duoc-lieu-co-muc-do-rui-ro-cao-muc-do-rui-ro-trung-binh-thuoc-trach-nhiem-quan-ly-cua-bo-y-te--94b66180-899c-11f1-87a9-714a0baabdef",
+    "title": "Thông tư 28/2026/TT-BYT của Bộ Y tế | CSDL quốc gia về pháp luật",
+    "document_number": "28/2026/TT",
+    "document_type": "law",
+    "issue_date": "2026-06-30",
+    "effective_date": "2026-07-27",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:30.243465+00:00",
+    "content_checksum": "sha256:0483c7a0b57aaf2d93573534403e273f466737fef1f471b45ba433f96fc955f8",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-quy-dinh-mot-so-che-do-phu-cap-dac-thu-trong-linh-vuc-y-te-ho-tro-hang-thang-doi-voi-nhan-vien-y-te-thon-to-dan-pho-va-co-do-thon-ban--ef540770-8995-11f1-9899-b5c691f58c81",
+    "title": "Nghị định 192/2026/NĐ-CP của Bộ Y tế | CSDL quốc gia về pháp luật",
+    "document_number": "91/2015/QH13",
+    "document_type": "law",
+    "issue_date": "2026-05-29",
+    "effective_date": "2026-07-27",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:31.975575+00:00",
+    "content_checksum": "sha256:335d97e680bbf3002e5f656fd41573d223068ed25c6f091b5bccd3b37a22371b",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-297-2026-nd-cp-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-bo-dan-toc-va-ton-giao--05e5d7f0-8989-11f1-a255-f96810bc1670",
+    "title": "Nghị định 297/2026/NĐ-CP của Bộ Dân tộc và Tôn giáo | CSDL quốc gia về pháp luật",
+    "document_number": "91/2015/QH13",
+    "document_type": "law",
+    "issue_date": "2026-07-23",
+    "effective_date": "2026-07-27",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:33.618699+00:00",
+    "content_checksum": "sha256:e7ecd82670a0781afc06b81746bc08801994a8ed3aa0e5f67bb73cce5a24b5f4",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-106-2026-tt-btc-ve-dang-ky-hoat-dong-cua-ngan-hang-chinh-sach-xa-hoi--82195990-8732-11f1-a72a-13cce3ddb121",
+    "title": "Thông tư 106/2026/TT-BTC của Bộ Tài chính | CSDL quốc gia về pháp luật",
+    "document_number": "106/2026/TT",
+    "document_type": "law",
+    "issue_date": "2026-07-21",
+    "effective_date": "2026-07-27",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:35.540253+00:00",
+    "content_checksum": "sha256:69010851746bf2f16949b31bf2904e2c0670d4d40949341974fd6baf3fafafb1",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-102-2026-tt-btc-huong-dan-mot-so-noi-dung-ve-giam-sat-kiem-tra-danh-gia-xep-loai-bao-cao-va-cong-khai-thong-tin-trong-quan-ly-va-dau-tu-von-nha-nuoc-tai-doanh-nghiep--3dc325f0-8732-11f1-ae03-43adf26bfa6e",
+    "title": "Thông tư 102/2026/TT-BTC của Bộ Tài chính | CSDL quốc gia về pháp luật",
+    "document_number": "102/2026/TT",
+    "document_type": "law",
+    "issue_date": "2026-07-16",
+    "effective_date": "2026-07-27",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:37.292056+00:00",
+    "content_checksum": "sha256:f405b6a2f51d2d12a56525179c29a4b77ad516337694f280e4cfe02456fb0d97",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-65-2026-tt-btc-sua-doi-bo-sung-mot-so-dieu-cua-thong-tu-so-320-2016-tt-btc-cua-bo-truong-bo-tai-chinh-quy-dinh-che-do-boi-duong-doi-voi-nguoi-lam-nhiem-vu-tiep-cong-dan-xu-ly-don-khieu-nai-to-cao-kien-nghi-phan-anh--4eb208d0-6faa-11f1-85c0-2be113469a4b",
+    "title": "Thông tư 65/2026/TT-BTC của Bộ Tài chính | CSDL quốc gia về pháp luật",
+    "document_number": "65/2026/TT",
+    "document_type": "law",
+    "issue_date": "2026-06-10",
+    "effective_date": "2026-07-26",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:38.999184+00:00",
+    "content_checksum": "sha256:9fbb152b6a7f49585f59e873f326aaaffbd7fe4b5f5480bfcd015e4bfbf93a46",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-17-2026-tt-nhnn-sua-doi-bo-sung-mot-so-dieu-cua-cac-thong-tu-trong-linh-vuc-quan-ly-ngoai-hoi-lien-quan-den-phan-cap-don-gian-hoa-thu-tuc-hanh-chinh--784d6e20-5d60-11f1-a1f9-55b80579da65",
+    "title": "Thông tư 17/2026/TT-NHNN của Ngân hàng Nhà nước Việt Nam | CSDL quốc gia về pháp luật",
+    "document_number": "17/2026/TT",
+    "document_type": "law",
+    "issue_date": "2026-05-18",
+    "effective_date": "2026-07-24",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:40.690258+00:00",
+    "content_checksum": "sha256:ea573e91646a1501a21743a677f419717a016b696fca19b848064ac10f6a7bd3",
+    "status_code": 200
+  },
+  {
+    "source_url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-55-2026-qd-ubnd-quy-dinh-bo-tieu-chi-xa-nong-thon-moi-tren-dia-ban-tinh-quang-tri-giai-doan-2026-2030--7f0f97e0-8675-11f1-8401-6d16c10a3234",
+    "title": "Quyết định 55/2026/QĐ-UBND của Quảng Trị | CSDL quốc gia về pháp luật",
+    "document_number": "91/2015/QH13",
+    "document_type": "law",
+    "issue_date": "2026-07-14",
+    "effective_date": "2026-07-24",
+    "status": "unknown",
+    "retrieved_at": "2026-07-27T14:24:42.383149+00:00",
+    "content_checksum": "sha256:5cefd031a8ceb0b4e2a63855ed523491134dcfa6922db2a057c0159dacfe6d58",
+    "status_code": 200
+  }
+]
