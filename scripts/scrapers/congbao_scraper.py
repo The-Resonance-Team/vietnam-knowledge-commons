@@ -16,10 +16,10 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scrapling.fetchers import AsyncFetcher
+from scrapling.fetchers import StealthyFetcher
 
-RATE_LIMIT_DELAY = 1.5
-DEFAULT_CONCURRENCY = 5
+RATE_LIMIT_DELAY = 2.0
+DEFAULT_CONCURRENCY = 2
 OUTPUT_DIR = Path(".scratch/congbao")
 
 
@@ -85,68 +85,40 @@ def extract_pdf_metadata(page, url: str) -> dict:
     return record
 
 
-async def fetch_page(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semaphore):
-    """Fetch a single page."""
+async def fetch_page(url: str, semaphore: asyncio.Semaphore):
+    """Fetch a single page with StealthyFetcher."""
     async with semaphore:
         try:
             await asyncio.sleep(RATE_LIMIT_DELAY)
-            page = await fetcher.get(url, stealthy_headers=True)
+            page = StealthyFetcher.fetch(url, headless=True)
             record = extract_pdf_metadata(page, url)
             return record, None
         except Exception as e:
             return None, {"url": url, "error": str(e)}
 
 
-async def discover_urls(fetcher: AsyncFetcher, limit: int = 10000) -> list[str]:
+async def discover_urls(limit: int = 10000) -> list[str]:
     """Discover PDF URLs from congbao.chinhphu.vn."""
     urls = []
 
-    # Try sitemap first
     try:
-        sitemap_url = "https://congbao.chinhphu.vn/sitemap.xml"
-        page = await fetcher.get(sitemap_url, stealthy_headers=True)
+        page = StealthyFetcher.fetch("https://congbao.chinhphu.vn/", headless=True)
         if page.status == 200:
-            import xml.etree.ElementTree as ET
-            root = ET.fromstring(page.text)
-            for url_elem in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc"):
-                if url_elem.text and (".pdf" in url_elem.text or "/cong-bao/" in url_elem.text):
-                    urls.append(url_elem.text.strip())
+            links = page.css('a[href*=".pdf"], a[href*="/cong-bao/"]')
+            for link in links:
+                href = link.attrib.get("href", "")
+                if href:
+                    if href.startswith("http"):
+                        urls.append(href)
+                    elif href.startswith("/"):
+                        urls.append(f"https://congbao.chinhphu.vn{href}")
+
                     if len(urls) >= limit:
                         break
     except Exception as e:
-        print(f"Sitemap failed: {e}, falling back to crawl")
+        print(f"Error crawling homepage: {e}")
 
-    # Fallback: crawl index pages
-    if not urls:
-        for year in range(2020, 2027):
-            for month in range(1, 13):
-                index_url = f"https://congbao.chinhphu.vn/default.aspx?pageid=2716&mode=list&year={year}&month={month}"
-                try:
-                    page = await fetcher.get(index_url, stealthy_headers=True)
-                    if page.status != 200:
-                        continue
-
-                    links = page.css('a[href*=".pdf"], a[href*="/cong-bao/"]')
-                    for link in links:
-                        href = link.attrib.get("href")
-                        if href:
-                            if href.startswith("http"):
-                                urls.append(href)
-                            elif href.startswith("/"):
-                                urls.append(f"https://congbao.chinhphu.vn{href}")
-
-                            if len(urls) >= limit:
-                                break
-
-                    if len(urls) >= limit:
-                        break
-                except Exception:
-                    continue
-
-            if len(urls) >= limit:
-                break
-
-    return urls[:limit]
+    return list(set(urls))[:limit]
 
 
 async def main_async(args):
@@ -162,9 +134,8 @@ async def main_async(args):
         fetched_urls = {r["source_url"] for r in existing}
 
     # Discover URLs
-    fetcher = AsyncFetcher(impersonate="chrome")
     print("Discovering URLs from congbao.chinhphu.vn...")
-    all_urls = await discover_urls(fetcher, limit=args.limit * 2)
+    all_urls = await discover_urls(limit=args.limit * 2)
     print(f"Found {len(all_urls)} URLs")
 
     # Filter to unfetched
@@ -177,7 +148,7 @@ async def main_async(args):
 
     # Fetch concurrently
     semaphore = asyncio.Semaphore(args.concurrency)
-    tasks = [fetch_page(fetcher, url, semaphore) for url in to_fetch]
+    tasks = [fetch_page(url, semaphore) for url in to_fetch]
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     new_records = []

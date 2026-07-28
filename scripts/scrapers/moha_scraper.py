@@ -16,10 +16,10 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scrapling.fetchers import AsyncFetcher
+from scrapling.fetchers import StealthyFetcher
 
-RATE_LIMIT_DELAY = 1.5
-DEFAULT_CONCURRENCY = 5
+RATE_LIMIT_DELAY = 2.0  # Slower for stealth
+DEFAULT_CONCURRENCY = 2  # Lower concurrency
 OUTPUT_DIR = Path(".scratch/moha")
 
 
@@ -85,34 +85,30 @@ def extract_unit_metadata(page, url: str) -> dict:
     return record
 
 
-async def fetch_page(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semaphore):
-    """Fetch a single page."""
+async def fetch_page(url: str, semaphore: asyncio.Semaphore):
+    """Fetch a single page with StealthyFetcher."""
     async with semaphore:
         try:
             await asyncio.sleep(RATE_LIMIT_DELAY)
-            page = await fetcher.get(url, stealthy_headers=True)
+            page = StealthyFetcher.fetch(url, headless=True)
             record = extract_unit_metadata(page, url)
             return record, None
         except Exception as e:
             return None, {"url": url, "error": str(e)}
 
 
-async def discover_urls(fetcher: AsyncFetcher, limit: int = 2000) -> list[str]:
+async def discover_urls(limit: int = 2000) -> list[str]:
     """Discover administrative unit URLs from moha.gov.vn."""
     urls = []
 
-    # Crawl from van-ban section (legal documents about mergers)
-    for page_num in range(1, 50):
-        index_url = f"https://moha.gov.vn/van-ban/trang-{page_num}.aspx"
-        try:
-            page = await fetcher.get(index_url, stealthy_headers=True)
-            if page.status != 200:
-                break
-
+    # Crawl from homepage with StealthyFetcher
+    try:
+        page = StealthyFetcher.fetch("https://moha.gov.vn/", headless=True)
+        if page.status == 200:
             # Find links to decree/decision pages about admin units
-            links = page.css('a[href*="/van-ban/chi-tiet/"]')
+            links = page.css('a[href]')
             for link in links:
-                href = link.attrib.get("href")
+                href = link.attrib.get("href", "")
                 text = link.text.strip() if link.text else ""
 
                 # Filter for admin unit related docs
@@ -124,12 +120,8 @@ async def discover_urls(fetcher: AsyncFetcher, limit: int = 2000) -> list[str]:
 
                     if len(urls) >= limit:
                         break
-
-            if len(urls) >= limit or not links:
-                break
-        except Exception as e:
-            print(f"Error crawling page {page_num}: {e}")
-            break
+    except Exception as e:
+        print(f"Error crawling homepage: {e}")
 
     return urls[:limit]
 
@@ -147,9 +139,8 @@ async def main_async(args):
         fetched_urls = {r["source_url"] for r in existing}
 
     # Discover URLs
-    fetcher = AsyncFetcher(impersonate="chrome")
     print("Discovering URLs from moha.gov.vn...")
-    all_urls = await discover_urls(fetcher, limit=args.limit * 2)
+    all_urls = await discover_urls(limit=args.limit * 2)
     print(f"Found {len(all_urls)} URLs")
 
     # Filter to unfetched
@@ -162,7 +153,7 @@ async def main_async(args):
 
     # Fetch concurrently
     semaphore = asyncio.Semaphore(args.concurrency)
-    tasks = [fetch_page(fetcher, url, semaphore) for url in to_fetch]
+    tasks = [fetch_page(url, semaphore) for url in to_fetch]
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     new_records = []

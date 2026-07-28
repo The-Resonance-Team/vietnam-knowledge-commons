@@ -113,42 +113,48 @@ async def fetch_document(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Sem
 
 
 async def discover_urls(fetcher: AsyncFetcher, limit: int = 5000) -> list[str]:
-    """Discover document URLs from thuvienphapluat.vn sitemap or crawl."""
+    """Discover document URLs from thuvienphapluat.vn homepage + categories."""
     urls = []
 
-    # Try sitemap first
-    try:
-        sitemap_url = "https://thuvienphapluat.vn/sitemap.xml"
-        page = await fetcher.get(sitemap_url, stealthy_headers=True)
-        if page.status == 200:
-            import xml.etree.ElementTree as ET
-            root = ET.fromstring(page.text)
-            for url_elem in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc"):
-                if url_elem.text and "/van-ban/" in url_elem.text:
-                    urls.append(url_elem.text.strip())
+    # Crawl from homepage and category pages
+    base_url = "https://thuvienphapluat.vn"
+    pages_to_crawl = [
+        "",  # Homepage
+        "/van-ban/Phap-luat",
+        "/van-ban/Hanh-chinh",
+        "/van-ban/Dau-tu",
+        "/van-ban/Dat-dai",
+        "/van-ban/Thue",
+    ]
+
+    for path in pages_to_crawl:
+        if len(urls) >= limit:
+            break
+
+        index_url = f"{base_url}{path}"
+        try:
+            page = await fetcher.get(index_url, stealthy_headers=True)
+            if page.status != 200:
+                continue
+
+            # Find all van-ban links
+            links = page.css('a[href*="/van-ban/"]')
+            for link in links:
+                href = link.attrib.get("href", "")
+                if href and ".aspx" in href and "/van-ban/" in href:
+                    if href.startswith("http"):
+                        urls.append(href)
+                    elif href.startswith("/"):
+                        urls.append(f"{base_url}{href}")
+
                     if len(urls) >= limit:
                         break
-    except Exception as e:
-        print(f"Sitemap failed: {e}, falling back to crawl")
+        except Exception as e:
+            print(f"Error crawling {index_url}: {e}")
+            continue
 
-    # Fallback: crawl index pages
-    if not urls:
-        for page_num in range(1, 100):
-            index_url = f"https://thuvienphapluat.vn/van-ban/phap-luat/trang-{page_num}.aspx"
-            try:
-                page = await fetcher.get(index_url, stealthy_headers=True)
-                links = page.css('a[href*="/van-ban/chi-tiet/"]')
-                for link in links:
-                    href = link.attrib.get("href")
-                    if href and href.startswith("http"):
-                        urls.append(href)
-                        if len(urls) >= limit:
-                            break
-                if len(urls) >= limit or not links:
-                    break
-            except Exception:
-                break
-
+    # Deduplicate
+    urls = list(set(urls))
     return urls[:limit]
 
 

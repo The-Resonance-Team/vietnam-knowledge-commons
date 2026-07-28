@@ -16,10 +16,10 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-from scrapling.fetchers import AsyncFetcher
+from scrapling.fetchers import StealthyFetcher
 
-RATE_LIMIT_DELAY = 1.5
-DEFAULT_CONCURRENCY = 5
+RATE_LIMIT_DELAY = 2.0
+DEFAULT_CONCURRENCY = 2
 OUTPUT_DIR = Path(".scratch/gso")
 
 
@@ -97,41 +97,31 @@ async def fetch_page(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semapho
             return None, {"url": url, "error": str(e)}
 
 
-async def discover_urls(fetcher: AsyncFetcher, limit: int = 2000) -> list[str]:
-    """Discover administrative unit code URLs from gso.gov.vn."""
+async def discover_urls(limit: int = 2000) -> list[str]:
+    """Discover administrative unit code URLs from nso.gov.vn (redirected from gso.gov.vn)."""
     urls = []
 
-    # GSO has statistical data pages for each admin unit
-    # Try crawling from data section
-    for section in ["don-vi-hanh-chinh", "thong-ke-2024", "thong-ke-2025"]:
-        for page_num in range(1, 30):
-            index_url = f"https://gso.gov.vn/{section}/trang-{page_num}.aspx"
-            try:
-                page = await fetcher.get(index_url, stealthy_headers=True)
-                if page.status != 200:
-                    break
+    # Use nso.gov.vn (redirect target from gso.gov.vn)
+    base_url = "https://www.nso.gov.vn"
 
-                links = page.css('a[href*="/{section}/"]')
-                for link in links:
-                    href = link.attrib.get("href")
-                    if href and ("tinh" in href or "huyen" in href or "xa" in href):
-                        if href.startswith("http"):
-                            urls.append(href)
-                        elif href.startswith("/"):
-                            urls.append(f"https://gso.gov.vn{href}")
+    try:
+        page = StealthyFetcher.fetch(f"{base_url}/", headless=True)
+        if page.status == 200:
+            links = page.css('a[href]')
+            for link in links:
+                href = link.attrib.get("href", "")
+                if href and any(kw in href for kw in ["/tinh-", "/huyen-", "/xa-", "don-vi", "thong-ke"]):
+                    if href.startswith("http"):
+                        urls.append(href)
+                    elif href.startswith("/"):
+                        urls.append(f"{base_url}{href}")
 
-                        if len(urls) >= limit:
-                            break
+                    if len(urls) >= limit:
+                        break
+    except Exception as e:
+        print(f"Error crawling homepage: {e}")
 
-                if len(urls) >= limit or not links:
-                    break
-            except Exception:
-                break
-
-        if len(urls) >= limit:
-            break
-
-    return urls[:limit]
+    return list(set(urls))[:limit]
 
 
 async def main_async(args):
@@ -147,9 +137,8 @@ async def main_async(args):
         fetched_urls = {r["source_url"] for r in existing}
 
     # Discover URLs
-    fetcher = AsyncFetcher(impersonate="chrome")
-    print("Discovering URLs from gso.gov.vn...")
-    all_urls = await discover_urls(fetcher, limit=args.limit * 2)
+    print("Discovering URLs from nso.gov.vn...")
+    all_urls = await discover_urls(limit=args.limit * 2)
     print(f"Found {len(all_urls)} URLs")
 
     # Filter to unfetched
@@ -162,7 +151,7 @@ async def main_async(args):
 
     # Fetch concurrently
     semaphore = asyncio.Semaphore(args.concurrency)
-    tasks = [fetch_page(fetcher, url, semaphore) for url in to_fetch]
+    tasks = [fetch_page(url, semaphore) for url in to_fetch]
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     new_records = []
