@@ -85,12 +85,12 @@ def extract_unit_code(page, url: str) -> dict:
     return record
 
 
-async def fetch_page(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semaphore):
-    """Fetch a single page."""
+async def fetch_page(url: str, semaphore: asyncio.Semaphore):
+    """Fetch a single page with StealthyFetcher (sync, run in thread)."""
     async with semaphore:
         try:
             await asyncio.sleep(RATE_LIMIT_DELAY)
-            page = await fetcher.get(url, stealthy_headers=True)
+            page = await asyncio.to_thread(StealthyFetcher.fetch, url, headless=True)
             record = extract_unit_code(page, url)
             return record, None
         except Exception as e:
@@ -105,7 +105,7 @@ async def discover_urls(limit: int = 2000) -> list[str]:
     base_url = "https://www.nso.gov.vn"
 
     try:
-        page = StealthyFetcher.fetch(f"{base_url}/", headless=True)
+        page = await asyncio.to_thread(StealthyFetcher.fetch, f"{base_url}/", headless=True)
         if page.status == 200:
             links = page.css('a[href]')
             for link in links:

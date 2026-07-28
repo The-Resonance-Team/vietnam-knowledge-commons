@@ -4,6 +4,8 @@
 Runs all steps in sequence: sitemap → documents → build records.
 Each step handles resume internally (skips already-processed data).
 
+Uses Scrapling for HTTP requests with browser impersonation and session management.
+
 Usage:
     python scripts/ingest/run.py [--limit 500] [--output-dir scripts/ingest/output]
 """
