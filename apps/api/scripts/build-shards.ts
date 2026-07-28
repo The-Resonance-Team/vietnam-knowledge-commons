@@ -12,6 +12,35 @@ interface Manifest {
   last_sync: string | null;
 }
 
+// STALE — superseded by scripts/ingest/build_data.py (ADR-0004).
+//
+// This script assembles shards from per-document `{id}.meta.json` files. Those
+// are no longer written: the Python transform emits `shards/` and
+// `metadata/index.json` directly, so a rebuild touches 28 files instead of
+// 27,904. Running this as-is finds an empty metadata dir and overwrites the
+// real shards with nothing, so it refuses to run until it is either rewritten
+// or deleted.
+function assertNotStale() {
+  const shardsDir = path.join(DATA_DIR, "legal-docs/shards");
+  const hasShards =
+    fs.existsSync(shardsDir) && fs.readdirSync(shardsDir).some((f) => f.startsWith("shard-"));
+  const metadataDir = path.join(DATA_DIR, "legal-docs/metadata");
+  const hasPerDocMeta =
+    fs.existsSync(metadataDir) && fs.readdirSync(metadataDir).some((f) => f.endsWith(".meta.json"));
+
+  if (hasShards && !hasPerDocMeta) {
+    console.error(
+      [
+        "build-shards is stale and would destroy data/legal-docs/shards/.",
+        "Shards are produced by:",
+        "  uv run --project packages/sdk-python python scripts/ingest/build_data.py",
+        "See docs/decisions/ADR-0004-legal-doc-identity-and-derivation.md",
+      ].join("\n"),
+    );
+    process.exit(1);
+  }
+}
+
 function buildLegalDocShards() {
   const metadataDir = path.join(DATA_DIR, "legal-docs/metadata");
   const fulltextDir = path.join(DATA_DIR, "legal-docs/fulltext");
@@ -157,6 +186,7 @@ function updateManifest(legalDocsCount: number, adminUnitsCount: number) {
 }
 
 function main() {
+  assertNotStale();
   console.log("Building shards from metadata...");
 
   const legalDocsCount = buildLegalDocShards();
