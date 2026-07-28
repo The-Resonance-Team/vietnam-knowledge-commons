@@ -1,0 +1,170 @@
+// Vietnam Knowledge Commons - Prisma Schema
+// Two domains: Administrative units + Legal corpus
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============ Administrative Units ============
+
+enum AdminUnitLevel {
+  province
+  district
+  ward
+}
+
+model AdministrativeUnit {
+  id          String        @id @default(uuid()) @db.Uuid
+  code        String        @unique // GSO statistical code
+  name        String        // Vietnamese name
+  nameEn      String?       @map("name_en") // English name (optional)
+  level       AdminUnitLevel
+  validFrom   DateTime      @map("valid_from")
+  validTo     DateTime?     @map("valid_to") // null = current
+  parentId    String?       @map("parent_id") @db.Uuid
+  population  Int?
+  areaKm2     Float?        @map("area_km2")
+  sourceUrl   String?       @map("source_url")
+  createdAt   DateTime      @default(now()) @map("created_at")
+  updatedAt   DateTime      @updatedAt @map("updated_at")
+
+  // Relations
+  parent       AdministrativeUnit?  @relation("UnitHierarchy", fields: [parentId], references: [id])
+  children     AdministrativeUnit[] @relation("UnitHierarchy")
+  predecessors AdminUnitRelation[]  @relation("PredecessorUnits")
+  successors   AdminUnitRelation[]  @relation("SuccessorUnits")
+  legalDocs    LegalDocument[]      @relation("DocumentAppliesToUnits")
+
+  @@map("administrative_units")
+}
+
+// Junction table for merger relationships (many-to-many)
+model AdminUnitRelation {
+  id              String   @id @default(uuid()) @db.Uuid
+  predecessorId   String   @map("predecessor_id") @db.Uuid
+  successorId     String   @map("successor_id") @db.Uuid
+  relationshipType String  @map("relationship_type") @default("merger") // merger, split, rename
+  effectiveDate   DateTime @map("effective_date")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  predecessor AdministrativeUnit @relation("PredecessorUnits", fields: [predecessorId], references: [id])
+  successor   AdministrativeUnit @relation("SuccessorUnits", fields: [successorId], references: [id])
+
+  @@unique([predecessorId, successorId, relationshipType])
+  @@map("admin_unit_relations")
+}
+
+// ============ Legal Documents ============
+
+enum DocumentType {
+  hien_phap   // Constitution
+  bo_luat     // Code
+  luat        // Law
+  nghi_quyet  // Resolution
+  phap_lenh   // Ordinance
+  nghi_dinh   // Decree
+  quyet_dinh  // Decision
+  thong_tu    // Circular
+  chi_thi     // Directive
+}
+
+enum DocumentScope {
+  nationwide
+  provincial
+  district
+  ward
+}
+
+model LegalDocument {
+  id              String         @id @default(uuid()) @db.Uuid
+  documentType    DocumentType   @map("document_type")
+  documentNumber  String         @map("document_number") // e.g., '01/2024/QH15'
+  title           String         // Vietnamese title
+  titleEn         String?        @map("title_en") // English title (optional)
+  issueDate       DateTime       @map("issue_date")
+  effectiveDate   DateTime       @map("effective_date")
+  expiryDate      DateTime?      @map("expiry_date") // null = still valid
+  issuingBody     String         @map("issuing_body") // e.g., 'National Assembly'
+  fullText        String?        @map("full_text") // Full text content
+  scope           DocumentScope  @default(nationwide)
+  sourceId        String         @map("source_id") @db.Uuid
+  sourceUrl       String         @map("source_url")
+  retrievedAt     DateTime       @map("retrieved_at")
+  keywords        String[]       @default([])
+  abstract        String?
+  isDuplicate     Boolean        @default(false) @map("is_duplicate")
+  canonicalDocId  String?        @map("canonical_doc_id") @db.Uuid // points to canonical if duplicate
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+
+  // Relations
+  source       Source          @relation(fields: [sourceId], references: [id])
+  files        File[]
+  appliesToUnits AdministrativeUnit[] @relation("DocumentAppliesToUnits")
+  canonicalDoc LegalDocument?  @relation("DuplicateDocs", fields: [canonicalDocId], references: [id])
+  duplicates   LegalDocument[] @relation("DuplicateDocs")
+
+  @@unique([documentNumber, issueDate, documentType])
+  @@index([documentType])
+  @@index([issueDate])
+  @@index([effectiveDate])
+  @@index([scope])
+  @@map("legal_documents")
+}
+
+// ============ Files ============
+
+enum FileType {
+  pdf
+  docx
+  xlsx
+  other
+}
+
+model File {
+  id              String   @id @default(uuid()) @db.Uuid
+  legalDocumentId String   @map("legal_document_id") @db.Uuid
+  filename        String
+  fileType        FileType @map("file_type")
+  fileSizeBytes   Int      @map("file_size_bytes")
+  storageUrl      String   @map("storage_url") // R2 URL
+  sourceUrl       String   @map("source_url") // Original download URL
+  checksumSha256  String   @map("checksum_sha256")
+  retrievedAt     DateTime @map("retrieved_at")
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  legalDocument LegalDocument @relation(fields: [legalDocumentId], references: [id], onDelete: Cascade)
+
+  @@index([legalDocumentId])
+  @@map("files")
+}
+
+// ============ Sources ============
+
+enum SourceType {
+  legal
+  administrative
+  gazette
+  ministry
+}
+
+model Source {
+  id               String     @id @default(uuid()) @db.Uuid
+  name             String     @unique // e.g., 'vbpl.vn'
+  baseUrl          String     @map("base_url")
+  sourceType       SourceType @map("source_type")
+  license          String     @default("public domain")
+  rateLimitSeconds Float      @default(1.5) @map("rate_limit_seconds")
+  description      String?
+  contact          String?
+  createdAt        DateTime   @default(now()) @map("created_at")
+
+  legalDocuments LegalDocument[]
+
+  @@map("sources")
+}
