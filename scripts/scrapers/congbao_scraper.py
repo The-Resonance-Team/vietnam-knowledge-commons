@@ -86,11 +86,11 @@ def extract_pdf_metadata(page, url: str) -> dict:
 
 
 async def fetch_page(url: str, semaphore: asyncio.Semaphore):
-    """Fetch a single page with StealthyFetcher."""
+    """Fetch a single page with StealthyFetcher (sync, run in thread)."""
     async with semaphore:
         try:
             await asyncio.sleep(RATE_LIMIT_DELAY)
-            page = StealthyFetcher.fetch(url, headless=True)
+            page = await asyncio.to_thread(StealthyFetcher.fetch, url, headless=True)
             record = extract_pdf_metadata(page, url)
             return record, None
         except Exception as e:
@@ -98,16 +98,21 @@ async def fetch_page(url: str, semaphore: asyncio.Semaphore):
 
 
 async def discover_urls(limit: int = 10000) -> list[str]:
-    """Discover PDF URLs from congbao.chinhphu.vn."""
+    """Discover HTML page URLs from congbao.chinhphu.vn (skip PDF download links)."""
     urls = []
 
     try:
-        page = StealthyFetcher.fetch("https://congbao.chinhphu.vn/", headless=True)
+        page = await asyncio.to_thread(StealthyFetcher.fetch, "https://congbao.chinhphu.vn/", headless=True)
         if page.status == 200:
-            links = page.css('a[href*=".pdf"], a[href*="/cong-bao/"]')
+            links = page.css('a[href]')
             for link in links:
                 href = link.attrib.get("href", "")
                 if href:
+                    # Skip PDF download links (trigger download instead of page load)
+                    if "/download/stream" in href or href.endswith(".pdf"):
+                        continue
+
+                    # Keep HTML page URLs
                     if href.startswith("http"):
                         urls.append(href)
                     elif href.startswith("/"):
