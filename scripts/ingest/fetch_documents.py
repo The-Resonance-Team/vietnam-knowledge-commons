@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """Fetch document pages from vbpl.vn and extract metadata.
 
+Uses Scrapling's Fetcher for HTTP requests with:
+- Browser impersonation (TLS fingerprint)
+- Session management
+- Polite rate limiting
+- Concurrent requests (asyncio)
+
 Read-only, polite: rate-limited, checksummed, provenance-tracked.
 Input: document_urls.json (from fetch_sitemap.py)
 Output: source_records.json (list of source-layer records)
@@ -9,34 +15,27 @@ Resume mode: skips URLs already in source_records.json. Run repeatedly
 until all URLs are processed.
 
 Usage:
-    python scripts/ingest/fetch_documents.py [--limit 500] [--output-dir scripts/ingest/output]
+    python scripts/ingest/fetch_documents.py [--limit 500] [--concurrency 5] [--output-dir scripts/ingest/output]
 """
 
 import argparse
+import asyncio
 import hashlib
 import json
 import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
 
-import httpx
+from scrapling.fetchers import AsyncFetcher
 
-USER_AGENT = (
-    "VNKC/0.1 (+https://github.com/The-Resonance-Team/vietnam-knowledge-commons)"
-)
 RATE_LIMIT_DELAY = 1.5
-REQUEST_TIMEOUT = 30.0
 MAX_PAGES = 500
+DEFAULT_CONCURRENCY = 5
 
 
-def sha256_hex(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
-
-
-def extract_metadata(html: str, url: str) -> dict:
-    """Extract document metadata from vbpl.vn HTML page."""
+def extract_metadata(page, url: str) -> dict:
+    """Extract document metadata from vbpl.vn HTML page using Scrapling parser."""
     record = {
         "source_url": url,
         "title": None,
@@ -48,20 +47,24 @@ def extract_metadata(html: str, url: str) -> dict:
         "retrieved_at": datetime.now(timezone.utc).isoformat(),
     }
 
-    title_match = re.search(r"<title[^>]*>([^<]+)</title>", html, re.IGNORECASE)
-    if title_match:
-        record["title"] = title_match.group(1).strip()
+    # Use Scrapling's CSS selectors
+    title_el = page.css("title")
+    if title_el:
+        record["title"] = title_el[0].text.strip()
 
-    h1_match = re.search(r"<h1[^>]*>([^<]+)</h1>", html, re.IGNORECASE)
-    if h1_match:
-        record["title"] = h1_match.group(1).strip()
+    h1_el = page.css("h1")
+    if h1_el:
+        record["title"] = h1_el[0].text.strip()
 
+    # Extract document number
+    body_text = page.text or ""
     doc_num_match = re.search(
-        r"(\d{1,4}/\d{4}/[A-Z]{2,10}\d{0,2})", html, re.IGNORECASE
+        r"(\d{1,4}/\d{4}/[A-Z]{2,10}\d{0,2})", body_text, re.IGNORECASE
     )
     if doc_num_match:
         record["document_number"] = doc_num_match.group(1)
 
+    # Extract dates
     date_patterns = [
         (r"ngày\s+(\d{1,2})\s+tháng\s+(\d{1,2})\s+năm\s+(\d{4})", "vi"),
         (r"(\d{1,2})/(\d{1,2})/(\d{4})", "slash"),
@@ -69,7 +72,7 @@ def extract_metadata(html: str, url: str) -> dict:
     ]
     dates_found = []
     for pattern, fmt in date_patterns:
-        for m in re.finditer(pattern, html):
+        for m in re.finditer(pattern, body_text):
             try:
                 if fmt == "vi":
                     d, mo, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
@@ -87,7 +90,8 @@ def extract_metadata(html: str, url: str) -> dict:
         if len(dates_found) > 1:
             record["effective_date"] = dates_found[1]
 
-    path = urlparse(url).path.lower()
+    # Detect document type
+    path = url.lower()
     title_lower = (record.get("title") or "").lower()
     if "luat" in path or "luật" in title_lower:
         record["document_type"] = "law"
@@ -113,19 +117,24 @@ def load_existing(output_dir: Path) -> tuple[list[dict], set[str]]:
     return records, urls
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Fetch vbpl.vn documents")
-    parser.add_argument(
-        "--limit",
-        type=int,
-        default=MAX_PAGES,
-        help=f"Max pages to fetch this run (default: {MAX_PAGES})",
-    )
-    parser.add_argument(
-        "--output-dir", default="scripts/ingest/output", help="Output directory"
-    )
-    args = parser.parse_args()
+async def fetch_document(
+    fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semaphore
+) -> tuple[dict | None, dict | None]:
+    """Fetch a single document page asynchronously."""
+    async with semaphore:
+        try:
+            await asyncio.sleep(RATE_LIMIT_DELAY)
+            page = await fetcher.get(url, stealthy_headers=True)
+            record = extract_metadata(page, url)
+            checksum = hashlib.sha256(page.text.encode("utf-8")).hexdigest()
+            record["content_checksum"] = f"sha256:{checksum}"
+            return record, None
+        except Exception as e:
+            return None, {"url": url, "error": str(e)}
 
+
+async def main_async(args):
+    """Async main loop with concurrency."""
     output_dir = Path(args.output_dir)
     doc_urls_path = output_dir / "document_urls.json"
 
@@ -143,37 +152,32 @@ def main():
     print(f"Total URLs: {len(all_urls)}")
     print(f"Already fetched: {len(fetched_urls)}")
     print(f"Remaining: {len(remaining)}")
-    print(f"This run: {len(to_fetch)}")
+    print(f"This run: {len(to_fetch)} (concurrency: {args.concurrency})")
 
     if not to_fetch:
         print("\nNothing to fetch — all URLs processed.")
         return
 
-    headers = {"User-Agent": USER_AGENT}
+    semaphore = asyncio.Semaphore(args.concurrency)
+    fetcher = AsyncFetcher(impersonate="chrome")
+
+    tasks = [fetch_document(fetcher, entry["url"], semaphore) for entry in to_fetch]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
     new_records = []
     errors = []
-
-    with httpx.Client(
-        timeout=REQUEST_TIMEOUT, headers=headers, follow_redirects=True
-    ) as client:
-        for i, entry in enumerate(to_fetch):
-            url = entry["url"]
-            print(f"  [{i + 1}/{len(to_fetch)}] {url}")
-            try:
-                time.sleep(RATE_LIMIT_DELAY)
-                resp = client.get(url)
-                resp.raise_for_status()
-                html = resp.text
-                checksum = sha256_hex(resp.content)
-
-                record = extract_metadata(html, url)
-                record["content_checksum"] = f"sha256:{checksum}"
-                record["status_code"] = resp.status_code
+    for i, result in enumerate(results):
+        if isinstance(result, Exception):
+            print(f"  [{i + 1}/{len(to_fetch)}] Exception: {result}")
+            errors.append({"url": to_fetch[i]["url"], "error": str(result)})
+        else:
+            record, error = result
+            if record:
                 new_records.append(record)
-
-            except Exception as e:
-                print(f"    Error: {e}")
-                errors.append({"url": url, "error": str(e)})
+                print(f"  [{i + 1}/{len(to_fetch)}] ✓ {to_fetch[i]['url']}")
+            if error:
+                errors.append(error)
+                print(f"  [{i + 1}/{len(to_fetch)}] ✗ {error['url']}: {error['error']}")
 
     # Merge with existing records
     all_records = existing_records + new_records
@@ -190,6 +194,28 @@ def main():
     print(f"Remaining URLs: {len(remaining) - len(to_fetch)}")
     if remaining and len(to_fetch) < len(remaining):
         print("Run again to continue fetching.")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Fetch vbpl.vn documents")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=MAX_PAGES,
+        help=f"Max pages to fetch this run (default: {MAX_PAGES})",
+    )
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        default=DEFAULT_CONCURRENCY,
+        help=f"Concurrent requests (default: {DEFAULT_CONCURRENCY})",
+    )
+    parser.add_argument(
+        "--output-dir", default="scripts/ingest/output", help="Output directory"
+    )
+    args = parser.parse_args()
+
+    asyncio.run(main_async(args))
 
 
 if __name__ == "__main__":
