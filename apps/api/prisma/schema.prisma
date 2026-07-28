@@ -61,16 +61,44 @@ model AdminUnitRelation {
 
 // ============ Legal Documents ============
 
+// Mirrors the canonical vocabulary in schemas/legal-document.schema.json,
+// which ADR-0002 makes authoritative. Prisma enum identifiers cannot contain
+// hyphens, so each value @maps to the exact canonical string; sync-db writes
+// the JSON value straight through. Vietnamese equivalents are noted for
+// readers coming from the domain rather than the schema.
 enum DocumentType {
-  hien_phap   // Constitution
-  bo_luat     // Code
-  luat        // Law
-  nghi_quyet  // Resolution
-  phap_lenh   // Ordinance
-  nghi_dinh   // Decree
-  quyet_dinh  // Decision
-  thong_tu    // Circular
-  chi_thi     // Directive
+  constitution                                       // hiến pháp
+  code                                               // bộ luật
+  law                                                // luật
+  ordinance                                          // pháp lệnh
+  resolution                                         // nghị quyết
+  decree                                             // nghị định
+  decision                                           // quyết định
+  circular                                           // thông tư
+  joint_circular        @map("joint-circular")       // thông tư liên tịch
+  directive                                          // chỉ thị
+  official_dispatch     @map("official-dispatch")    // công văn
+  treaty                                             // hiệp định
+  consolidated_document @map("consolidated-document") // văn bản hợp nhất
+  promulgation_order    @map("promulgation-order")   // lệnh
+  historic_ordinance    @map("historic-ordinance")   // sắc lệnh
+  other                                              // khác
+}
+
+// How documentType was derived. The Vietnamese title prefix names the type
+// ('Thông tư'); the number suffix names the issuing body ('TT-BYT'). They are
+// orthogonal, so the prefix is authoritative and the suffix only a fallback.
+enum DocumentTypeBasis {
+  title_prefix
+  number_suffix
+  fallback
+}
+
+// Whether the source page was actually retrieved, or only discovered via a
+// listing page. Discovered records have a title but no dates and no body.
+enum FetchStatus {
+  fetched
+  discovered
 }
 
 enum DocumentScope {
@@ -82,15 +110,31 @@ enum DocumentScope {
 
 model LegalDocument {
   id              String         @id @default(uuid()) @db.Uuid
+  // Published identity, e.g. 'vnkc:legal-doc:21490'. Derived 1:1 from the
+  // source page, so it is unique alongside sourceUrl rather than instead of it.
+  canonicalId     String         @unique @map("canonical_id")
   documentType    DocumentType   @map("document_type")
-  documentNumber  String         @map("document_number") // e.g., '01/2024/QH15'
-  title           String         // Vietnamese title
+  documentTypeBasis DocumentTypeBasis @map("document_type_basis")
+  // Null when the title carried no parseable number (~1,260 rows); the
+  // unparsed token is kept in documentNumberRaw rather than guessed at.
+  documentNumber  String?        @map("document_number") // e.g., '01/2024/QH15'
+  documentNumberRaw String?      @map("document_number_raw")
+  // A citation, not a subject: 'Thông tư 28/2026/TT-BYT của Bộ Y tế'.
+  citationTitle   String?        @map("citation_title")
+  // The document's actual topic, de-diacriticized, from the URL slug.
+  subjectSlug     String?        @map("subject_slug")
   titleEn         String?        @map("title_en") // English title (optional)
-  issueDate       DateTime       @map("issue_date")
-  effectiveDate   DateTime       @map("effective_date")
+  // Null on discovered-but-unfetched records.
+  issueDate       DateTime?      @map("issue_date")
+  effectiveDate   DateTime?      @map("effective_date")
   expiryDate      DateTime?      @map("expiry_date") // null = still valid
-  issuingBody     String         @map("issuing_body") // e.g., 'National Assembly'
+  // Verbatim body token from the number ('TT-BYT'). Not mapped to a display
+  // name: 1,106 distinct tokens, top 30 cover only 80% of rows.
+  issuingAuthorityCode String?   @map("issuing_authority_code")
+  issuingBody     String?        @map("issuing_body") // e.g., 'National Assembly'
   fullText        String?        @map("full_text") // Full text content
+  fetchStatus     FetchStatus    @default(discovered) @map("fetch_status")
+  contentChecksum String?        @map("content_checksum")
   scope           DocumentScope  @default(nationwide)
   sourceId        String         @map("source_id") @db.Uuid
   sourceUrl       String         @map("source_url")
@@ -109,7 +153,14 @@ model LegalDocument {
   canonicalDoc LegalDocument?  @relation("DuplicateDocs", fields: [canonicalDocId], references: [id])
   duplicates   LegalDocument[] @relation("DuplicateDocs")
 
-  @@unique([documentNumber, issueDate, documentType])
+  // Identity is the source page, not the document number. The number is a
+  // parsed attribute that is null or ambiguous on ~4.5% of rows, and dates
+  // are absent on the 10,005 discovered-only records, so the old
+  // [documentNumber, issueDate, documentType] key was unsatisfiable.
+  // See ADR-0004.
+  @@unique([sourceUrl])
+  @@index([documentNumber])
+  @@index([fetchStatus])
   @@index([documentType])
   @@index([issueDate])
   @@index([effectiveDate])
