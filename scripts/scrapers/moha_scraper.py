@@ -86,11 +86,11 @@ def extract_unit_metadata(page, url: str) -> dict:
 
 
 async def fetch_page(url: str, semaphore: asyncio.Semaphore):
-    """Fetch a single page with StealthyFetcher."""
+    """Fetch a single page with StealthyFetcher (sync, run in thread)."""
     async with semaphore:
         try:
             await asyncio.sleep(RATE_LIMIT_DELAY)
-            page = StealthyFetcher.fetch(url, headless=True)
+            page = await asyncio.to_thread(StealthyFetcher.fetch, url, headless=True)
             record = extract_unit_metadata(page, url)
             return record, None
         except Exception as e:
@@ -101,18 +101,25 @@ async def discover_urls(limit: int = 2000) -> list[str]:
     """Discover administrative unit URLs from moha.gov.vn."""
     urls = []
 
-    # Crawl from homepage with StealthyFetcher
+    # Crawl from homepage with network_idle + wait (JS-rendered SPA)
     try:
-        page = StealthyFetcher.fetch("https://moha.gov.vn/", headless=True)
+        page = await asyncio.to_thread(
+            StealthyFetcher.fetch,
+            "https://moha.gov.vn/",
+            headless=True,
+            network_idle=True,
+            wait=5
+        )
         if page.status == 200:
-            # Find links to decree/decision pages about admin units
+            # Find all /tin-tuc/ links (news articles about admin units)
             links = page.css('a[href]')
             for link in links:
                 href = link.attrib.get("href", "")
                 text = link.text.strip() if link.text else ""
 
-                # Filter for admin unit related docs
-                if href and any(kw in text.lower() for kw in ["nghị quyết", "sáp nhập", "đơn vị hành chính", "tỉnh", "huyện", "xã"]):
+                # Filter for tin-tuc or admin unit keywords
+                if href and ("/tin-tuc/" in href or "/nghi-quyet" in href or
+                           any(kw in text.lower() for kw in ["đơn vị hành chính", "sáp nhập", "tỉnh", "huyện", "xã", "ward", "district", "province"])):
                     if href.startswith("http"):
                         urls.append(href)
                     elif href.startswith("/"):
@@ -123,7 +130,32 @@ async def discover_urls(limit: int = 2000) -> list[str]:
     except Exception as e:
         print(f"Error crawling homepage: {e}")
 
-    return urls[:limit]
+    # Also try /tin-tuc/ section with network_idle
+    if len(urls) < limit:
+        try:
+            page = await asyncio.to_thread(
+                StealthyFetcher.fetch,
+                "https://moha.gov.vn/tin-tuc/",
+                headless=True,
+                network_idle=True,
+                wait=5
+            )
+            if page.status == 200:
+                links = page.css('a[href]')
+                for link in links:
+                    href = link.attrib.get("href", "")
+                    if href and "/tin-tuc/" in href:
+                        if href.startswith("http"):
+                            urls.append(href)
+                        elif href.startswith("/"):
+                            urls.append(f"https://moha.gov.vn{href}")
+
+                        if len(urls) >= limit:
+                            break
+        except Exception:
+            pass
+
+    return list(set(urls))[:limit]
 
 
 async def main_async(args):
