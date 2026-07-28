@@ -22,12 +22,15 @@ export class LegalDocsService {
   }
 
   async search(query: string, limit = 50) {
-    // Full-text search via Meilisearch (to be implemented)
-    // For now, basic SQL LIKE search
+    // Full-text search via Typesense (to be implemented). This is a basic SQL
+    // LIKE search and, per ADR-0004, `citationTitle` is a citation
+    // ("Thông tư 28/2026/TT-BYT của Bộ Y tế"), not a subject — so this only
+    // matches what's literally in the citation, number, or (rarely present)
+    // full text, not what a document is about.
     return this.prisma.legalDocument.findMany({
       where: {
         OR: [
-          { title: { contains: query, mode: "insensitive" } },
+          { citationTitle: { contains: query, mode: "insensitive" } },
           { documentNumber: { contains: query, mode: "insensitive" } },
           { fullText: { contains: query, mode: "insensitive" } },
         ],
