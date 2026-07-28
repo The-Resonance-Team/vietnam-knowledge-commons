@@ -97,15 +97,90 @@ async def fetch_page(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semapho
             return None, {"url": url, "error": str(e)}
 
 
+async def discover_urls(fetcher: AsyncFetcher, limit: int = 2000) -> list[str]:
+    """Discover administrative unit code URLs from gso.gov.vn."""
+    urls = []
+
+    # GSO has statistical data pages for each admin unit
+    # Try crawling from data section
+    for section in ["don-vi-hanh-chinh", "thong-ke-2024", "thong-ke-2025"]:
+        for page_num in range(1, 30):
+            index_url = f"https://gso.gov.vn/{section}/trang-{page_num}.aspx"
+            try:
+                page = await fetcher.get(index_url, stealthy_headers=True)
+                if page.status != 200:
+                    break
+
+                links = page.css('a[href*="/{section}/"]')
+                for link in links:
+                    href = link.attrib.get("href")
+                    if href and ("tinh" in href or "huyen" in href or "xa" in href):
+                        if href.startswith("http"):
+                            urls.append(href)
+                        elif href.startswith("/"):
+                            urls.append(f"https://gso.gov.vn{href}")
+
+                        if len(urls) >= limit:
+                            break
+
+                if len(urls) >= limit or not links:
+                    break
+            except Exception:
+                break
+
+        if len(urls) >= limit:
+            break
+
+    return urls[:limit]
+
+
 async def main_async(args):
     """Async main loop."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / "raw_codes.json"
 
-    print("GSO scraper — gso.gov.vn")
-    print("TODO: Implement URL discovery (statistical code pages)")
-    print("Need: Crawl from https://gso.gov.vn/ or download Excel/CSV")
-    return
+    # Load existing
+    existing = []
+    fetched_urls = set()
+    if output_path.exists():
+        existing = json.loads(output_path.read_text(encoding="utf-8"))
+        fetched_urls = {r["source_url"] for r in existing}
+
+    # Discover URLs
+    fetcher = AsyncFetcher(impersonate="chrome")
+    print("Discovering URLs from gso.gov.vn...")
+    all_urls = await discover_urls(fetcher, limit=args.limit * 2)
+    print(f"Found {len(all_urls)} URLs")
+
+    # Filter to unfetched
+    to_fetch = [u for u in all_urls if u not in fetched_urls][: args.limit]
+    print(f"Already fetched: {len(fetched_urls)}, this run: {len(to_fetch)}")
+
+    if not to_fetch:
+        print("Nothing to fetch")
+        return
+
+    # Fetch concurrently
+    semaphore = asyncio.Semaphore(args.concurrency)
+    tasks = [fetch_page(fetcher, url, semaphore) for url in to_fetch]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    new_records = []
+    errors = []
+    for i, result in enumerate(results):
+        if isinstance(result, Exception):
+            errors.append({"url": to_fetch[i], "error": str(result)})
+        else:
+            record, error = result
+            if record:
+                new_records.append(record)
+            if error:
+                errors.append(error)
+
+    # Merge and save
+    all_records = existing + new_records
+    output_path.write_text(json.dumps(all_records, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"✓ Saved {len(all_records)} records ({len(new_records)} new, {len(errors)} errors)")
 
 
 def main():

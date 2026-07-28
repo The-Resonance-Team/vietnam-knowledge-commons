@@ -112,6 +112,46 @@ async def fetch_document(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Sem
             return None, {"url": url, "error": str(e)}
 
 
+async def discover_urls(fetcher: AsyncFetcher, limit: int = 5000) -> list[str]:
+    """Discover document URLs from thuvienphapluat.vn sitemap or crawl."""
+    urls = []
+
+    # Try sitemap first
+    try:
+        sitemap_url = "https://thuvienphapluat.vn/sitemap.xml"
+        page = await fetcher.get(sitemap_url, stealthy_headers=True)
+        if page.status == 200:
+            import xml.etree.ElementTree as ET
+            root = ET.fromstring(page.text)
+            for url_elem in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}loc"):
+                if url_elem.text and "/van-ban/" in url_elem.text:
+                    urls.append(url_elem.text.strip())
+                    if len(urls) >= limit:
+                        break
+    except Exception as e:
+        print(f"Sitemap failed: {e}, falling back to crawl")
+
+    # Fallback: crawl index pages
+    if not urls:
+        for page_num in range(1, 100):
+            index_url = f"https://thuvienphapluat.vn/van-ban/phap-luat/trang-{page_num}.aspx"
+            try:
+                page = await fetcher.get(index_url, stealthy_headers=True)
+                links = page.css('a[href*="/van-ban/chi-tiet/"]')
+                for link in links:
+                    href = link.attrib.get("href")
+                    if href and href.startswith("http"):
+                        urls.append(href)
+                        if len(urls) >= limit:
+                            break
+                if len(urls) >= limit or not links:
+                    break
+            except Exception:
+                break
+
+    return urls[:limit]
+
+
 async def main_async(args):
     """Async main loop."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -124,20 +164,41 @@ async def main_async(args):
         existing = json.loads(output_path.read_text(encoding="utf-8"))
         fetched_urls = {r["source_url"] for r in existing}
 
-    # Get URLs to fetch (from sitemap or list)
-    # TODO: Implement sitemap parsing for thuvienphapluat
-    # For now, placeholder
-    print("TODO: Implement URL discovery for thuvienphapluat.vn")
-    print("Need: sitemap parser or URL list")
-    return
-
-    # Placeholder for actual scraping
-    semaphore = asyncio.Semaphore(args.concurrency)
+    # Discover URLs
     fetcher = AsyncFetcher(impersonate="chrome")
-    # ... rest of scraping logic
+    print("Discovering URLs from thuvienphapluat.vn...")
+    all_urls = await discover_urls(fetcher, limit=args.limit * 2)
+    print(f"Found {len(all_urls)} URLs")
 
-    output_path.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Saved {len(existing)} records")
+    # Filter to unfetched
+    to_fetch = [u for u in all_urls if u not in fetched_urls][: args.limit]
+    print(f"Already fetched: {len(fetched_urls)}, this run: {len(to_fetch)}")
+
+    if not to_fetch:
+        print("Nothing to fetch")
+        return
+
+    # Fetch concurrently
+    semaphore = asyncio.Semaphore(args.concurrency)
+    tasks = [fetch_document(fetcher, url, semaphore) for url in to_fetch]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    new_records = []
+    errors = []
+    for i, result in enumerate(results):
+        if isinstance(result, Exception):
+            errors.append({"url": to_fetch[i], "error": str(result)})
+        else:
+            record, error = result
+            if record:
+                new_records.append(record)
+            if error:
+                errors.append(error)
+
+    # Merge and save
+    all_records = existing + new_records
+    output_path.write_text(json.dumps(all_records, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"✓ Saved {len(all_records)} records ({len(new_records)} new, {len(errors)} errors)")
 
 
 def main():

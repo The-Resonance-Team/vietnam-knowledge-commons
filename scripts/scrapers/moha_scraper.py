@@ -97,15 +97,90 @@ async def fetch_page(fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semapho
             return None, {"url": url, "error": str(e)}
 
 
+async def discover_urls(fetcher: AsyncFetcher, limit: int = 2000) -> list[str]:
+    """Discover administrative unit URLs from moha.gov.vn."""
+    urls = []
+
+    # Crawl from van-ban section (legal documents about mergers)
+    for page_num in range(1, 50):
+        index_url = f"https://moha.gov.vn/van-ban/trang-{page_num}.aspx"
+        try:
+            page = await fetcher.get(index_url, stealthy_headers=True)
+            if page.status != 200:
+                break
+
+            # Find links to decree/decision pages about admin units
+            links = page.css('a[href*="/van-ban/chi-tiet/"]')
+            for link in links:
+                href = link.attrib.get("href")
+                text = link.text.strip() if link.text else ""
+
+                # Filter for admin unit related docs
+                if href and any(kw in text.lower() for kw in ["nghị quyết", "sáp nhập", "đơn vị hành chính", "tỉnh", "huyện", "xã"]):
+                    if href.startswith("http"):
+                        urls.append(href)
+                    elif href.startswith("/"):
+                        urls.append(f"https://moha.gov.vn{href}")
+
+                    if len(urls) >= limit:
+                        break
+
+            if len(urls) >= limit or not links:
+                break
+        except Exception as e:
+            print(f"Error crawling page {page_num}: {e}")
+            break
+
+    return urls[:limit]
+
+
 async def main_async(args):
     """Async main loop."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / "raw_units.json"
 
-    print("MOH scraper — moha.gov.vn")
-    print("TODO: Implement URL discovery (merger decree pages)")
-    print("Need: Crawl from https://moha.gov.vn/van-ban/ or search API")
-    return
+    # Load existing
+    existing = []
+    fetched_urls = set()
+    if output_path.exists():
+        existing = json.loads(output_path.read_text(encoding="utf-8"))
+        fetched_urls = {r["source_url"] for r in existing}
+
+    # Discover URLs
+    fetcher = AsyncFetcher(impersonate="chrome")
+    print("Discovering URLs from moha.gov.vn...")
+    all_urls = await discover_urls(fetcher, limit=args.limit * 2)
+    print(f"Found {len(all_urls)} URLs")
+
+    # Filter to unfetched
+    to_fetch = [u for u in all_urls if u not in fetched_urls][: args.limit]
+    print(f"Already fetched: {len(fetched_urls)}, this run: {len(to_fetch)}")
+
+    if not to_fetch:
+        print("Nothing to fetch")
+        return
+
+    # Fetch concurrently
+    semaphore = asyncio.Semaphore(args.concurrency)
+    tasks = [fetch_page(fetcher, url, semaphore) for url in to_fetch]
+    results = await asyncio.gather(*tasks, return_exceptions=True)
+
+    new_records = []
+    errors = []
+    for i, result in enumerate(results):
+        if isinstance(result, Exception):
+            errors.append({"url": to_fetch[i], "error": str(result)})
+        else:
+            record, error = result
+            if record:
+                new_records.append(record)
+            if error:
+                errors.append(error)
+
+    # Merge and save
+    all_records = existing + new_records
+    output_path.write_text(json.dumps(all_records, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"✓ Saved {len(all_records)} records ({len(new_records)} new, {len(errors)} errors)")
 
 
 def main():
