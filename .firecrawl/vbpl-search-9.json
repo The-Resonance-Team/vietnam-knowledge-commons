@@ -1,0 +1,309 @@
+{
+  "success": true,
+  "data": {
+    "web": [
+      {
+        "url": "https://vbpl.vn/",
+        "title": "Trang chủ | CSDL quốc gia về pháp luật",
+        "description": "Cơ sở dữ liệu quốc gia về pháp luật cung cấp thông tin đầy đủ nghị định, thông tư. National Database on Legislation ・ 2025 của Chính phủ 37/2026/TT-NHNN ・ hà ...",
+        "position": 1
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/trung-uong",
+        "title": "Văn bản quy phạm pháp luật Trung ương",
+        "description": "Nghị định số 284/2026/NĐ-CP Quy định xử phạt vi phạm hành chính về tài sản mã hóa và thị trường tài sản mã hóa. PDF. Lược đồ. Tải về. Trạng thái:Chưa có hiệu ...",
+        "position": 2
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-291-2026-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-125-2020-nd-cp-ngay-19-thang-10-nam-2020-cua-chinh-phu-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-thue-hoa-don-duoc-sua-doi-bo-sung-boi-nghi-dinh-so-102-2021-nd-cp-ngay-16-thang-11-nam-2021-cua-chinh-phu-va-nghi-dinh-so-310-2025-nd-cp-ngay-02-thang-12-nam-2025-cua-chinh-phu--9a9ad2b0-8641-11f1-8319-e3edb8533e81",
+        "title": "Nghị định 291/2026/NĐ-CP của Bộ Tài chính",
+        "description": "Nghị định số 291/2026/NĐ-CP Sửa đổi, bổ sung một số điều của Nghị định số 125/2020/NĐ-CP ngày 19 tháng 10 năm 2020 của Chính phủ quy định xử ...",
+        "position": 3
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-250-2026-nd-cp-quy-dinh-chi-tiet-ve-ky-thuat-trinh-bay-van-ban-hop-nhat--638c8c30-76cb-11f1-9685-e9600634dedb",
+        "title": "Nghị định 250/2026/NĐ-CP của Bộ Tư pháp",
+        "description": "Chính phủ ban hành Nghị định quy định chi tiết về kỹ thuật trình bày văn bản hợp nhất. Điều 1. Phạm vi điều chỉnh. Nghị định này quy định chi ...",
+        "position": 4
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-51-2026-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-143-2013-nd-cp-ngay-24-thang-10-nam-2013-cua-chinh-phu-quy-dinh-ve-boi-hoan-hoc-bong-va-chi-phi-dao-tao--187044",
+        "title": "Nghị định 51/2026/NĐ-CP của Bộ Giáo dục và Đào tạo",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 143/2013/NĐ-CP ngày 24 tháng 10 năm 2013 của Chính phủ quy định về bồi hoàn học ...",
+        "position": 5
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-198-2026-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-26-2025-nd-cp-ngay-24-thang-02-nam-2025-cua-chinh-phu-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-ngan-hang-nha-nuoc-viet-nam--60a7a510-62dd-11f1-9fdf-21aab439a894",
+        "title": "Nghị định 198/2026/NĐ-CP Sửa đổi, bổ sung một số điều ...",
+        "description": "NGHỊ ĐỊNH. Chính phủ ban hành Nghị định sửa đổi, Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam.",
+        "position": 6
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-190-2026-nd-cp-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-tinh-trang-khan-cap--c9f90730-60d4-11f1-b749-eb162913cf38",
+        "title": "Nghị định 190/2026/NĐ-CP của Bộ Quốc phòng",
+        "description": "Thủ tướng Chính phủ đề nghị cấp có thẩm quyền quyết định ban bố, bãi bỏ tình trạng khẩn cấp về an ninh quốc gia, trật tự, an toàn xã hội;",
+        "position": 7
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-273-2026-nd-cp-ve-kinh-doanh-hang-mien-thue--f8fc0770-8033-11f1-9ecb-65d57157638f",
+        "title": "Nghị định 273/2026/NĐ-CP của Bộ Tài chính",
+        "description": "Nghị định số 273/2026/NĐ-CP Về kinh doanh hàng miễn thuế ; 08b. Danh sách hàng hóa đưa vào cửa hàng miễn thuế, kho chứa hàng miễn thuế (hàng hóa ...",
+        "position": 8
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-276-2026-nd-cp-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-bo-noi-vu--ee626bf0-8007-11f1-9817-a78f5fdc4853",
+        "title": "Nghị định số 276/2026/NĐ-CP Quy định chức năng, nhiệm ...",
+        "description": "Nghị định số 276/2026/NĐ-CP Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Nội vụ.",
+        "position": 9
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-278-2026-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-72-2025-nd-cp-ngay-28-thang-3-nam-2025-cua-chinh-phu-quy-dinh-ve-co-che-thoi-gian-dieu-chinh-gia-ban-le-dien-binh-quan--abc1ead0-7e97-11f1-b894-6dc9dff16474",
+        "title": "Nghị định số 278/2026/NĐ-CP Sửa đổi, bổ sung một số ...",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 72/2025/NĐ-CP ngày 28 tháng 3 năm 2025 của Chính phủ quy định về ...",
+        "position": 10
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-278-2026-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-72-2025-nd-cp-ngay-28-thang-3-nam-2025-cua-chinh-phu-quy-dinh-ve-co-che-thoi-gian-dieu-chinh-gia-ban-le-dien-binh-quan--abc1ead0-7e97-11f1-b894-6dc9dff16474",
+        "title": "Nghị định số 278/2026/NĐ-CP Sửa đổi, bổ sung một số ...",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 72/2025/NĐ-CP ngày 28 tháng 3 năm 2025 của Chính phủ quy định về ...",
+        "position": 11
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-297-2026-nd-cp-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-bo-dan-toc-va-ton-giao--05e5d7f0-8989-11f1-a255-f96810bc1670",
+        "title": "Nghị định 297/2026/NĐ-CP của Bộ Dân tộc và Tôn giáo",
+        "description": "Theo đề nghị của Bộ trưởng Bộ Dân tộc và Tôn giáo;. Chính phủ ban hành Nghị định quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức ...",
+        "position": 12
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-279-2026-nd-cp-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-bo-giao-duc-va-dao-tao--1e48fa20-84a7-11f1-8ef2-67037efa0c35",
+        "title": "Nghị định 279/2026/NĐ-CP của Bộ Giáo dục và Đào tạo",
+        "description": "Theo đề nghị của Bộ trưởng Bộ Giáo dục và Đào tạo;. Chính phủ ban hành Nghị định quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của ...",
+        "position": 13
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/huong-dan-mot-so-noi-dung-tai-nghi-dinh-so-289-2025-nd-cp-ngay-06-thang-11-nam-2025-cua-chinh-phu-huong-dan-thi-hanh-nghi-quyet-so-197-2025-qh15-ngay-17-thang-5-nam-2025-cua-quoc-hoi-ve-mot-so-co-che-chinh-sach-dac-biet-tao-dot-pha-trong-xay-dung-va-to-chuc-thi-hanh-phap-luat-thuoc-tham-quyen-cua-bo-noi-vu--5a347b70-5d03-11f1-b1ac-a9974e906ec3",
+        "title": "Hướng dẫn một số nội dung tại Nghị định số 289/2025/NĐ ...",
+        "description": "Căn cứ Nghị định số 289/2025/NĐ-CP ngày 06 tháng 11 năm 2025 của Chính phủ hướng dẫn thi hành Nghị quyết số 197/2025/QH15 về một số cơ chế, ...",
+        "position": 14
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-284-2026-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-ve-tai-san-ma-hoa-va-thi-truong-tai-san-ma-hoa--06632380-8642-11f1-bb6f-4dcf390b7388",
+        "title": "Nghị định 284/2026/NĐ-CP của Bộ Tài chính",
+        "description": "Nghị định này quy định các hành vi vi phạm hành chính, hình thức xử phạt, mức xử phạt, biện pháp khắc phục hậu quả, việc thi hành các hình thức xử phạt vi phạm ...",
+        "position": 15
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-quy-dinh-ve-phan-quyen-phan-cap-trong-linh-vuc-cong-nghiep-va-thuong-mai--dca741c0-3f92-11f1-8d7d-7bc067dbff13",
+        "title": "Văn bản hợp nhất 30/VBHN-BCT của Bộ Công thương",
+        "description": "Nghị định 146/2025/NĐ-CP ngày 12 tháng 6 năm 2025 của Chính phủ quy định về phân quyền, phân cấp trong lĩnh vực công nghiệp và thương mại, có hiệu lực kể từ ...",
+        "position": 16
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-199-2026-nd-cp-quy-dinh-chinh-sach-ho-tro-phuc-vu--610cf490-6564-11f1-9176-c9d3ad7ca57f",
+        "title": "Nghị định số 199/2026/NĐ-CP Quy định chính sách hỗ trợ ...",
+        "description": "Chính phủ ban hành Nghị định quy định chính sách hỗ trợ phục vụ. Điều 1. Phạm vi điều chỉnh. 1. Nghị định này quy định về chính sách hỗ trợ ...",
+        "position": 17
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quy-dinh-xu-phat-vi-pham-hanh-chinh-trong-linh-vuc-lao-dong-bao-hiem-xa-hoi-nguoi-lao-dong-viet-nam-di-lam-viec-o-nuoc-ngoai-theo-hop-dong--787d3780-866f-11f1-8511-612429c9d15e",
+        "title": "Nghị định 283/2026/NĐ-CP của Bộ Nội vụ",
+        "description": "NGHỊ ĐỊNH. Quy định xử phạt vi phạm hành chính trong lĩnh vực lao động, bảo hiểm xã hội, người lao động Việt Nam đi làm việc ở nước ngoài ...",
+        "position": 18
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-66-2026-nd-cp-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-giao-duc--187298",
+        "title": "Nghị định số 66/2026/NĐ-CP quy định chi tiết một số điều của ...",
+        "description": "Nghị định số 66/2026/NĐ-CP quy định chi tiết một số điều của Luật Giáo dục · 1. Cơ sở giáo dục mầm non có trẻ em nhà trẻ bán trú được hưởng các chính sách sau:.",
+        "position": 19
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-275-2026-nd-cp-quy-dinh-xu-phat-vi-pham-hanh-chinh-trong-linh-vuc-hoa-chat-va-vat-lieu-no-cong-nghiep--9d85c890-7f39-11f1-a307-ef47d5d415c6",
+        "title": "Nghị định số 275/2026/NĐ-CP Quy định xử phạt vi phạm ...",
+        "description": "Nghị định số 275/2026/NĐ-CP Quy định xử phạt vi phạm hành chính trong lĩnh vực hóa chất và vật liệu nổ công nghiệp.",
+        "position": 20
+      },
+      {
+        "url": "http://vbpl.vn/vanphongchinhphu/Pages/vbpq-thuoctinh.aspx?ItemID=15519",
+        "title": "Văn phòng Chính phủ - VBPL - MoJ.gov.vn - Bộ Tư pháp",
+        "description": "Số ký hiệu, 07/2006/QĐ-VPCP, Ngày ban hành, 18/08/2006 ; Loại văn bản, Quyết định, Ngày có hiệu lực, 08/09/2006 ; Nguồn thu thập, Công báo số 67+68, năm 2006 ...",
+        "position": 21
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-06-2015-qd-ttg-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-ban-ton-giao-chinh-phu-truc-thuoc-bo-noi-vu--51571",
+        "title": "Quyết định 06/2015/QĐ-TTg của Bộ Nội vụ",
+        "description": "Căn cứ Nghị định số 36/2012/NĐ-CP ngày 18 tháng 4 năm 2012 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ, cơ quan ngang Bộ;.",
+        "position": 22
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-09-2024-qd-ubnd-ban-hanh-quy-dinh-ve-chuc-nang-nhiem-vu-quyen-han-va-to-chuc-cua-phong-tai-chinh-ke-hoach-thuoc-uy-ban-nhan-dan-quan-4--172004",
+        "title": "Quyết định số 09/2024/QĐ-UBND Ban hành quy định về chức ...",
+        "description": "Quyết định số 09/2024/QĐ-UBND Ban hành quy định về chức năng, nhiệm vụ, quyền hạn và tổ chức của Phòng Tài chính - Kế hoạch thuộc Ủy ban nhân dân Quận 4.",
+        "position": 23
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-45-2025-qd-ttg-quy-dinh-doi-tuong-thue-nha-o-cong-vu-tai-cac-dia-phuong-thuoc-dien-sap-xep-don-vi-hanh-chinh-cap-tinh--184175",
+        "title": "Quyết định số 45/2025/QĐ-TTg Quy định đối tượng thuê nhà ...",
+        "description": "Thủ tướng Chính phủ ban hành Quyết định quy định đối tượng thuê nhà ở công vụ tại các địa phương thuộc diện sắp xếp đơn vị hành chính cấp tỉnh.",
+        "position": 24
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-139-2026-nd-cp-quy-dinh-chi-tiet-noi-dung-che-do-bao-cao-thong-ke-cap-quoc-gia--7078c880-3e47-11f1-8230-0f1a244cc355",
+        "title": "Nghị định 139/2026/NĐ-CP Quy định chi tiết nội dung chế độ ...",
+        "description": "Nghị định này quy định chi tiết nội dung chế độ báo cáo thống kê cấp quốc gia để thu thập thông tin thống kê thuộc hệ thống chỉ tiêu thống kê ...",
+        "position": 25
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-13-2022-qd-ttg-ve-thuc-hien-chinh-sach-ho-tro-bao-hiem-nong-nghiep--154382",
+        "title": "Quyết định 13/2022/QĐ-TTg của Bộ Tài chính",
+        "description": "Tra cứu Quyết định 13/2022/QĐ-TTg, Quyết định số 13/2022/QĐ-TTg Về thực hiện chính sách hỗ trợ bảo hiểm nông nghiệp. Xem toàn văn và hiệu lực.",
+        "position": 26
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-08-nd-cp-ve-viec-chuyen-ban-thi-dua-khen-thuong-trung-uong-ban-ton-giao-chinh-phu-ban-co-yeu-chinh-phu-vao-bo-noi-vu--13683",
+        "title": "Nghị định số 08/NĐ-CP Về việc chuyển Ban Thi đua",
+        "description": "Nghị định số 08/NĐ-CP Về việc chuyển Ban Thi đua - Khen thưởng Trung ương, Ban Tôn giáo Chính phủ, Ban Cơ yếu Chính phủ vào Bộ Nội vụ.",
+        "position": 27
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-so-20-2024-nq-hdnd-quy-dinh-chinh-sach-ho-tro-can-bo-lanh-dao-quan-ly-con-do-tuoi-cong-tac-duoi-01-nhiem-ky-nghi-huu-truoc-tuoi-nghi-cong-tac-cho-du-tuoi-nghi-huu-tren-dia-ban-tinh-quang-nam-giai-doan-2024-2029--169792",
+        "title": "Nghị quyết số số 20/2024/NQ-HĐND Quy định chính sách hỗ trợ ...",
+        "description": "Nghị quyết số số 20/2024/NQ-HĐND Quy định chính sách hỗ trợ cán bộ lãnh đạo, quản lý còn độ tuổi công tác dưới 01 nhiệm kỳ nghỉ hưu trước tuổi, nghỉ công tác ...",
+        "position": 28
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-36-2013-nd-cp-ve-vi-tri-viec-lam-va-co-cau-ngach-cong-chuc--113427",
+        "title": "Nghị định số 36/2013/NĐ-CP Về vị trí việc làm và cơ cấu ...",
+        "description": "Chương 1. NHỮNG QUY ĐỊNH CHUNG. Điều 1. Phạm vi điều chỉnh. Nghị định này quy định về căn cứ, nguyên tắc, phương pháp, trình tự, thủ tục xác định vị trí ...",
+        "position": 29
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-193-2025-qd-ubnd-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-truong-trung-hoc-pho-thong-tan-ke-thuoc-so-giao-duc-va-dao-tao-tinh-vinh-long--183808",
+        "title": "Quyết định 193/2025/QĐ-UBND của Vĩnh Long",
+        "description": "Căn cứ Nghị định số 150/2025/NĐ-CP ngày 12 tháng 6 năm 2025 của Chính phủ quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, ...",
+        "position": 30
+      },
+      {
+        "url": "http://vbpl.vn/vanphongchinhphu/Pages/vbpq-van-ban-goc.aspx?ItemID=133862&dvid=329",
+        "title": "Nghị định 09/2019/NĐ-CP Quy định về chế độ báo cáo của cơ ...",
+        "description": "Nghị định 09/2019/NĐ-CP Quy định về chế độ báo cáo của cơ quan hành chính nhà nước.",
+        "position": 31
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-04-2016-nq-hdnd-ve-viec-bai-bo-nghi-quyet-so-09-2015-nq-hdnd-ngay-18-01-2015-cua-hoi-dong-nhan-dan-tinh-tuyen-quang-khoa-xviii-ky-hop-thu-9-quy-dinh-muc-thu-che-do-thu-nop-quan-ly-va-su-dung-phi-su-dung-duong-bo-theo-dau-phuong-tien-doi-voi-xe-mo-to-tren-dia-ban-tinh-tuyen-quang--112417",
+        "title": "Nghị quyết 04/2016/NQ-HĐND của Tuyên Quang",
+        "description": "Căn cứ Nghị định số 56/2014/NĐ-CP ngày 30 tháng 5 năm 2014 của Chính phủ về sửa đổi, bổ sung một số điều của Nghị định số 18/2012/NĐ-CP ngày 13 ...",
+        "position": 32
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-06-2025-nq-hdnd-quy-dinh-tham-quyen-quyet-dinh-viec-mua-sam-tai-san-cua-cac-nhiem-vu-khoa-hoc-va-cong-nghe-su-dung-ngan-sach-nha-nuoc-va-tham-quyen-quyet-dinh-viec-mua-sam-hang-hoa-dich-vu-doi-voi-nguon-kinh-phi-khoa-hoc-va-cong-nghe-thuoc-pham-vi-quan-ly-cua-tinh-dak-nong--177268",
+        "title": "Nghị quyết 06/2025/NQ-HĐND của Lâm Đồng",
+        "description": "Hội đồng nhân dân ban hành Nghị quyết Quy định thẩm quyền quyết định việc mua sắm tài sản của các nhiệm vụ khoa học và công nghệ sử dụng ngân ...",
+        "position": 33
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-30-2020-tt-byt-quy-dinh-chi-tiet-va-huong-dan-bien-phap-thi-hanh-mot-so-dieu-cua-nghi-dinh-so-146-2018-nd-cp-ngay-17-thang-10-nam-2018-cua-chinh-phu-quy-dinh-chi-tiet-va-huong-dan-bien-phap-thi-hanh-mot-so-dieu-cua-luat-bao-hiem-y-te--147385",
+        "title": "Thông tư 30/2020/TT-BYT của Bộ Y tế",
+        "description": "Thông tư số 30/2020/TT-BYT quy định chi tiết và hướng dẫn biện pháp thi hành một số điều của Nghị định số 146/2018/NĐ-CP ngày 17 tháng 10 năm ...",
+        "position": 34
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-146-2017-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-100-2016-nd-cp-ngay-01-thang-7-nam-2016-va-nghi-dinh-so-12-2015-nd-cp-ngay-12-thang-02-nam-2015-cua-chinh-phu--126410",
+        "title": "Nghị định 146/2017/NĐ-CP của Bộ Tài chính",
+        "description": "Nghị định số 146/2017/NĐ-CP Sửa đổi, bổ sung một số điều của Nghị định số 100/2016/NĐ-CP ngày 01 tháng 7 năm 2016 và Nghị định số 12/2015/NĐ-CP ngày 12 tháng 02 ...",
+        "position": 35
+      },
+      {
+        "url": "https://vbpl.vn/vanphongchinhphu/Pages/vbpq-toanvan.aspx?ItemID=22576",
+        "title": "Văn phòng Chính phủ - Cơ sở dữ liệu quốc gia về pháp luật",
+        "description": "QUYẾT ĐỊNH CỦA THỦ TƯỚNG CHÍNH PHỦ. Về thẩm quyền ký ban hành văn bản quy phạm pháp luật đểthực hiện quản lý nhà nước.",
+        "position": 36
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-140-2025-nd-cp-quy-dinh-ve-phan-dinh-tham-quyen-cua-chinh-quyen-dia-phuong-02-cap-trong-linh-vuc-quan-ly-nha-nuoc-cua-bo-xay-dung--178223",
+        "title": "Nghị định 140/2025/NĐ-CP của Bộ Xây dựng",
+        "description": "Tra cứu Nghị định 140/2025/NĐ-CP, Nghị định số 140/2025/NĐ-CP Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh ...",
+        "position": 37
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-73-2014-nd-cp-sua-doi-bo-sung-dieu-29-nghi-dinh-so-55-2013-nd-cp-ngay-22-thang-5-nam-2013-cua-chinh-phu-quy-dinh-chi-tiet-thi-hanh-khoan-3-dieu-54-cua-bo-luat-lao-dong-ve-viec-cap-phep-hoat-dong-cho-thue-lai-lao-dong-viec-ky-quy-va-danh-muc-cong-viec-duoc-thuc-hien-cho-thue-lai-lao-dong--36843",
+        "title": "Nghị định 73/2014/NĐ-CP của Bộ Nội vụ",
+        "description": "1. Nghị định này có hiệu lực thi hành kể từ ngày 15 tháng 9 năm 2014. 2. Các Bộ trưởng, Thủ trưởng cơ quan ngang Bộ, Thủ trưởng cơ quan thuộc Chính phủ ...",
+        "position": 38
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-76-2019-nd-cp-ve-che-do-chinh-sach-doi-voi-can-bo-cong-chuc-vien-chuc-nguoi-lao-dong-va-luc-luong-vu-trang-cong-tac-o-vung-co-dieu-kien-kinh-te-xa-hoi-dac-biet-kho-khan--138335",
+        "title": "Nghị định số 76/2019/NĐ-CP về chế độ chính sách đối với ...",
+        "description": "1. Nghị định này quy định về chính sách đối với cán bộ, công chức, viên chức, người lao động và người hưởng lương trong lực lượng vũ trang (Quân ...",
+        "position": 39
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-80-2022-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-35-2016-nd-cp-ngay-15-thang-5-nam-2016-cua-chinh-phu-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-thu-y--159007",
+        "title": "Nghị định 80/2022/NĐ-CP của Bộ Nông nghiệp và Môi ...",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 35/2016/NĐ-CP ngày 15 tháng 5 năm 2016 của Chính phủ quy định chi ...",
+        "position": 40
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-146-2017-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-100-2016-nd-cp-ngay-01-thang-7-nam-2016-va-nghi-dinh-so-12-2015-nd-cp-ngay-12-thang-02-nam-2015-cua-chinh-phu--126410",
+        "title": "Nghị định 146/2017/NĐ-CP của Bộ Tài chính",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 100/2016/NĐ-CP ngày 01 tháng 7 năm 2016 và Nghị định số 12/2015/NĐ-CP ngày 12 tháng ...",
+        "position": 41
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-73-2014-nd-cp-sua-doi-bo-sung-dieu-29-nghi-dinh-so-55-2013-nd-cp-ngay-22-thang-5-nam-2013-cua-chinh-phu-quy-dinh-chi-tiet-thi-hanh-khoan-3-dieu-54-cua-bo-luat-lao-dong-ve-viec-cap-phep-hoat-dong-cho-thue-lai-lao-dong-viec-ky-quy-va-danh-muc-cong-viec-duoc-thuc-hien-cho-thue-lai-lao-dong--36843",
+        "title": "Nghị định 73/2014/NĐ-CP của Bộ Nội vụ",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung Điều 29 Nghị định số 55/2013/NĐ-CP ngày 22 tháng 5 năm 2013 của Chính phủ quy định chi tiết thi hành Khoản 3 ...",
+        "position": 42
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-140-2025-nd-cp-quy-dinh-ve-phan-dinh-tham-quyen-cua-chinh-quyen-dia-phuong-02-cap-trong-linh-vuc-quan-ly-nha-nuoc-cua-bo-xay-dung--178223",
+        "title": "Nghị định 140/2025/NĐ-CP của Bộ Xây dựng",
+        "description": "Tra cứu Nghị định 140/2025/NĐ-CP, Nghị định số 140/2025/NĐ-CP Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh ...",
+        "position": 43
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-210-2025-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-38-2018-nd-cp-ngay-11-thang-3-nam-2018-cua-chinh-phu-quy-dinh-chi-tiet-ve-dau-tu-cho-doanh-nghiep-nho-va-vua-khoi-nghiep-sang-tao--179899",
+        "title": "Nghị định số 210/2025/NĐ-CP Sửa đổi, bổ sung một số ...",
+        "description": "Nghị định số 210/2025/NĐ-CP Sửa đổi, bổ sung một số điều của Nghị định số 38/2018/NĐ-CP ngày 11 tháng 3 năm 2018 của Chính phủ quy định chi tiết về đầu tư ...",
+        "position": 44
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-76-2019-nd-cp-ve-che-do-chinh-sach-doi-voi-can-bo-cong-chuc-vien-chuc-nguoi-lao-dong-va-luc-luong-vu-trang-cong-tac-o-vung-co-dieu-kien-kinh-te-xa-hoi-dac-biet-kho-khan--138335",
+        "title": "Nghị định số 76/2019/NĐ-CP về chế độ chính sách đối với ...",
+        "description": "Chính phủ ban hành Nghị định về chính sách đối với cán bộ, công chức, viên chức, người lao động và người hưởng lương trong lực lượng vũ ...",
+        "position": 45
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-60-2025-nq-hdnd-ban-hanh-quy-dinh-chinh-sach-dac-thu-ho-tro-cho-cac-hoat-dong-xuc-tien-thuong-mai-cua-thanh-pho-ho-chi-minh--185123",
+        "title": "Nghị quyết số 60/2025/NQ-HĐND Ban hành Quy định ...",
+        "description": "Căn cứ Quyết định số 12/2019/QĐ-TTg của Thủ tướng Chính phủ sửa đổi, bổ sung một số điều của Quy chế xây dựng, quản lý và thực hiện Chương trình Xúc tiến thương ...",
+        "position": 46
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-21-2010-nd-cp-ve-quan-ly-bien-che-cong-chuc--113406",
+        "title": "Nghị định số 21/2010/NĐ-CP Về quản lý biên chế công chức",
+        "description": "1. Bộ, cơ quan ngang Bộ, cơ quan thuộc Chính phủ, tổ chức do Chính phủ, Thủ tướng Chính phủ thành lập mà không phải là đơn ...",
+        "position": 47
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-80-2022-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-35-2016-nd-cp-ngay-15-thang-5-nam-2016-cua-chinh-phu-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-thu-y--159007",
+        "title": "Nghị định 80/2022/NĐ-CP của Bộ Nông nghiệp và Môi ...",
+        "description": "Chính phủ ban hành Nghị định sửa đổi, bổ sung một số điều của Nghị định số 35/2016/NĐ-CP ngày 15 tháng 5 năm 2016 của Chính phủ quy định chi ...",
+        "position": 48
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-204-2025-nd-cp-quy-dinh-chi-tiet-trinh-tu-thu-tuc-lap-du-toan-thanh-toan-kinh-phi-chi-tra-chi-phi-to-tung--179579",
+        "title": "Nghị định số 204/2025/NĐ-CP Quy định chi tiết trình tự, thủ ...",
+        "description": "Nơi nhận: - Ban Bí thư Trung ương Đảng; - Thủ tướng, các Phó Thủ tướng Chính phủ; - Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ; - HĐND, ...",
+        "position": 49
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-60-2008-nd-cp-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-uy-ban-dan-toc--24594",
+        "title": "Nghị định 60/2008/NĐ-CP của Bộ Dân tộc và Tôn giáo",
+        "description": "Ủy ban Dân tộc thực hiện các nhiệm vụ, quyền hạn quy định tại Nghị định số 178/2007/NĐ-CP ngày 03 tháng 12 năm 2007 của Chính phủ quy định chức năng, nhiệm vụ, ...",
+        "position": 50
+      }
+    ]
+  },
+  "id": "019fa482-cec0-75fd-93d5-58b64a284f95",
+  "creditsUsed": 10
+}

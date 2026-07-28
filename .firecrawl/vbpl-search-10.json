@@ -1,0 +1,309 @@
+{
+  "success": true,
+  "data": {
+    "web": [
+      {
+        "url": "https://vbpl.vn/",
+        "title": "Trang chủ | CSDL quốc gia về pháp luật",
+        "description": "Tra cứu văn bản pháp luật Việt Nam - Cơ sở dữ liệu quốc gia về pháp luật cung cấp thông tin đầy đủ về luật, nghị định, thông tư và các văn bản pháp luật ...",
+        "position": 1
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-23-2025-tt-byt-quy-dinh-ve-che-do-bao-cao-thong-ke-nganh-y-te-do-bo-truong-bo-y-te-ban-hanh--179722",
+        "title": "Thông tư số 23/2025/TT-BYT quy định về chế độ báo cáo ...",
+        "description": "Thông tư số 23/2025/TT-BYT quy định về chế độ báo cáo thống kê ngành y tế do Bộ trưởng Bộ Y tế ban hành.",
+        "position": 2
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-03-2026-tt-bdttg-bai-bo-mot-so-van-ban-quy-pham-phap-luat-thuoc-tham-quyen-cua-bo-truong-bo-dan-toc-va-ton-giao--c865c680-6dd9-11f1-8965-91cc0def154b",
+        "title": "Thông tư số 03/2026/TT-BDTTG Bãi bỏ một số văn bản quy ...",
+        "description": "Thông tư số 03/2026/TT-BDTTG Bãi bỏ một số văn bản quy phạm pháp luật thuộc thẩm quyền của Bộ trưởng Bộ Dân tộc và Tôn giáo.",
+        "position": 3
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-104-2026-tt-btc-quy-dinh-phan-cap-tham-quyen-va-quy-trinh-kiem-tra-chuyen-nganh-trong-mot-so-linh-vuc-quan-ly-nha-nuoc-cua-bo-tai-chinh--a79d6f30-867e-11f1-876c-212b748a03d2",
+        "title": "Thông tư 104/2026/TT-BTC của Bộ Tài chính",
+        "description": "THÔNG TƯ. Quy định phân cấp thẩm quyền và quy trình kiểm tra chuyên ngành. trong một số lĩnh vực quản lý nhà nước của Bộ Tài chính.",
+        "position": 4
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-60-2025-tt-byt-quy-dinh-ve-benh-nghe-nghiep-duoc-huong-bao-hiem-xa-hoi-va-huong-dan-chan-doan-giam-dinh-muc-suy-giam-kha-nang-lao-dong-do-benh-nghe-nghiep--187267",
+        "title": "Thông tư 60/2025/TT-BYT của Bộ Y tế",
+        "description": "Quy định về bệnh nghề nghiệp được hưởng bảo hiểm xã hội và hướng dẫn chẩn đoán, giám định mức suy giảm khả năng lao động do bệnh nghề nghiệp.",
+        "position": 5
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-lien-tich-so-79-ttlt-huong-dan-thuc-hien-quyet-dinh-so-874-ttg-ngay-20-11-1996-cua-thu-tuong-chinh-phu-ve-cong-tac-dao-tao-boi-duong-can-bo-va-cong-chuc-nha-nuoc--8289",
+        "title": "Thông tư liên tịch 79/TTLT của Bộ Tài chính",
+        "description": "Hướng dẫn thực hiện Quyết định 874/TTg ngày 20/11/1996 của Thủ tướng Chính phủ về công tác đào tạo, bồi dưỡng cán bộ và công chức Nhà nước.",
+        "position": 6
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-56-2025-tt-bct-quy-dinh-ve-quy-trinh-kiem-tra-chuyen-nganh-cong-thuong--184154",
+        "title": "Thông tư 56/2025/TT-BCT của Bộ Công thương",
+        "description": "1. Thông tư này quy định về quy trình kiểm tra chuyên ngành Công Thương theo quy định tại điểm b khoản 2 Điều 18 Nghị định số 217/2025/NĐ-CP. 2.",
+        "position": 7
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/trung-uong",
+        "title": "Văn bản quy phạm pháp luật Trung ương",
+        "description": "Tra cứu và tìm kiếm văn bản pháp luật do cơ quan trung ương ban hành bao gồm luật, nghị định, thông tư và các văn bản khác.",
+        "position": 8
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-35-2025-tt-byt-bai-bo-thong-tu-29-2019-tt-byt-quy-dinh-viec-xay-dung-ban-hanh-va-to-chuc-trien-khai-thi-hanh-van-ban-quy-pham-phap-luat-ve-y-te-do-bo-truong-bo-y-te-ban-hanh--180487",
+        "title": "Thông tư 35/2025/TT-BYT của Bộ Y tế",
+        "description": "1. Thông tư này có hiệu lực thi hành từ ngày 15 tháng 9 năm 2025. 2. Chánh Văn phòng Bộ, Vụ trưởng Vụ Pháp chế, Vụ trưởng, Cục trưởng các ...",
+        "position": 9
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2025-tt-bgddt-sua-doi-bo-sung-mot-so-dieu-cua-quy-che-tuyen-sinh-dai-hoc-tuyen-sinh-cao-dang-nganh-giao-duc-mam-non-ban-hanh-kem-theo-thong-tu-so-08-2022-tt-bgddt--177044",
+        "title": "Thông tư 06/2025/TT-BGDĐT của Bộ Giáo dục và Đào tạo",
+        "description": "Thông tư số 06/2025/TT-BGDĐT sửa đổi, bổ sung một số điều của Quy chế tuyển sinh đại học, tuyển sinh cao đẳng ngành Giáo dục Mầm non ban hành kèm theo Thông tư ...",
+        "position": 10
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-43-tc-nltl-huong-dan-ve-bu-gia-luong-thuc-theo-quyet-dinh-so-150-h-bt-ngay-29-9-1988-cua-chu-tich-h-bt-ve-gia-ban-gao-te-thong-dung-tai-cac-tinh-thanh-pho-phia-bac--80182",
+        "title": "Thông tư 43 TC/NLTL của Bộ Tài chính",
+        "description": "Thông tư số 43 TC/NLTL Hướng dẫn về bù giá lương thực theo quyết định số 150/ HÐBT ngày 29/9/1988 của Chủ tịch HÐBT “về giá bán gạo tẻ thông ...",
+        "position": 11
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-35-2025-tt-byt-bai-bo-thong-tu-29-2019-tt-byt-quy-dinh-viec-xay-dung-ban-hanh-va-to-chuc-trien-khai-thi-hanh-van-ban-quy-pham-phap-luat-ve-y-te-do-bo-truong-bo-y-te-ban-hanh--180487",
+        "title": "Thông tư 35/2025/TT-BYT của Bộ Y tế",
+        "description": "1. Thông tư này có hiệu lực thi hành từ ngày 15 tháng 9 năm 2025. 2. Chánh Văn phòng Bộ, Vụ trưởng Vụ Pháp chế, Vụ trưởng, Cục trưởng các ...",
+        "position": 12
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/huong-dan-thuc-hien-muc-luong-co-so-doi-voi-cac-doi-tuong-huong-luong-phu-cap-trong-cac-co-quan-to-chuc-don-vi-su-nghiep-cong-lap-cua-dang-nha-nuoc-mat-tran-to-quoc-viet-nam-to-chuc-chinh-tri-xa-hoi-va-hoi--cef8b400-5ef5-11f1-b930-cdd0a2f9cb85",
+        "title": "Thông tư 13/2026/TT-BNV của Bộ Nội vụ",
+        "description": "THÔNG TƯ Hướng dẫn thực hiện mức lương cơ sở đối với các đối tượng hưởng lương, phụ cấp trong các cơ quan, tổ chức, đơn vị sự nghiệp công lập của Đảng,",
+        "position": 13
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-13-byt-tt-ve-viec-phan-cong-phan-cap-cong-tac-quan-ly-to-chuc-va-can-bo-trong-nganh-y-te--3523",
+        "title": "Thông tư 13/BYT-TT của Bộ Y tế",
+        "description": "CỦA BỘ Y TẾ SỐ 13/BYT-TT NGÀY 18-4-1983 VỀ VIỆC PHÂN CÔNG, PHÂN CẤP CÔNG TÁC QUẢN LÝ TỔ CHỨC VÀ CÁN BỘ TRONG NGÀNH Y TẾ.",
+        "position": 14
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-04-2025-tt-bldtbxh-quy-dinh-ma-so-tieu-chuan-chuc-danh-nghe-nghiep-tieu-chuan-dieu-kien-xet-thang-hang-vien-chuc-nghiep-vu-chuyen-nganh-linh-vuc-viec-lam--176198",
+        "title": "Thông tư 04/2025/TT-BLĐTBXH của Bộ Nội vụ",
+        "description": "THÔNG TƯ. Quy định mã số, tiêu chuẩn chức danh nghề nghiệp; tiêu chuẩn, điều kiện xét thăng hạng viên chức nghiệp vụ chuyên ngành lĩnh vực làm việc.",
+        "position": 15
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-02-2026-tt-bdttg-huong-dan-mot-so-noi-dung-hop-phan-thu-hai-chuong-trinh-muc-tieu-quoc-gia-xay-dung-nong-thon-moi-giam-ngheo-ben-vung-va-phat-trien-kinh-te-xa-hoi-vung-dong-bao-dan-toc-thieu-so-va-mien-nui-giai-doan-2026-2035-giai-doan-i-tu-nam-2026-den-nam-2030-thuoc-tham-quyen-quan-ly-nha-nuoc-cua-bo-dan-toc-va-ton-giao--c8b49210-647e-11f1-9a98-e552ff75cd12",
+        "title": "Thông tư số 02/2026/TT-BDTTG Hướng dẫn một số nội dung ...",
+        "description": "Thông tư này hướng dẫn thực hiện một số nội dung của Hợp phần thứ hai tại Quyết định số 417/QĐ-BNNMT ngày 31 tháng 01 năm 2026 của Bộ trưởng Bộ ...",
+        "position": 16
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-47-2026-tt-bgddt-bai-bo-mot-so-van-ban-quy-pham-phap-luat-do-bo-truong-bo-giao-duc-va-dao-tao-ban-hanh-trong-linh-vuc-giao-duc--e431e3e0-6fb3-11f1-89af-89e13a3d7ffe",
+        "title": "Thông tư số 47/2026/TT-BGDĐT Bãi bỏ một số văn bản ...",
+        "description": "Thông tư số 47/2026/TT-BGDĐT Bãi bỏ một số văn bản quy phạm pháp luật do Bộ trưởng Bộ Giáo dục và Đào tạo ban hành trong lĩnh vực giáo dục.",
+        "position": 17
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-lien-tich-so-39-tt-lb-huong-dan-quan-ly-su-dung-kinh-phi-chuong-trinh-phong-chong-te-nan-mai-dam--9743",
+        "title": "Thông tư liên tịch số 39/TT-LB Hướng dẫn quản lý, sử dụng kinh phí ...",
+        "description": "Thông tư liên tịch số 39/TT-LB Hướng dẫn quản lý, sử dụng kinh phí Chương trình phòng, chống tệ nạn mại dâm.",
+        "position": 18
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-22-2026-tt-bkhcn-sua-doi-bo-sung-mot-so-thong-tu-trong-linh-vuc-tieu-chuan-do-luong-chat-luong-de-thuc-hien-cat-giam-don-gian-hoa-thu-tuc-hanh-chinh-va-phu-hop-voi-phap-luat-ve-dau-tu-kinh-doanh--e0420900-582e-11f1-af2d-fd6705b18ec6",
+        "title": "Thông tư 22/2026/TT-BKHCN Sửa đổi, bổ sung một số ...",
+        "description": "Thông tư 22/2026/TT-BKHCN Sửa đổi, bổ sung một số thông tư trong lĩnh vực tiêu chuẩn đo lường chất lượng để thực hiện cắt giảm, ...",
+        "position": 19
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-58-2026-tt-btc-huong-dan-che-do-ke-toan-cho-doanh-nghiep-sieu-nho--09d100a0-5a7d-11f1-9f2a-e3eb9d125a46",
+        "title": "Thông tư 58/2026/TT-BTC của Bộ Tài chính",
+        "description": "Thông tư này hướng dẫn về chứng từ kế toán, ghi sổ kế toán, lập và trình bày Báo cáo tài chính của doanh nghiệp siêu nhỏ. Việc xác định nghĩa vụ ...",
+        "position": 20
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quy-dinh-muc-luong-cua-chuyen-gia-tu-van-trong-nuoc-lam-co-so-cho-viec-xac-dinh-gia-goi-thau--d41c64d0-5037-11f1-98f3-db53da8a4c6f",
+        "title": "Quy định mức lương của chuyên gia tư vấn trong nước làm ...",
+        "description": "Tra cứu Thông tư 07/2026/TT-BNV, Quy định mức lương của chuyên gia tư vấn trong nước làm cơ sở cho việc xác định giá gói thầu. Xem toàn văn và hiệu lực.",
+        "position": 21
+      },
+      {
+        "url": "http://vbpl.vn/bovanhoathethao/Pages/vbpq-toanvan.aspx?dvid=323&ItemID=2046&Keyword=",
+        "title": "Bộ Văn hóa - Thể thao và Du lịch",
+        "description": "Thông tư này có hiệu lực thi hành kể từ ngày 1-1-1990, các quy định trước đây trái với Thông tư này đều bãi bỏ. Trong quá trình thực hiện nếu có gì vướng mắc, ...",
+        "position": 22
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-07-nv-ve-viec-giai-thich-va-huong-dan-thi-hanh-nghi-dinh-so-25-cp-ngay-7-3-1967-cua-hoi-dong-chinh-phu-ve-che-do-su-dung-nha-trong-tinh-hinh-so-tan-phong-khong--1238",
+        "title": "Thông tư 07-NV của Bộ Nội vụ",
+        "description": "Thông tư số 07-NV Về việc giải thích và hướng dẫn thi hành Nghị định số 25/Cp ngày 7/3/1967 của Hội đồng Chính phủ về chế độ sử dụng nhà trong tình hình sơ tán, ...",
+        "position": 23
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-20-2024-tt-bkhdt-quy-dinh-che-do-bao-cao-thong-ke-nganh-thong-ke--172446",
+        "title": "Thông tư số 20/2024/TT-BKHĐT Quy định Chế độ báo cáo ...",
+        "description": "THÔNG TƯ · Quy định Chế độ báo cáo thống kê ngành Thống kê · Điều 1. Phạm vi điều chỉnh · Điều 2. Đối tượng áp dụng · Điều 3. Nội dung Chế độ báo cáo thống kê ngành ...",
+        "position": 24
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-14-2019-tt-btnmt-ban-hanh-dinh-muc-kinh-te-ky-thuat-do-dac-truc-tiep-phuc-vu-thanh-lap-ban-do-dia-hinh-ty-le-1-500-1-1-000-va-ban-do-dia-hinh-quoc-gia-ty-le-1-2-000-1-5-000--137699",
+        "title": "Thông tư 14/2019/TT-BTNMT của Bộ Nông nghiệp và Môi ...",
+        "description": "Thông tư số 14/2019/TT-BTNMT Ban hành Định mức kinh tế - kỹ thuật đo đạc trực tiếp phục vụ thành lập bản đồ địa hình tỷ lệ 1:500, 1:1.000 và bản đồ địa hình ...",
+        "position": 25
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-01-2004-tt-bts-huong-dan-thuc-hien-khoan-1-ieu-1-nghi-dinh-so-80-2002-n-cp-ngay-15-10-2002-cua-chinh-phu-ve-viec-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-72-1998-n-cp-ngay-15-9-1998-ve-dam-bao-an-toan-cho-nguoi-va-phuong-tien-nghe-ca-khi-hoat-dong-tren-bien--19535",
+        "title": "Thông tư số 01/2004/TT-BTS Hướng dẫn thực hiện khoản 1 ...",
+        "description": "Thông tư số 01/2004/TT-BTS Hướng dẫn thực hiện khoản 1 Ðiều 1 Nghị định số 80/2002/NÐ-CP ngày 15/10/2002 của Chính phủ về việc sửa đổi, bổ sung ...",
+        "position": 26
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-30-2022-tt-bnnptnt-huong-dan-chuc-nang-nhiem-vu-quyen-han-cua-co-quan-chuyen-mon-ve-nong-nghiep-va-phat-trien-nong-thon-thuoc-uy-ban-nhan-dan-cap-tinh-cap-huyen--159793",
+        "title": "Thông tư 30/2022/TT-BNNPTNT của Bộ Nông nghiệp và ...",
+        "description": "Tra cứu Thông tư 30/2022/TT-BNNPTNT, Thông tư số 30/2022/TT-BNNPTNT Hướng dẫn chức năng, nhiệm vụ, quyền hạn của cơ quan chuyên môn về nông nghiệp và phát ...",
+        "position": 27
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-12-tc-tct-qui-dinh-va-huong-dan-ve-quan-ly-va-su-dung-trang-phuc-nganh-thue--80568",
+        "title": "Thông tư 12-TC/TCT của Bộ Tài chính",
+        "description": "Thông tư số 12-TC/TCT Qui định và hướng dẫn về quản lý và sử dụng trang phục ngành thuế. Còn hiệu lực. Ngày có hiệu lực:28/02/1991. Ngày cập ...",
+        "position": 28
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-lien-tich-so-1442-1999-ttlt-tcdc-btc-huong-dan-cap-giay-chung-nhan-quyen-su-dung-dat-theo-chi-thi-so-18-1999-ct-ttg-ngay-01-7-1999-cua-thu-tuong-chinh-phu--6560",
+        "title": "Thông tư liên tịch số 1442/1999/TTLT/TCĐC-BTC Hướng dẫn cấp ...",
+        "description": "THÔNG TƯ LIÊN TỊCH. Hướng dẫn nội dung và mức chi chương trình quốc gia về thể thao. Căn cứ Nghị định số 87/CP ngày 19/12/1997 của Chính phủ về phân cấp ...",
+        "position": 29
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-43-2017-tt-bca-quy-dinh-ve-trinh-tu-cap-thu-hoi-giay-chung-nhan-du-dieu-kien-ve-an-ninh-trat-tu-va-sat-hach-cap-chung-chi-nghiep-vu-bao-ve--177233",
+        "title": "Thông tư số 43/2017/TT-BCA Quy định về trình tự cấp, thu hồi ...",
+        "description": "Quy định về trình tự cấp, thu hồi Giấy chứng nhận đủ điều kiện về an ninh, trật tự và sát hạch, cấp Chứng chỉ nghiệp vụ bảo vệ.",
+        "position": 30
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-8-tt-lb-quy-dinh-su-phoi-hop-giua-cong-tac-chinh-quyen-va-cong-doan-giao-duc-cac-cap-trong-nganh-giao-duc--2706",
+        "title": "Thông tư 8/TT-LB của Bộ Giáo dục và Đào tạo",
+        "description": "Thông tư số 8/TT-LB Quy định sự phối hợp giữa công tác chính quyền và Công đoàn Giáo dục các cấp trong ngành Giáo dục. Hết hiệu lực toàn bộ.",
+        "position": 31
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-thong-tu-38-2024-tt-byt-quy-dinh-xay-dung-quan-ly-khai-thac-su-dung-he-thong-thong-tin-ve-quan-ly-hoat-dong-kham-benh-chua-benh-do-bo-truong-bo-y-te-ban-hanh--176350",
+        "title": "Thông tư số Thông tư 38/2024/TT-BYT quy định xây dựng ...",
+        "description": "Thông tư số Thông tư 38/2024/TT-BYT quy định xây dựng, quản lý, khai thác, sử dụng Hệ thống thông tin về quản lý hoạt động khám bệnh, chữa bệnh do Bộ trưởng Bộ ...",
+        "position": 32
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-06-2018-tt-bxd-ban-hanh-he-thong-chi-tieu-thong-ke-nganh-xay-dung--130658",
+        "title": "Thông tư 06/2018/TT-BXD của Bộ Xây dựng",
+        "description": "Điều 1. Ban hành kèm theo Thông tư này Hệ thống chỉ tiêu thống kê ngành Xây dựng bao gồm: 1. Danh mục chỉ tiêu thống kê ngành Xây dựng (Phụ lục I).",
+        "position": 33
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-47-2022-tt-bgtvt-quy-dinh-ma-so-tieu-chuan-chuc-danh-nghe-nghiep-va-xep-luong-vien-chuc-chuyen-nganh-ky-thuat-duong-bo-chuyen-nganh-ky-thuat-ben-pha--159093",
+        "title": "Thông tư 47/2022/TT-BGTVT của Bộ Xây dựng",
+        "description": "1. Thông tư này quy định mã số, tiêu chuẩn chức danh nghề nghiệp và xếp lương đối với viên chức chuyên ngành kỹ thuật đường bộ, chuyên ngành kỹ thuật bến phà.",
+        "position": 34
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-40-2014-tt-bgddt-ban-hanh-chuong-trinh-khung-trung-cap-chuyen-nghiep-cac-nhom-nganh-nong-nghiep-lam-nghiep--47457",
+        "title": "Thông tư 40/2014/TT-BGDĐT của Bộ Giáo dục và Đào tạo",
+        "description": "Điều 1. Ban hành kèm theo Thông tư này chương trình khung trung cấp chuyên nghiệp các nhóm ngành: Nông nghiệp; Lâm nghiệp, gồm: 1. Nhóm ngành ...",
+        "position": 35
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-lien-tich-so-77-ttlb-tc-nv-huong-dan-thu-va-su-dung-tien-phat-doi-voi-cac-hanh-vi-vi-pham-hanh-chinh-trong-linh-vuc-trat-tu-an-toan-giao-thong-duong-bo-va-trat-tu-an-toan-giao-thong-do-thi--9519",
+        "title": "Thông tư liên tịch 77/TTLB-TC-NV của Bộ Nội vụ",
+        "description": "Hướng dẫn bổ sung việc thu và sử dụng tiền thu phạt đối với các hành vi vi phạm hành chính trong lĩnh vực trật tự an toàn giao thông đường ...",
+        "position": 36
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/van-ban-hop-nhat-so-05-vbhn-bgtvt-thong-tu-quy-dinh-ve-bao-cao-va-dieu-tra-tai-nan-hang-hai--154841",
+        "title": "Văn bản hợp nhất số 05/VBHN-BGTVT Thông tư Quy định ...",
+        "description": "Văn bản hợp nhất số 05/VBHN-BGTVT Thông tư Quy định về báo cáo và điều tra tai nạn hàng hải. --. Ngày có hiệu lực:02/03/2021. Ngày cập nhật:19/01/2026.",
+        "position": 37
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-lien-tich-so-thong-tu-lien-tich-06-2010-ttlt-byt-bnv-btc-huong-dan-nghi-dinh-64-2009-nd-cp-ve-chinh-sach-doi-voi-can-bo-vien-chuc-y-te-cong-tac-o-vung-co-dieu-kien-kinh-te-xa-hoi-dac-biet-kho-khan-do-bo-y-te-bo-noi-vu-bo-tai-chinh-ban-hanh--178516",
+        "title": "Thông tư liên tịch Thông tư liên tịch 06/2010/TTLT-BYT- ...",
+        "description": "Chi phí mua và vận chuyển 1 mét khối nước ngọt đến nơi ở và nơi làm việc của viên chức y tế và cán bộ, nhân viên quân y do Ủy ban nhân dân cấp tỉnh quy định (c);.",
+        "position": 38
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-03-2017-tt-bnv-ban-hanh-he-thong-chi-tieu-thong-ke-nganh-noi-vu--123140",
+        "title": "Thông tư 03/2017/TT-BNV của Bộ Nội vụ",
+        "description": "Thông tư số 03/2017/TT-BNV Ban hành Hệ thống chỉ tiêu thống kê ngành Nội vụ · 1. Khái niệm, phương pháp tính · 2. Phân tổ chủ yếu · 3. Kỳ công bố.",
+        "position": 39
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-166-tt-btc-quy-dinh-viec-quan-ly-va-su-dung-kinh-phi-thuc-hien-du-an-dao-tao-ngan-han-ve-an-toan-an-ninh-thong-tin-trong-nuoc-thuoc-de-an-dao-tao-va-phat-trien-nguon-nhan-luc-an-toan-an-ninh-thong-tin-den-nam-2020--110902",
+        "title": "Thông tư 166/TT-BTC của Bộ Tài chính",
+        "description": "Thông tư số 166/TT-BTC Quy định việc quản lý và sử dụng kinh phí thực hiện Dự án Đào tạo ngắn hạn về an toàn, an ninh thông tin trong nước thuộc Đề án Đào tạo ...",
+        "position": 40
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-25-2023-tt-byt-quy-dinh-chi-tiet-huong-dan-thi-hanh-mot-so-dieu-cua-luat-thi-dua-khen-thuong-trong-nganh-y-te--166207",
+        "title": "Thông tư 25/2023/TT-BYT của Bộ Y tế",
+        "description": "Tra cứu Thông tư 25/2023/TT-BYT, THÔNG TƯ SỐ 25/2023/TT-BYT QUY ĐỊNH CHI TIẾT, HƯỚNG DẪN THI HÀNH MỘT SỐ ĐIỀU CỦA LUẬT THI ĐUA, KHEN THƯỞNG TRONG NGÀNH Y TẾ ...",
+        "position": 41
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-11-2024-tt-bldtbxh-huong-dan-xep-hang-mot-so-loai-hinh-don-vi-su-nghiep-cong-lap-thuoc-nganh-linh-vuc-lao-dong-nguoi-co-cong-va-xa-hoi--173109",
+        "title": "Thông tư 11/2024/TT-BLĐTBXH của Bộ Nội vụ",
+        "description": "Thông tư số 11/2024/TT-BLĐTBXH Hướng dẫn xếp hạng một số loại hình đơn vị sự nghiệp công lập thuộc ngành, lĩnh vực lao động, người có công và xã ...",
+        "position": 42
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-56-2014-tt-btc-huong-dan-thuc-hien-nghi-dinh-so-177-2013-nd-cp-ngay-14-thang-11-nam-2013-cua-chinh-phu-quy-dinh-chi-tiet-va-huong-dan-thi-hanh-mot-so-dieu-cua-luat-gia--37827",
+        "title": "Thông tư 56/2014/TT-BTC của Bộ Tài chính",
+        "description": "Tra cứu Thông tư 56/2014/TT-BTC, Thông tư số 56/2014/TT-BTC Hướng dẫn thực hiện Nghị định số 177/2013/NĐ-CP ngày 14 tháng 11 năm 2013 của Chính phủ quy định ...",
+        "position": 43
+      },
+      {
+        "url": "https://vbpl.vn/bovanhoathethao/pages/vbpq-timkiem.aspx?type=0&s=1&Keyword=18/2013/TT-BKHCN&SearchIn=Title,Title1&IsRec=1&pv=0",
+        "title": "Bộ khoa học công nghệ - VBPL - MoJ.gov.vn",
+        "description": "2. Đơn yêu cầu công nhận sáng kiến có thể làm theo mẫu quy định tại Phụ lục I ban hành kèm theo Thông tư này, trừ trường hợp cơ sở nơi tác giả ...",
+        "position": 44
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-03-2016-tt-bnv-huong-dan-ve-thanh-lap-va-hoat-dong-cua-hoi-dong-quan-ly-trong-don-vi-su-nghiep-cong-lap--104921",
+        "title": "Thông tư 03/2016/TT-BNV của Bộ Nội vụ",
+        "description": "Thông tư này hướng dẫn chung về thủ tục thành lập, vị trí, chức năng, nhiệm vụ, quyền hạn, cơ cấu tổ chức và phê duyệt quy chế hoạt động của Hội đồng quản lý ...",
+        "position": 45
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-05-2020-tt-byt-sua-doi-bo-sung-mot-so-dieu-cua-thong-tu-so-24-2018-tt-byt-ngay-18-9-2018-cua-bo-y-te-quy-dinh-viec-thanh-lap-to-chuc-va-hoat-dong-cua-hoi-dong-tu-van-chuyen-mon-danh-gia-nguyen-nhan-tai-bien-nang-trong-qua-trinh-su-dung-vac-xin--141855",
+        "title": "Thông tư 05/2020/TT-BYT của Bộ Y tế",
+        "description": "Tra cứu Thông tư 05/2020/TT-BYT, Thông tư số 05/2020/TT-BYT Sửa đổi, bổ sung một số điều của Thông tư số 24/2018/TT-BYT ngày 18/9/2018 của ...",
+        "position": 46
+      },
+      {
+        "url": "https://vbpl.vn/kiemtoannhanuoc/Pages/vbpq-print.aspx?dvid=330&ItemID=12789",
+        "title": "Kiểm toán Nhà nước - VBPL - Moj.gov.vn - Bộ Tư pháp",
+        "description": "Bộ Tư pháp thực hiện các nhiệm vụ, quyền hạn theo quy định tại Nghị định số 178/2007/NĐ-CP ngày 03 tháng 12 năm 2007 của Chính phủ quy định chức năng, nhiệm vụ, ...",
+        "position": 47
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-66-2011-tt-bgtvt-ve-viec-ban-hanh-03-quy-chuan-ky-thuat-quoc-gia-ve-duong-sat--67286",
+        "title": "Thông tư 66/2011/TT-BGTVT của Bộ Xây dựng",
+        "description": "Điều 2. Thông tư này có hiệu lực thi hành sau 06 tháng kể từ ngày ký; bãi bỏ các Quyết định của Bộ trưởng Bộ Giao thông vận tải sau đây: - Quyết ...",
+        "position": 48
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-61-2015-qd-ubnd-ban-hanh-bo-don-gia-hoat-dong-quan-trac-va-phan-tich-moi-truong-tren-dia-ban-tinh-nghe-an--99179",
+        "title": "Quyết định 61/2015/QĐ-UBND của Nghệ An",
+        "description": "Căn cứ Thông tư của Bộ Tài nguyên và Môi trường: số 18/2014/TT-BTNMT ... ngành cấp tỉnh; Chủ tịch UBND các huyện, thành phố, thị xã và ...",
+        "position": 49
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-16-2020-tt-bldtbxh-ban-hanh-dinh-muc-kinh-te-ky-thuat-ve-dao-tao-trinh-do-trung-cap-trinh-do-cao-dang-cho-46-nganh-nghe--146702",
+        "title": "Thông tư 16/2020/TT-BLĐTBXH của Bộ Nội vụ",
+        "description": "Thông tư số 16/2020/TT-BLĐTBXH Ban hành định mức kinh tế - kỹ thuật về đào tạo trình độ trung cấp, trình độ cao đẳng cho 46 ngành, nghề · THÔNG TƯ · Căn cứ Luật ...",
+        "position": 50
+      }
+    ]
+  },
+  "id": "019fa482-d20c-75fb-989e-c2483b8aea37",
+  "creditsUsed": 10
+}

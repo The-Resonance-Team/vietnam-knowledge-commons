@@ -1,0 +1,309 @@
+{
+  "success": true,
+  "data": {
+    "web": [
+      {
+        "url": "https://vbpl.vn/",
+        "title": "Trang chủ | CSDL quốc gia về pháp luật",
+        "description": "Tra cứu văn bản pháp luật Việt Nam - Cơ sở dữ liệu quốc gia về pháp luật cung cấp thông tin đầy đủ về luật, nghị định, thông tư và các văn bản pháp luật khác.",
+        "position": 1
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/trung-uong",
+        "title": "Văn bản quy phạm pháp luật Trung ương",
+        "description": "Tra cứu và tìm kiếm văn bản pháp luật do cơ quan trung ương ban hành bao gồm luật, nghị định, thông tư và các văn bản khác.",
+        "position": 2
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-15-2025-qd-ubnd-ban-hanh-quy-dinh-chi-tiet-va-bien-phap-thi-hanh-mot-so-dieu-cua-nghi-dinh-so-112-2024-nd-cp-ngay-11-9-2024-cua-chinh-phu-quy-dinh-chi-tiet-ve-dat-trong-lua-tren-dia-ban-tinh-lao-cai--175263",
+        "title": "Quyết định 15/2025/QĐ-UBND của Lào Cai",
+        "description": "Quyết định số 15/2025/QĐ-UBND Ban hành Quy định chi tiết và biện pháp thi hành một số điều của Nghị định số 112/2024/NĐ-CP ngày 11/9/2024 của ...",
+        "position": 3
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-31-2025-nq-hdnd-sua-doi-bo-sung-mot-so-dieu-cua-quy-dinh-bang-gia-dat-nam-2020-tren-dia-ban-tinh-yen-bai-ban-hanh-kem-theo-nghi-quyet-so-49-2019-nq-hdnd-ngay-29-thang-11-nam-2019-nghi-quyet-so-57-2024-nq-hdnd-ngay-16-thang-8-nam-2024-cua-hoi-dong-nhan-dan-tinh-yen-bai--177355",
+        "title": "Nghị quyết 31/2025/NQ-HĐND của Lào Cai",
+        "description": "Căn cứ Nghị định số 78/2025/NĐ-CP ngày 01 tháng 4 năm 2025 của Chính phủ quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Ban hành ...",
+        "position": 4
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-63-2025-qd-ubnd-quy-dinh-dien-tich-dat-su-dung-de-xay-dung-cong-trinh-phuc-vu-truc-tiep-san-xuat-nong-nghiep-dien-tich-vi-tri-muc-dich-su-dung-cua-cong-trinh-xay-dung-phuc-vu-truc-tiep-san-xuat-nong-nghiep-tren-dat-trong-lua-tren-dia-ban-tinh-ba-ria-vung-tau--178628",
+        "title": "Quyết định 63/2025/QĐ-UBND của Hồ Chí Minh",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật 2025; Căn cứ Nghị định số 102/2024/NĐ-CP ngày 30 tháng 7 năm. Quy định chi tiết thi hành",
+        "position": 5
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-10-2025-qd-ubnd-ban-hanh-quy-dinh-tham-quyen-quy-trinh-lap-trinh-phe-duyet-ke-hoach-ung-von-tu-quy-phat-trien-dat-tinh-lao-cai-va-tham-quyen-quyet-dinh-ung-von-tu-quy-phat-trien-dat-tinh-lao-cai--174610",
+        "title": "Quyết định 10/2025/QĐ-UBND của Lào Cai",
+        "description": "Căn cứ Nghị định số 34/2016/NĐ-CP ngày 14/5/2016 của Chính phủ Quy định chi tiết một số điều và biện pháp thi hành Luật ban hành văn bản quy phạm pháp luật;.",
+        "position": 6
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-47-2025-qd-ubnd-quy-dinh-viec-uu-tien-doi-tuong-duoc-thue-nha-o-xa-hoi-do-nha-nuoc-dau-tu-xay-dung-bang-von-dau-tu-cong-va-cac-tieu-chuan-doi-tuong-dieu-kien-duoc-mua-thue-mua-thue-nha-o-xa-hoi-tren-dia-ban-thanh-pho-ho-chi-minh--176308",
+        "title": "Quyết định 47/2025/QĐ-UBND của Hồ Chí Minh",
+        "description": "Căn cứ Nghị định số 100/2024/NĐ-CP ngày 26 tháng 7 năm 2024 của Chính phủ quy định chi tiết một số điều của Luật Nhà ở về phát triển và quản lý ...",
+        "position": 7
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-07-2025-qd-ubnd-quy-dinh-dieu-kien-trinh-tu-thu-tuc-tham-dinh-de-giao-dat-khong-dau-gia-quyen-su-dung-dat-cho-ca-nhan-tren-dia-ban-tinh-lam-dong--174730",
+        "title": "Quyết định 07/2025/QĐ-UBND của Lâm Đồng",
+        "description": "Quyết định này quy định điều kiện, trình tự, thủ tục thẩm định để giao đất không đấu giá quyền sử dụng đất cho cá nhân trên địa bàn tỉnh Lâm Đồng theo quy định ...",
+        "position": 8
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-quy-dinh-ve-phan-quyen-phan-cap-trong-linh-vuc-cong-nghiep-va-thuong-mai--dca741c0-3f92-11f1-8d7d-7bc067dbff13",
+        "title": "Văn bản hợp nhất 30/VBHN-BCT của Bộ Công thương",
+        "description": "Tra cứu Văn bản hợp nhất 30/VBHN-BCT, Nghị định quy định về phân quyền, phân cấp trong lĩnh vực công nghiệp và thương mại. Xem toàn văn và hiệu lực.",
+        "position": 9
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-57-2025-qd-ubnd-ban-hanh-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-trung-tam-phat-trien-quy-dat-thuoc-so-nong-nghiep-va-moi-truong-tinh-ninh-binh--178903",
+        "title": "Quyết định 57/2025/QĐ-UBND của Ninh Bình",
+        "description": "Quyết định số 57/2025/QĐ-UBND Ban hành Quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Trung tâm Phát triển quỹ đất thuộc Sở Nông nghiệp và ...",
+        "position": 10
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-02-2025-nq-hdnd-sua-doi-dieu-1-cua-nghi-quyet-so-07-2024-nq-hdnd-ngay-12-thang-7-nam-2024-cua-hoi-dong-nhan-dan-tinh-quy-dinh-muc-thu-hoc-phi-tu-nam-hoc-2024-2025-doi-voi-cac-co-so-giao-duc-mam-non-giao-duc-pho-thong-cong-lap-tren-dia-ban-tinh-dak-lak--177330",
+        "title": "Nghị quyết 02/2025/NQ-HĐND của Đắk Lắk",
+        "description": "Nghị quyết này quy định mức thu học phí từ năm học 2024- 2025 đối với các cơ sở giáo dục mầm non, giáo dục phổ thông công lập trên địa bàn tỉnh ...",
+        "position": 11
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-16-2025-qd-ubnd-ban-hanh-quy-che-phoi-hop-trong-quan-ly-nha-nuoc-ve-giam-dinh-tu-phap-tren-dia-ban-thanh-pho-ho-chi-minh--174831",
+        "title": "Quyết định số 16/2025/QĐ-UBND Ban hành Quy chế phối ...",
+        "description": "Quyết định số 16/2025/QĐ-UBND Ban hành Quy chế phối hợp trong quản lý nhà nước về giám định tư pháp trên địa bàn Thành phố Hồ Chí Minh.",
+        "position": 12
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-46-2025-qd-ubnd-ban-hanh-quy-dinh-phan-cap-tham-quyen-xu-ly-tai-san-ket-cau-ha-tang-giao-thong-duong-bo-thuoc-pham-vi-quan-ly-cua-tinh-binh-dinh--178194",
+        "title": "Quyết định 46/2025/QĐ-UBND của Gia Lai",
+        "description": "Căn cứ Nghị định số 44/2024/NĐ-CP ngày 24 tháng 4 năm 2024 của Chính phủ quy định về việc quản lý, sử dụng và khai thác tài sản kết cấu hạ tầng giao thông đường ...",
+        "position": 13
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-40-2025-qd-ubnd-ban-hanh-quy-dinh-dinh-muc-kinh-te-ky-thuat-do-dac-lap-ban-do-dia-chinh-dang-ky-dat-dai-tai-san-gan-lien-voi-dat-lap-ho-so-dia-chinh-cap-giay-chung-nhan-quyen-su-dung-dat-quyen-so-huu-tai-san-gan-lien-voi-dat-xay-dung-co-so-du-lieu-dia-chinh-tren-dia-ban-tinh-dien-bien--179879",
+        "title": "Quyết định 40/2025/QĐ-UBND của Điện Biên",
+        "description": "Quyết định số 40/2025/QĐ-UBND Ban hành Quy định Định mức kinh tế - kỹ thuật đo đạc lập bản đồ địa chính, đăng ký đất đai, tài sản gắn liền với đất, lập hồ sơ ...",
+        "position": 14
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-124-2025-qd-ubnd-ban-hanh-quy-che-quan-ly-van-hanh-khai-thac-he-thong-thong-tin-giai-quyet-thu-tuc-hanh-chinh-tinh-phu-tho--184576",
+        "title": "Quyết định số 124/2025/QĐ-UBND Ban hành Quy chế quản lý ...",
+        "description": "Quyết định số 124/2025/QĐ-UBND Ban hành Quy chế quản lý, vận hành, khai thác Hệ thống thông tin giải quyết thủ tục hành chính tỉnh Phú Thọ.",
+        "position": 15
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-01-2025-qd-ubnd-sua-doi-bo-sung-phan-ii-bo-don-gia-nha-cua-vat-kien-truc-tren-dia-ban-tinh-ninh-binh-ban-hanh-kem-theo-quyet-dinh-so-54-2023-qd-ubnd-ngay-29-thang-8-nam-2023-cua-uy-ban-nhan-dan-tinh-ninh-binh-va-bai-bo-mot-phan-quyet-dinh-so-68-2024-qd-ubnd-ngay-11-thang-10-nam-2024-cua-uy-ban-nhan-dan-tinh-ninh-binh-sua-doi-bo-sung-bo-don-gia-nha-cua-vat-kien-truc-tren-dia-ban-tinh-ninh-binh-kem-theo-quyet-dinh-so-54-2023-qd-ubnd-ngay-29-thang-8-nam-2023-cua-uy-ban-nhan-dan-tinh-ninh-binh--175638",
+        "title": "Quyết định 01/2025/QĐ-UBND của Ninh Bình",
+        "description": "Quyết định số 01/2025/QĐ-UBND Sửa đổi, bổ sung Phần II Bộ đơn giá nhà cửa, vật kiến trúc trên địa bàn tỉnh Ninh Bình ban hành kèm theo Quyết định số ...",
+        "position": 16
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-234-2025-qd-ubnd-ban-hanh-quy-dinh-dinh-muc-kinh-te-ky-thuat-dieu-tra-danh-gia-dat-dai-tren-dia-ban-thanh-pho-hai-phong--184955",
+        "title": "Quyết định 234/2025/QĐ-UBND của Hải Phòng",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp Luật số 64/2025/QH15 được sửa đổi, bổ sung một số điều bởi Luật số 87/2025/QH15;. Căn cứ Luật Đất đai số 31/2024 ...",
+        "position": 17
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-44-2025-qd-ubnd-bai-bo-cac-quyet-dinh-cua-uy-ban-nhan-dan-tinh-hoa-binh-lien-quan-den-linh-vuc-cong-thuong--177672",
+        "title": "Bãi bỏ các Quyết định của Ủy ban nhân dân tỉnh Hòa Bình",
+        "description": "Quyết định số 44/2025/QĐ-UBND Bãi bỏ các Quyết định của Ủy ban nhân dân tỉnh Hòa Bình liên quan đến lĩnh vực Công Thương.",
+        "position": 18
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/dia-phuong",
+        "title": "Văn bản quy phạm pháp luật Địa phương",
+        "description": "Tra cứu và tìm kiếm văn bản pháp luật do cơ quan địa phương ban hành bao gồm quyết định, chỉ thị, công văn và các văn bản khác.",
+        "position": 19
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-51-2025-qd-ubnd-ve-viec-phan-cap-chap-thuan-vi-tri-huong-tuyen-tong-mat-bang-du-an-dau-tu-xay-dung-tai-khu-vuc-khong-co-yeu-cau-lap-quy-hoach-do-thi-va-nong-thon-quy-hoach-co-tinh-chat-ky-thuat-chuyen-nganh-khac-tren-dia-ban-tinh-quang--184918",
+        "title": "Quyết định 51/2025/QĐ-UBND của Quảng Ngãi",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được sửa đổi, bổ sung bởi Luật số 87/2025/QH15;. Căn cứ Luật Quy hoạch đô thị ...",
+        "position": 20
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-60-2025-nq-hdnd-ban-hanh-quy-dinh-chinh-sach-dac-thu-ho-tro-cho-cac-hoat-dong-xuc-tien-thuong-mai-cua-thanh-pho-ho-chi-minh--185123",
+        "title": "Nghị quyết số 60/2025/NQ-HĐND Ban hành Quy định ...",
+        "description": "Nghị quyết số 60/2025/NQ-HĐND Ban hành Quy định chính sách đặc thù hỗ trợ cho các hoạt động xúc tiến thương mại của Thành phố Hồ Chí Minh.",
+        "position": 21
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-10-2025-qd-ubnd-quy-dinh-dac-diem-kinh-te-ky-thuat-cua-cac-dich-vu-theo-yeu-cau-lien-quan-den-viec-cong-chung-tren-dia-ban-tinh-an-giang--175623",
+        "title": "Quyết định số 10/2025/QĐ-UBND Quy định đặc điểm kinh tế - kỹ ...",
+        "description": "QUYẾT ĐỊNH. Quy định đặc điểm kinh tế - kỹ thuật của các dịch vụ theo yêu cầu. liên quan đến việc công chứng trên địa bàn tỉnh An Giang.",
+        "position": 22
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-04-2025-qd-ubnd-bai-bo-quyet-dinh-so-01-2024-qd-ubnd-ngay-20-12-2024-cua-uy-ban-nhan-dan-xa-thanh-an-ve-ban-hanh-quy-che-thuc-hien-dan-chu-o-xa-thanh-an--177361",
+        "title": "Quyết định 04/2025/QĐ-UBND của Hồ Chí Minh",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 19 tháng 02 năm 2025;. Căn cứ Luật Thực hiện dân chủ ở cơ sở ngày 10 tháng 11 năm 2022;.",
+        "position": 23
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-05-2024-nq-hdnd-ve-viec-quy-dinh-muc-ho-tro-them-tien-dong-cho-nguoi-tham-gia-bao-hiem-xa-hoi-tu-nguyen-tren-dia-ban-tinh-khanh-hoa-giai-doan-2024-2025--169333",
+        "title": "Nghị quyết số 05/2024/NQ-HĐND Về việc quy định mức hỗ ...",
+        "description": "Nghị quyết này quy định mức hỗ trợ thêm tiền đóng cho người tham gia bảo hiểm xã hội tự nguyện trên địa bàn tỉnh Khánh Hòa giai đoạn 2024 - 2025. Điều 2. Đối ...",
+        "position": 24
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-100-2026-tt-btc-bai-bo-toan-bo-06-thong-tu-do-bo-truong-bo-tai-chinh-ban-hanh--4fda4da0-80ec-11f1-ac2d-554d7f9461b5",
+        "title": "Thông tư số 100/2026/TT-BTC, Bãi bỏ toàn bộ 06 ...",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được sửa đổi, bổ sung bởi Luật số 87/2025/QH15;. Căn cứ Luật Giá số 16/2023 ...",
+        "position": 25
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-64-2025-qd-ubnd-quy-dinh-ve-quan-ly-hoat-dong-van-tai-duong-bo-trong-do-thi-va-ty-le-phuong-tien-van-chuyen-hanh-khach-cong-cong-co-thiet-bi-ho-tro-cho-nguoi-khuyet-tat-trong-do-thi-tren-dia-ban-tinh-quang-ninh--180012",
+        "title": "Quyết định 64/2025/QĐ-UBND của Quảng Ninh",
+        "description": "Căn cứ Nghị định số 151/2024/NĐ-CP ngày 15 tháng 11 năm 2024 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Trật tự, an toàn giao thông ...",
+        "position": 26
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-99-2025-qd-ubnd-quy-dinh-muc-ho-tro-dao-tao-nghe-cho-nguoi-co-dat-thu-hoi-tren-dia-ban-tinh-son-la-nam-2025--182265",
+        "title": "Quyết định 99/2025/QĐ-UBND của Sơn La",
+        "description": "Căn cứ Nghị định số 78/2025/NĐ-CP ngày 01 tháng 4 năm 2025 của Chính phủ quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi ...",
+        "position": 27
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-05-2025-qd-ubnd-quy-dinh-chi-tiet-thi-hanh-mot-so-dieu-cua-luat-trat-tu-an-toan-giao-thong-duong-bo-so-36-2024-qh15-tren-dia-ban-tinh-hai-duong--174659",
+        "title": "Quyết định 05/2025/QĐ-UBND của Hải Phòng",
+        "description": "QUYẾT ĐỊNH. Quy định chi tiết thi hành một số điều của Luật Trật tự, an toàn giao thông đường bộ số 36/2024/QH15 trên địa bàn tỉnh Hải Dương.",
+        "position": 28
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-04-2025-qd-ubnd-ve-viec-bai-bo-mot-so-quyet-dinh-quy-pham-phap-luat-cua-ubnd-tinh-lao-cai--174493",
+        "title": "Quyết định 04/2025/QĐ-UBND của Lào Cai",
+        "description": "Tra cứu Quyết định 04/2025/QĐ-UBND, Quyết định số 04/2025/QĐ-UBND Về việc bãi bỏ một số Quyết định quy phạm pháp luật của UBND tỉnh Lào Cai. Xem toàn văn và ...",
+        "position": 29
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-18-2025-nq-hdnd-quy-dinh-nguyen-tac-pham-vi-dinh-muc-ho-tro-va-su-dung-kinh-phi-ho-tro-bao-ve-dat-trong-lua-tren-dia-ban-tinh-dak-lak--185966",
+        "title": "Nghị quyết 18/2025/NQ-HĐND của Đắk Lắk",
+        "description": "NGHỊ QUYẾT Quy định nguyên tắc, phạm vi, định mức hỗ trợ và sử dụng kinh phí hỗ trợ bảo vệ đất trồng lúa trên địa bàn tỉnh Đắk Lắk. Căn cứ Luật Tổ chức ...",
+        "position": 30
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-18-2025-nq-hdnd-quy-dinh-nguyen-tac-pham-vi-dinh-muc-ho-tro-va-su-dung-kinh-phi-ho-tro-bao-ve-dat-trong-lua-tren-dia-ban-tinh-dak-lak--185966",
+        "title": "Nghị quyết 18/2025/NQ-HĐND của Đắk Lắk",
+        "description": "NGHỊ QUYẾT Quy định nguyên tắc, phạm vi, định mức hỗ trợ và sử dụng kinh phí hỗ trợ bảo vệ đất trồng lúa trên địa bàn tỉnh Đắk Lắk. Căn cứ Luật Tổ chức ...",
+        "position": 31
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-28-2025-qd-ubnd-quy-dinh-ve-quan-ly-duong-do-thi-duong-huyen-duong-xa-duong-ap-tren-dia-ban-tinh-tien-giang--176097",
+        "title": "Quyết định 28/2025/QĐ-UBND của Đồng Tháp",
+        "description": "5. Trường hợp văn bản quy phạm pháp luật dẫn chiếu tại Quyết định này được sửa đổi, bổ sung hoặc thay thế thì áp dụng văn bản sửa đổi, bổ sung hoặc thay thế.",
+        "position": 32
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-304-2025-nd-cp-quy-dinh-dieu-kien-tai-san-bao-dam-cua-khoan-no-xau-duoc-thu-giu--183905",
+        "title": "Nghị định 304/2025/NĐ-CP của Ngân hàng Nhà nước Việt ...",
+        "description": "Nghị định này quy định điều kiện tài sản bảo đảm của khoản nợ xấu được thu giữ theo điểm đ khoản 2 Điều 198a Luật Các tổ chức tín dụng số 32/ ...",
+        "position": 33
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-35-2025-qd-ubnd-ve-viec-bai-bo-quyet-dinh-so-473-2017-qd-ubnd-ngay-14-02-2017-cua-ubnd-tinh-quy-dinh-muc-trich-muc-chi-doi-voi-mot-so-noi-dung-chi-cho-cong-tac-to-chuc-thuc-hien-boi-thuong-ho-tro-tai-dinh-cu-tren-dia-ban-tinh-thanh-hoa--176716",
+        "title": "Quyết định 35/2025/QĐ-UBND của Thanh Hóa",
+        "description": "Quyết định số 35/2025/QĐ-UBND Về việc bãi bỏ Quyết định số 473/2017/QĐ-UBND ngày 14/02/2017 của UBND tỉnh quy định mức trích, ...",
+        "position": 34
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-45-2025-qd-ubnd-ban-hanh-dinh-muc-kinh-te-ky-thuat-thong-ke-kiem-ke-dat-dai-va-lap-ban-do-hien-trang-su-dung-dat-tren-dia-ban-tinh-hau-giang--177547",
+        "title": "Quyết định 45/2025/QĐ-UBND của Cần Thơ",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 19 tháng 02 năm 2025;. Căn cứ Luật Đất đai ngày 18 tháng 01 năm 2024;. Căn cứ Luật sửa đổi, bổ sung ...",
+        "position": 35
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-02-2025-qd-ubnd-bai-bo-quyet-dinh-so-72-2015-qd-ubnd-ngay-31-thang-12-nam-2015-cua-uy-ban-nhan-dan-tinh-ban-hanh-quy-dinh-ve-cuong-che-thi-hanh-quyet-dinh-giai-quyet-tranh-chap-dat-dai-quyet-dinh-cong-nhan-hoa-giai-thanh-tren-dia-ban-tinh-binh-duong--174497",
+        "title": "Quyết định số 02/2025/QĐ-UBND Bãi bỏ Quyết định số 72/2015/QĐ ...",
+        "description": "Quyết định số 02/2025/QĐ-UBND Bãi bỏ Quyết định số 72/2015/QĐ-UBND ngày 31 tháng 12 năm 2015 của Ủy ban nhân dân tỉnh ban hành quy định về cưỡng chế thi ...",
+        "position": 36
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-136-2026-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-100-2024-nd-cp-ngay-26-thang-7-nam-2024-cua-chinh-phu-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-nha-o-ve-phat-trien-va-quan-ly-nha-o-xa-hoi-da-duoc-sua-doi-bo-sung-tai-nghi-dinh-so-261-2025-nd-cp-va-nghi-dinh-so-54-2026-nd-cp--f46d94f0-3e64-11f1-988d-a36edc903152",
+        "title": "Văn bản pháp luật",
+        "description": "Văn bản không tồn tại. Về trang chủ. CƠ SỞ DỮ LIỆU QUỐC GIA VỀ PHÁP LUẬT. Đơn vị chủ quản: Bộ Tư pháp. Điện thoại:024.6273 ...",
+        "position": 37
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-102-2025-qd-ubnd-sua-doi-bo-sung-khoan-1-dieu-1-quyet-dinh-so-17-2025-qd-ubnd-ngay-21-5-2025-cua-ubnd-tinh-ve-viec-sua-doi-bo-sung-khoan-1-khoan-2-khoan-3-khoan-4-dieu-2-khoan-2-dieu-3-quyet-dinh-so-51-2019-qd-ubnd-ngay-20-12-2019-ve-viec-ban-hanh-bang-gia-dat-tren-dia-ban-huyen-hung-nguyen-cu-giai-doan-2020-2024--185803",
+        "title": "Quyết định 102/2025/QĐ-UBND của Nghệ An",
+        "description": "Căn cứ Nghị định số 226/2025/NĐ-CP ngày 15 tháng 8 năm 2025 của Chính phủ sửa đổi, bổ sung một số điều của các nghị định quy định chi tiết thi ...",
+        "position": 38
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-21-2025-nq-hdnd-quy-dinh-tieu-chi-thanh-lap-so-luong-thanh-vien-to-bao-ve-an-ninh-trat-tu-va-muc-ho-tro-boi-duong-doi-voi-luc-luong-tham-gia-bao-ve-an-ninh-trat-tu-o-co-so-tren-dia-ban-tinh-quang-tri--185740",
+        "title": "Nghị quyết số 21/2025/NQ-HĐND quy định tiêu chí thành lập ...",
+        "description": "Căn cứ Nghị định số 78/2025/NĐ-CP ngày 01 tháng 4 năm 2025 của Chính phủ quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Ban hành ...",
+        "position": 39
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-121-qd-ubnd-bai-bo-cac-van-ban-quy-pham-phap-luat-cua-uy-ban-nhan-dan-tinh-dong-nai-va-uy-ban-nhan-dan-tinh-binh-phuoc-thuoc-linh-vuc-khoa-hoc-va-cong-nghe-tren-dia-ban-thanh-pho-dong-nai--9a0cf1b0-4eb6-11f1-8355-5b1d3c6d17bd",
+        "title": "Quyết định 121/QĐ-UBND của Đồng Nai",
+        "description": "Căn cứ Nghị định số 78/2025/NĐ-CP ngày 01 tháng 4 năm 2025 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Ban hành văn ...",
+        "position": 40
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-03-2025-qd-ubnd-ban-hanh-quy-dinh-ve-quy-trinh-luan-chuyen-ho-so-xac-dinh-nghia-vu-tai-chinh-ve-dat-dai-tren-dia-ban-tinh-thai-nguyen--180766",
+        "title": "Quyết định '03/2025/QĐ-UBND của Thái Nguyên",
+        "description": "Căn cứ Nghị định số 102/2024/NĐ-CP ngày 30/7/2024 của Chính phủ quy định chi tiết thi hành một số điều của Luật Đất đai;.",
+        "position": 41
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-36-2025-qd-ubnd-ban-hanh-quy-dinh-ve-dinh-muc-kinh-te-ky-thuat-dieu-tra-danh-gia-dat-dai-tren-dia-ban-tinh-khanh-hoa--179176",
+        "title": "Quyết định 36/2025/QĐ-UBND của Khánh Hòa",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 19 tháng 02 năm 2025;. Căn cứ Luật Đất đai ngày 18 tháng 01 năm 2024;. Căn cứ Luật sửa ...",
+        "position": 42
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-39-2025-qd-ubnd-ban-hanh-bang-gia-tinh-thue-tai-nguyen-nam-2026-tren-dia-ban-tinh-lao-cai--186253",
+        "title": "Quyết định 39/2025/QĐ-UBND của Lào Cai",
+        "description": "Căn cứ Nghị định số 78/2025/NĐ-CP của Chính phủ Quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Ban hành văn bản ...",
+        "position": 43
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-20-2025-qd-ubnd-quy-dinh-chuc-nang-nhiem-vu-quyen-han-va-co-cau-to-chuc-cua-so-tai-chinh-tinh-ninh-thuan--176568",
+        "title": "Quyết định 20/2025/QĐ-UBND của Khánh Hòa",
+        "description": "Căn cứ Luật Sửa đổi, bổ sung một số điều của Luật Ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;. Căn cứ Nghị quyết số 190/2025/ ...",
+        "position": 44
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-127-2025-nd-cp-quy-dinh-ve-phan-cap-tham-quyen-quan-ly-nha-nuoc-trong-linh-vuc-quan-ly-su-dung-tai-san-cong--178286",
+        "title": "Nghị định 127/2025/NĐ-CP của Bộ Tài chính",
+        "description": "1. Bảo đảm phù hợp với quy định của Hiến pháp; phù hợp với các nguyên tắc, quy định về phân định thẩm quyền, phân cấp của Luật ...",
+        "position": 45
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-48-2025-nq-hdnd-quy-dinh-chinh-sach-ho-tro-nang-cap-thay-the-thiet-bi-giam-sat-hanh-trinh-tau-ca-dap-ung-dieu-kien-theo-quy-dinh-tai-nghi-dinh-so-37-2024-nd-cp-va-duy-tri-ket-noi-he-thong-thiet-bi-giam-sat-hanh-trinh-tau-ca-tren-dia-ban-tinh-dong-thap--186047",
+        "title": "Nghị quyết số 48/2025/NQ-HĐND Quy định chính sách hỗ trợ ...",
+        "description": "... 2024/NĐ-CP và duy trì kết nối hệ thống thiết bị giám sát hành ... Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được ...",
+        "position": 46
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-09-2024-nq-hdnd-quy-dinh-muc-ho-tro-cong-trinh-phuc-loi-cho-xa-huyen-dat-chuan-nong-thon-moi-nang-cao-xa-dat-chuan-nong-thon-moi-kieu-mau-tren-dia-ban-tinh-dong-nai-den-nam-2025--168979",
+        "title": "Nghị quyết số 09/2024/NQ-HĐND Quy định mức hỗ trợ công ...",
+        "description": "Căn cứ Luật sửa đổi, bổ sung một số điều của Luật ban hành văn bản quy phạm pháp luật ngày 18 tháng 6 năm 2020;. Căn cứ Nghị định số 163/2016/NĐ-CP ngày 21 ...",
+        "position": 47
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-35-2025-nq-hdnd-quy-dinh-muc-ho-tro-kinh-phi-dong-bao-hiem-y-te-cho-mot-so-doi-tuong-tren-dia-ban-tinh-gia-lai--184890",
+        "title": "Nghị quyết 35/2025/NQ-HĐND của Gia Lai",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được ... Luật số 51/2024/QH15;. Căn cứ Luật Ngân sách nhà nước số 89 ...",
+        "position": 48
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-03-2026-tt-bdttg-bai-bo-mot-so-van-ban-quy-pham-phap-luat-thuoc-tham-quyen-cua-bo-truong-bo-dan-toc-va-ton-giao--c865c680-6dd9-11f1-8965-91cc0def154b",
+        "title": "Thông tư số 03/2026/TT-BDTTG Bãi bỏ một số văn bản quy ...",
+        "description": "Thông tư số 03/2026/TT-BDTTG Bãi bỏ một số văn bản quy phạm pháp luật thuộc thẩm quyền của Bộ trưởng Bộ Dân tộc và Tôn giáo · THÔNG TƯ · Bãi bỏ ...",
+        "position": 49
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-241-2025-qd-ubnd-ban-hanh-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-nha-o-so-27-2023-qh15-tren-dia-ban-thanh-pho-hai-phong--185072",
+        "title": "Quyết định 241/2025/QĐ-UBND của Hải Phòng",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật số 64/2025/QH15 được sửa đổi ... Căn cứ Nghị định số 95/2024/NĐ-CP ngày 24/7/2024 của Chính phủ về quy ...",
+        "position": 50
+      }
+    ]
+  },
+  "id": "019fa482-cb4b-72bf-bc6c-b069411a79da",
+  "creditsUsed": 10
+}

@@ -1,0 +1,279 @@
+{
+  "success": true,
+  "data": {
+    "web": [
+      {
+        "url": "https://vbpl.vn/",
+        "title": "Trang chủ | CSDL quốc gia về pháp luật",
+        "description": "Tra cứu văn bản pháp luật Việt Nam - Cơ sở dữ liệu quốc gia về pháp luật cung cấp thông tin đầy đủ về luật, nghị định, thông tư và các văn bản pháp luật ...",
+        "position": 1
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/trung-uong",
+        "title": "Văn bản quy phạm pháp luật Trung ương",
+        "description": "Tra cứu và tìm kiếm văn bản pháp luật do cơ quan trung ương ban hành bao gồm luật, nghị định, thông tư và các văn bản khác.",
+        "position": 2
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/bo-luat-dan-su-so-91-2015-qh13--95942",
+        "title": "Bộ luật Dân sự số 91/2015/QH13",
+        "description": "Bộ luật này quy định địa vị pháp lý, chuẩn mực pháp lý về cách ứng xử của cá nhân, pháp nhân; quyền, nghĩa vụ về nhân thân và tài sản của cá nhân, pháp nhân ...",
+        "position": 3
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-60-cp-huong-dan-thi-hanh-cac-quy-dinh-cua-bo-luat-dan-su-ve-quan-he-dan-su-co-yeu-to-nuoc-ngoai--8489",
+        "title": "Nghị định 60/CP của Bộ Tư pháp | CSDL quốc gia về ...",
+        "description": "Nghị định này hướng dẫn việc áp dụng pháp luật đối với quan hệ dân sự có yếu tố nước ngoài được quy định trong Bộ Luật dân sự của nước Cộng hoà xã hội chủ nghĩa ...",
+        "position": 4
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-khoa-hoc-cong-nghe-va-doi-moi-sang-tao-so-93-2025-qh15--179265",
+        "title": "Luật 93/2025/QH15 của Bộ Khoa học và Công nghệ",
+        "description": "Luật này quy định về hoạt động khoa học, công nghệ và đổi mới sáng tạo của cơ quan, tổ chức, cá nhân; chính sách, biện pháp bảo đảm phát triển khoa học, công ...",
+        "position": 5
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-sua-doi-bo-sung-mot-so-dieu-cua-luat-dau-tu-nuoc-ngoai-tai-viet-nam-so-41-lct-hdnn8--2067",
+        "title": "Luật 41-LCT/HĐNN8 của Bộ Tài chính",
+        "description": "Luật này sửa đổi, bổ sung một số điều của Luật đầu tư nước ngoại tại Việt Nam được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam thông",
+        "position": 6
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-sua-doi-bo-sung-mot-so-dieu-cua-bo-luat-hinh-su-so-khong-so--8533",
+        "title": "Luật Sửa đổi, bổ sung một số điều của Bộ ...",
+        "description": "Luật này sửa đổi, bổ sung một số điều của Bộ luật hình sự được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam thông qua ngày 27 tháng",
+        "position": 7
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15--179941",
+        "title": "Luật Thuế thu nhập doanh nghiệp số 67/2025/QH15",
+        "description": "Luật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu ...",
+        "position": 8
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-thu-do-so-02-2026-qh16--251c4420-5265-11f1-848d-2bb321e41052",
+        "title": "Luật Thủ đô số 02/2026/QH16",
+        "description": "Luật này quy định vị trí, vai trò của Thủ đô; cơ chế, chính sách, thẩm quyền, trách nhiệm xây dựng, phát triển và bảo vệ Thủ đô. Điều 2. Vị ...",
+        "position": 9
+      },
+      {
+        "url": "https://vbpl.vn/bovanhoathethao/Pages/vbpq-thuoctinh.aspx?dvid=323&ItemID=128203&Keyword=",
+        "title": "Bộ Văn hóa - Thể thao và Du lịch - VBPL - MoJ.gov.vn",
+        "description": "Luật sửa đổi, bổ sung một số điều của Luật Cơ quan đại diện nước Cộng hòa xã hội chủ nghĩa Việt Nam ở nước ngoài. Số ký hiệu, 19/2017/QH14, Ngày ban hành ...",
+        "position": 10
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/184549",
+        "title": "Bãi bỏ một số văn bản quy phạm pháp luật",
+        "description": "Căn cứ Nghị định số 78/2025/NĐ-CP ngày 01 tháng 4 năm 2025 của Chính phủ quy định chi tiết một số điều và biện pháp để tổ chức, hướng dẫn thi hành Luật Ban hành ...",
+        "position": 11
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-thue-thu-nhap-doanh-nghiep-so-67-2025-qh15--179941",
+        "title": "Luật Thuế thu nhập doanh nghiệp số 67/2025/QH15",
+        "description": "Luật này quy định về người nộp thuế, thu nhập chịu thuế, thu nhập được miễn thuế, căn cứ tính thuế, phương pháp tính thuế và ưu đãi thuế thu ...",
+        "position": 12
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/lenh-so-08-2002-l-ctn-ve-viec-cong-bo-luat-sua-doi-bo-sung-mot-so-dieu-cua-bo-luat-lao-dong--22153",
+        "title": "Lệnh 08/2002/L-CTN của Văn phòng Chủ tịch nước",
+        "description": "Lệnh số 08/2002/L-CTN Về việc công bố Luật sửa đổi, bổ sung một số điều của Bộ Luật Lao động.",
+        "position": 13
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-ho-tich-so-03-2026-qh16--ec5cde10-54bc-11f1-abb8-a5ee305e759c",
+        "title": "Luật Hộ tịch số 03/2026/QH16",
+        "description": "Luật này quy định về hộ tịch, đăng ký hộ tịch, Cơ sở dữ liệu hộ tịch và quản lý nhà nước về hộ tịch. Điều 2. Giải thích từ ngữ. Trong Luật này, các từ ngữ dưới ...",
+        "position": 14
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-197-cp-quy-dinh-chi-tiet-va-huong-dan-thi-hanh-mot-so-dieu-cua-bo-luat-lao-dong-ve-tien-luong--10197",
+        "title": "Nghị định 197-CP của Bộ Nội vụ",
+        "description": "Tra cứu Nghị định 197-CP, Nghị định số 197-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về tiền lương.",
+        "position": 15
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-khong-so-ve-cong-tac-xay-dung-phap-luat-tu-nay-den-het-nhiem-ky-quoc-hoi-khoa-ix--9706",
+        "title": "Nghị quyết số Không số Về công tác xây dựng pháp luật từ ...",
+        "description": "NGHỊ QUYẾT. Về công tấc xây dựng Pháp luật từ nay đến hết nhiệm kỳ quốc hội khoá IX. QUỐC HỘI. NƯỚC CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM.",
+        "position": 16
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/van-ban-hop-nhat-so-118-vbhn-vpqh-ve-phap-lenh-hop-nhat-van-ban-quy-pham-phap-luat--d7efd6f0-7355-11f1-82e3-3f416dfaffef",
+        "title": "Văn bản hợp nhất 118/VBHN-VPQH của Bộ Tư pháp",
+        "description": "Pháp lệnh này quy định về việc hợp nhất văn bản quy phạm pháp luật (sau đây gọi là văn bản), thẩm quyền, trách nhiệm của các cơ quan trong việc ...",
+        "position": 17
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-73-2014-nd-cp-sua-doi-bo-sung-dieu-29-nghi-dinh-so-55-2013-nd-cp-ngay-22-thang-5-nam-2013-cua-chinh-phu-quy-dinh-chi-tiet-thi-hanh-khoan-3-dieu-54-cua-bo-luat-lao-dong-ve-viec-cap-phep-hoat-dong-cho-thue-lai-lao-dong-viec-ky-quy-va-danh-muc-cong-viec-duoc-thuc-hien-cho-thue-lai-lao-dong--36843",
+        "title": "Nghị định 73/2014/NĐ-CP của Bộ Nội vụ",
+        "description": "Sửa đổi, bổ sung Điều 29 Nghị định số 55/2013/NĐ-CP ngày 22 tháng 5 năm 2013. của Chính phủ quy định chi tiết thi hành Khoản 3 Điều 54 của Bộ luật.",
+        "position": 18
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/thong-tu-so-10-2020-tt-bldtbxh-quy-dinh-chi-tiet-va-huong-dan-thi-hanh-mot-so-dieu-khoan-sau-day-cua-bo-luat-lao-dong-ve-noi-dung-cua-hop-dong-lao-dong-hoi-dong-thuong-luong-tap-the-va-nghe-cong-viec-co-anh-huong-xau-toi-chuc-nang-sinh-san-nuoi-con--146696",
+        "title": "Thông tư 10/2020/TT-BLĐTBXH của Bộ Nội vụ",
+        "description": "THÔNG TƯ. Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về nội dung của hợp đồng lao động, Hội đồng thương lượng tập thể và nghề, ...",
+        "position": 19
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-sua-doi-bo-sung-mot-so-dieu-cua-luat-gia-so-140-2025-qh15--186702",
+        "title": "Luật 140/2025/QH15 của Bộ Tài chính",
+        "description": "Quốc hội ban hành Luật sửa đổi, bổ sung một số điều của Luật Giá số 16/2023/QH15 đã được sửa đổi, bổ sung một số điều theo Luật số 44/2024/QH15, Luật số 61/2024 ...",
+        "position": 20
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-sua-doi-bo-sung-mot-so-dieu-cua-luat-tro-giup-phap-ly-so-05-2026-qh16--9f320090-54c9-11f1-aa08-59e3f5ee2be8",
+        "title": "Luật 05/2026/QH16 của Bộ Tư pháp",
+        "description": "LUẬT. SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA. LUẬT TRỢ GIÚP PHÁP LÝ. Căn cứ Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam đã được sửa đổi, bổ sung một số điều ...",
+        "position": 21
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-hon-nhan-va-gia-dinh-so-22-2000-qh10--6117",
+        "title": "Luật Hôn nhân và gia đình số 22/2000/QH10",
+        "description": "Luật hôn nhân và gia đình quy định chế độ hôn nhân và gia đình, trách nhiệm của công dân, Nhà nước và xã hội trong việc xây dựng, củng cố chế độ hôn nhân và gia ...",
+        "position": 22
+      },
+      {
+        "url": "https://vbpl.vn/bovanhoathethao/Pages/vbpq-van-ban-goc.aspx?dvid=323&ItemID=101872",
+        "title": "Luật 103/2016/QH13 Báo chí - Bộ Văn hóa - Thể thao và Du lịch",
+        "description": "Luật 103/2016/QH13 · Hiệu lực: Hết hiệu lực một phần · Ngày có hiệu lực: 01/01/2017 ...",
+        "position": 23
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/luat-canh-tranh-so-27-2004-qh11--18566",
+        "title": "Luật Cạnh tranh số 27/2004/QH11",
+        "description": "LUẬT. CẠNH TRANH. Căn cứ vào Hiến pháp nước Cộng hoà xã hội chủ nghĩa Việt Nam năm 1992 đã được sửa đổi, bổ sung theo Nghị quyết số 51/2001/QH10 ngày 25 ...",
+        "position": 24
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/phap-lenh-so-01-2026-ubtvqh16-sua-doi-bo-sung-mot-so-dieu-cua-phap-lenh-hop-nhat-van-ban-quy-pham-phap-luat--4978cbd0-6aee-11f1-980c-d3fdbd60ea75",
+        "title": "Pháp lệnh 01/2026/UBTVQH16 của Bộ Tư pháp",
+        "description": "Pháp lệnh số 01/2026/UBTVQH16 SỬA ĐỔI, BỔ SUNG MỘT SỐ ĐIỀU CỦA PHÁP LỆNH HỢP NHẤT VĂN BẢN QUY PHẠM PHÁP LUẬT. Còn hiệu lực. Ngày có hiệu lực:01/ ...",
+        "position": 25
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-857-nq-ubtvqh13-ve-viec-to-chuc-lay-y-kien-nhan-dan-doi-voi-du-thao-bo-luat-dan-su-sua-doi--46783",
+        "title": "Nghị quyết số 857/NQ-UBTVQH13 Về việc tổ chức lấy ý kiến ...",
+        "description": "NGHỊ QUYẾT. Về việc tổ chức lấy ý kiến Nhân dân đối với dự thảo Bộ luật dân sự (sửa đổi). ỦY BAN THƯỜNG VỤ QUỐC HỘI.",
+        "position": 26
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/van-ban-hop-nhat-so-14-vbhn-vpqh-luat-nha-o--178409",
+        "title": "Văn bản hợp nhất 14/VBHN-VPQH của Bộ Tư pháp",
+        "description": "Văn bản hợp nhất số 14/VBHN-VPQH Luật Nhà ở. --. Ngày có hiệu lực:24/02/2025. Ngày cập nhật:19/01/2026. Thuộc tính. Lược đồ. Văn bản gốc.",
+        "position": 27
+      },
+      {
+        "url": "https://vbpl.vn/gioi-thieu",
+        "title": "Giới thiệu | CSDL quốc gia về pháp ...",
+        "description": "Cung cấp hệ thống văn bản pháp luật được cập nhật kịp thời, tra cứu thuận tiện, góp phần nâng cao nhận thức pháp luật và bảo đảm việc tuân thủ pháp luật ...",
+        "position": 28
+      },
+      {
+        "url": "https://vbpl.vn/bovanhoathethao/Pages/vbpq-vanbanlienquan.aspx?dvid=323&ItemID=9589&Keyword=",
+        "title": "Nghị định 41/CP Quy định chi tiết và hướng dẫn thi hành một ...",
+        "description": "Nghị định 41/CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về kỷ luật lao động và trách nhiệm vật chất.",
+        "position": 29
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-47-2025-qd-ubnd-quy-dinh-viec-uu-tien-doi-tuong-duoc-thue-nha-o-xa-hoi-do-nha-nuoc-dau-tu-xay-dung-bang-von-dau-tu-cong-va-cac-tieu-chuan-doi-tuong-dieu-kien-duoc-mua-thue-mua-thue-nha-o-xa-hoi-tren-dia-ban-thanh-pho-ho-chi-minh--176308",
+        "title": "Quyết định 47/2025/QĐ-UBND của Hồ Chí Minh",
+        "description": "Căn cứ Luật Sửa đổi, bổ sung Luật Nhà ở, Luật Đất đai, Luật Kinh doanh bất động sản và Luật Các tổ chức tín dụng ngày 29 tháng 6 năm 2024;.",
+        "position": 30
+      },
+      {
+        "url": "http://vbpl.vn/toaannhandantoicao/Pages/vbpq-toanvan.aspx?ItemID=19390&Keyword=32/2004/QH11",
+        "title": "Tòa án nhân dân tối cao - VBPL - MoJ.gov.vn",
+        "description": "Bộ luật Tố tụng dân sự được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam khoá XI, kỳ họp thứ 5 thông qua ngày 15 tháng 6 năm 2004, có hiệu lực từ ngày ...",
+        "position": 31
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-101-nq-cp-phien-hop-chuyen-de-ve-cong-tac-xay-dung-phap-luat--32112",
+        "title": "Nghị quyết số 101/NQ-CP Phiên họp chuyên đề về công tác ...",
+        "description": "7. Chính phủ thảo luận và cho ý kiến về mục tiêu, quan điểm và một số định hướng cơ bản sửa đổi Bộ luật dân sự, do Bộ trưởng Bộ Tư pháp trình.",
+        "position": 32
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/van-ban-hop-nhat-so-14-vbhn-vpqh-luat-nha-o--178409",
+        "title": "Văn bản hợp nhất 14/VBHN-VPQH của Bộ Tư pháp",
+        "description": "Văn bản hợp nhất số 14/VBHN-VPQH Luật Nhà ở. --. Ngày có hiệu lực:24/02/2025. Ngày cập nhật:19/01/2026. Thuộc tính. Lược đồ. Văn bản gốc.",
+        "position": 33
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-quyet-so-857-nq-ubtvqh13-ve-viec-to-chuc-lay-y-kien-nhan-dan-doi-voi-du-thao-bo-luat-dan-su-sua-doi--46783",
+        "title": "Nghị quyết số 857/NQ-UBTVQH13 Về việc tổ chức lấy ý kiến ...",
+        "description": "NGHỊ QUYẾT. Về việc tổ chức lấy ý kiến Nhân dân đối với dự thảo Bộ luật dân sự (sửa đổi). ỦY BAN THƯỜNG VỤ QUỐC HỘI.",
+        "position": 34
+      },
+      {
+        "url": "https://vbpl.vn/bovanhoathethao/Pages/vbpq-luocdo.aspx?ItemID=131014",
+        "title": "Luật 21/2017/QH14 quy hoạch - Thể thao và Du lịch",
+        "description": "Luật 38/2024/QH15 Luật Công nghiệp quốc phòng, an ninh và động viên công nghiệp(văn bản bổ sung) · Luật 15/2023/QH15 Luật khám bệnh, chữa bệnh 2023(văn bản bổ ...",
+        "position": 35
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/nghi-dinh-so-80-2022-nd-cp-sua-doi-bo-sung-mot-so-dieu-cua-nghi-dinh-so-35-2016-nd-cp-ngay-15-thang-5-nam-2016-cua-chinh-phu-quy-dinh-chi-tiet-mot-so-dieu-cua-luat-thu-y--159007",
+        "title": "Nghị định 80/2022/NĐ-CP của Bộ Nông nghiệp và Môi ...",
+        "description": "Sửa đổi, bổ sung một số điều của Nghị định số 35/2016/NĐ-CP ngày 15 tháng 5 năm 2016 của Chính phủ quy định chi tiết một số điều của Luật ...",
+        "position": 36
+      },
+      {
+        "url": "https://vbpl.vn/bovanhoathethao/Pages/vbpq-vanbanlienquan.aspx?dvid=323&ItemID=9589&Keyword=",
+        "title": "Nghị định 41/CP Quy định chi tiết và hướng dẫn thi hành một ...",
+        "description": "Nghị định 41/CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về kỷ luật lao động và trách nhiệm vật chất.",
+        "position": 37
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-18-2023-qd-ubnd-ban-ha-nh-quy-dinh-ve-cac-tieu-chi-doi-voi-ben-xe-khach-thap-hon-ben-xe-khach-loai-6-thuoc-vung-sau-vung-xa-cac-khu-vuc-co-dieu-kien-kinh-te-xa-hoi-kho-khan-tren-dia-ban-tinh-son-la--161763",
+        "title": "Quyết định 18/2023/QĐ-UBND của Sơn La",
+        "description": "Ban hành Quy định về các tiêu chí đối với bến xe khách thấp hơn. bến xe khách loại 6 thuộc vùng sâu, vùng xa, các khu vực có điều kiện.",
+        "position": 38
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-22-2021-qd-ubnd-ban-hanh-quy-dinh-quan-ly-hoat-dong-cua-xe-o-to-van-tai-trung-chuyen-hanh-khach-tren-dia-ban-tinh-son-la--150700",
+        "title": "Quyết định 22/2021/QĐ-UBND của Sơn La",
+        "description": "QUYẾT ĐỊNH. Ban hành Quy định quản lý hoạt động của xe ô tô. vận tải trung chuyển hành khách trên địa bàn tỉnh Sơn La. ______. ỦY BAN NHÂN DÂN TỈNH SƠN LA.",
+        "position": 39
+      },
+      {
+        "url": "https://vbpl.vn/uybandantoc/pages/vbpq-timkiemhethonghoa.aspx?DivID=resultSearch&IsVietNamese=True&type=",
+        "title": "Ủy ban Dân tộc - VBPL - Moj.gov.vn",
+        "description": "Tìm kiếm hệ thống hóa VBPQPL. Từ khóa tìm kiếm. Loại văn bản. Luật. Hiến pháp. Bộ luật. Luật Pháp lệnh. Nghị quyết. Nghị định. Quyết định. Thông tư",
+        "position": 40
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-09-2024-qd-ubnd-ban-hanh-quy-dinh-ve-chuc-nang-nhiem-vu-quyen-han-va-to-chuc-cua-phong-tai-chinh-ke-hoach-thuoc-uy-ban-nhan-dan-quan-4--172004",
+        "title": "Quyết định số 09/2024/QĐ-UBND Ban hành quy định về chức ...",
+        "description": "Căn cứ Luật Ban hành văn bản quy phạm pháp luật ngày 22 tháng 6 năm 2015 ... Căn cứ Thông tư số 04/2022/TT-BTC ngày 28 tháng 01 năm 2022 của Bộ trưởng ...",
+        "position": 41
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/quyet-dinh-so-110-qd-ub-ve-viec-thanh-lap-trung-tam-day-nghe-kinh-bac-thuoc-cong-ty-co-phan-thuong-mai-va-du-lich-bac-ninh--13581",
+        "title": "Quyết định số 110/QĐ-UB về việc thành lập Trung tâm dạy ...",
+        "description": "... Bộ Luật Lao động và Luật Giáo dục về dạy nghề;. Căn cứ Thông tư số 01/2002/TT-BLÐTBXH, ngày 04/02/2002 của Bộ Lao động-Thương binh và xã hội, hướng dẫn việc ...",
+        "position": 42
+      },
+      {
+        "url": "http://vbpl.vn/toaannhandantoicao/Pages/vbpq-toanvan.aspx?ItemID=19390&Keyword=32/2004/QH11",
+        "title": "Tòa án nhân dân tối cao - VBPL - MoJ.gov.vn",
+        "description": "1. Bộ luật Tố tụng dân sự được Quốc hội nước Cộng hoà xã hội chủ nghĩa Việt Nam khoá XI, kỳ họp thứ 5 thông qua ngày 15 tháng 6 năm 2004, có hiệu lực từ ngày 01 ...",
+        "position": 43
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/van-ban-hop-nhat-so-05-vbhn-byt-quy-dinh-chi-tiet-thi-hanh-mot-so-dieu-cua-luat-phong-chong-benh-truyen-nhiem-ve-kiem-dich-y-te-bien-gioi--135221",
+        "title": "Văn bản hợp nhất 05/VBHN-BYT của Bộ Y tế",
+        "description": "Tra cứu Văn bản hợp nhất 05/VBHN-BYT, Văn bản hợp nhất số 05/VBHN-BYT Quy định chi tiết thi hành một số điều của Luật phòng, chống bệnh truyền nhiễm về kiểm ...",
+        "position": 44
+      },
+      {
+        "url": "https://vbpl.vn/van-ban/chi-tiet/van-ban-hop-nhat-so-8014-vbhn-btp-ve-tu-van-phap-luat--32950",
+        "title": "Văn bản hợp nhất 8014/VBHN-BTP của Bộ Tư pháp",
+        "description": "Văn bản hợp nhất số 8014/VBHN-BTP Về tư vấn pháp luật. --. Ngày có hiệu lực:11/12/2013. Ngày cập nhật:19/01/2026. Thuộc tính. Lược đồ. Văn bản gốc.",
+        "position": 45
+      }
+    ]
+  },
+  "id": "019fa482-6a0c-760c-8f80-97465111e64c",
+  "creditsUsed": 10
+}
