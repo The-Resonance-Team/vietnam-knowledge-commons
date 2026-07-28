@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "id": "moj-vbpl",
+      "name": "vbpl.vn",
+      "base_url": "https://vbpl.vn",
+      "source_type": "legal",
+      "document_count": 27910
+    }
+  ]
+}
