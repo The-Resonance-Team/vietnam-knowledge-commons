@@ -42,4 +42,4 @@ if errors:
         print(f"  ✗ {e}")
     sys.exit(1)
 
-print(f"OK — all datasets valid against matching schemas.")
+print("OK — all datasets valid against matching schemas.")

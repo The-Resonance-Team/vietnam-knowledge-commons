@@ -38,4 +38,4 @@ if errors:
         print(f"  ✗ {e}")
     sys.exit(1)
 
-print(f"OK — all registry files valid against matching schemas.")
+print("OK — all registry files valid against matching schemas.")
