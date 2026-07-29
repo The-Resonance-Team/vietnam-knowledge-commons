@@ -244,11 +244,7 @@ scripts/ingest/
 
 ```python
 def dedup_key(doc):
-    return (
-        doc.document_number,
-        doc.issue_date,
-        doc.document_type
-    )
+    return (doc.document_number, doc.issue_date, doc.document_type)
 ```
 
 **Post-process:**
@@ -267,25 +263,16 @@ def dedup_key(doc):
 
 ```python
 {
-  "primaryKey": "id",
-  "searchableAttributes": [
-    "title",
-    "document_number",
-    "full_text",
-    "keywords",
-    "issuing_body"
-  ],
-  "filterableAttributes": [
-    "document_type",
-    "issue_date",
-    "effective_date",
-    "scope",
-    "applies_to_units"
-  ],
-  "sortableAttributes": [
-    "issue_date",
-    "effective_date"
-  ]
+    "primaryKey": "id",
+    "searchableAttributes": ["title", "document_number", "full_text", "keywords", "issuing_body"],
+    "filterableAttributes": [
+        "document_type",
+        "issue_date",
+        "effective_date",
+        "scope",
+        "applies_to_units",
+    ],
+    "sortableAttributes": ["issue_date", "effective_date"],
 }
 ```
 

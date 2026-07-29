@@ -49,20 +49,14 @@ def parse_sitemap_urls(xml_text: str) -> list[dict]:
     for url_elem in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}url"):
         loc = url_elem.find("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
         lastmod = url_elem.find("{http://www.sitemaps.org/schemas/sitemap/0.9}lastmod")
-        changefreq = url_elem.find(
-            "{http://www.sitemaps.org/schemas/sitemap/0.9}changefreq"
-        )
-        priority = url_elem.find(
-            "{http://www.sitemaps.org/schemas/sitemap/0.9}priority"
-        )
+        changefreq = url_elem.find("{http://www.sitemaps.org/schemas/sitemap/0.9}changefreq")
+        priority = url_elem.find("{http://www.sitemaps.org/schemas/sitemap/0.9}priority")
         if loc is not None and loc.text:
             urls.append(
                 {
                     "url": loc.text.strip(),
                     "lastmod": lastmod.text.strip() if lastmod is not None else None,
-                    "changefreq": changefreq.text.strip()
-                    if changefreq is not None
-                    else None,
+                    "changefreq": changefreq.text.strip() if changefreq is not None else None,
                     "priority": float(priority.text) if priority is not None else None,
                 }
             )

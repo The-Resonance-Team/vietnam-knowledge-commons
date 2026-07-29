@@ -22,12 +22,11 @@ import argparse
 import hashlib
 import json
 import re
-import time
 from datetime import datetime
 from pathlib import Path
 
-from scrapling.spiders import Spider, Request, Response
 from scrapling.fetchers import FetcherSession
+from scrapling.spiders import Request, Response, Spider
 
 
 class VBPLSpider(Spider):
@@ -44,9 +43,7 @@ class VBPLSpider(Spider):
     # Robots.txt compliance
     robots_txt_obey = True
 
-    def __init__(
-        self, output_dir: str = "scripts/ingest/output", limit: int = 500, **kwargs
-    ):
+    def __init__(self, output_dir: str = "scripts/ingest/output", limit: int = 500, **kwargs):
         super().__init__(**kwargs)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -71,9 +68,7 @@ class VBPLSpider(Spider):
             import xml.etree.ElementTree as ET
 
             root = ET.fromstring(response.text)
-            for sm in root.findall(
-                ".//{http://www.sitemaps.org/schemas/sitemap/0.9}sitemap"
-            ):
+            for sm in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}sitemap"):
                 loc = sm.find("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
                 if loc is not None and loc.text:
                     yield Request(loc.text.strip(), callback=self.parse_sitemap)
@@ -85,9 +80,7 @@ class VBPLSpider(Spider):
 
         root = ET.fromstring(response.text)
 
-        for url_elem in root.findall(
-            ".//{http://www.sitemaps.org/schemas/sitemap/0.9}url"
-        ):
+        for url_elem in root.findall(".//{http://www.sitemaps.org/schemas/sitemap/0.9}url"):
             loc = url_elem.find("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")
             if loc is not None and loc.text:
                 page_url = loc.text.strip()
@@ -110,9 +103,7 @@ class VBPLSpider(Spider):
             # Save progress every 100 records
             if self.fetched_count % 100 == 0:
                 self.save_records()
-                print(
-                    f"  Progress: {self.fetched_count}/{self.limit} documents fetched"
-                )
+                print(f"  Progress: {self.fetched_count}/{self.limit} documents fetched")
 
     def extract_metadata(self, response: Response) -> dict | None:
         """Extract document metadata from vbpl.vn HTML page."""
@@ -140,9 +131,7 @@ class VBPLSpider(Spider):
 
         # Extract document number
         body_text = response.text or ""
-        doc_num_match = re.search(
-            r"(\d{1,4}/\d{4}/[A-Z]{2,10}\d{0,2})", body_text, re.IGNORECASE
-        )
+        doc_num_match = re.search(r"(\d{1,4}/\d{4}/[A-Z]{2,10}\d{0,2})", body_text, re.IGNORECASE)
         if doc_num_match:
             record["document_number"] = doc_num_match.group(1)
 
@@ -219,12 +208,8 @@ class VBPLSpider(Spider):
 
 def main():
     parser = argparse.ArgumentParser(description="VBPL.vn ingestion spider")
-    parser.add_argument(
-        "--limit", type=int, default=500, help="Max pages to fetch (default: 500)"
-    )
-    parser.add_argument(
-        "--output-dir", default="scripts/ingest/output", help="Output directory"
-    )
+    parser.add_argument("--limit", type=int, default=500, help="Max pages to fetch (default: 500)")
+    parser.add_argument("--output-dir", default="scripts/ingest/output", help="Output directory")
     parser.add_argument("--resume", action="store_true", help="Resume from checkpoint")
     args = parser.parse_args()
 
