@@ -23,16 +23,20 @@ def test_extract_body_returns_none_when_no_text_segment():
     assert extract_body('0:["$@1",["x",null]]\n') is None
 
 
-def test_extract_subject_extracts_verbatim_span_from_meta_description():
-    html_text = (FIXTURES / "sample_page.html").read_text(encoding="utf-8")
+def test_extract_subject_reads_title_from_document_record_row():
+    rsc_text = (FIXTURES / "sample_body.rsc.txt").read_text(encoding="utf-8")
 
-    subject = extract_subject(html_text)
+    subject = extract_subject(rsc_text)
 
     assert subject is not None
     assert "hạn ngạch thuế quan nhập khẩu" in subject
-    assert not subject.lower().startswith("tra cứu")
-    assert "xem toàn văn" not in subject.lower()
 
 
-def test_extract_subject_returns_none_without_matching_meta_description():
-    assert extract_subject("<html><head></head><body></body></html>") is None
+def test_extract_subject_prefers_docabs_over_title_when_present():
+    rsc_text = '2:T5,<p>x</p>\n1:{"id":"1","title":"citation title","docAbs":"the real abstract"}'
+
+    assert extract_subject(rsc_text) == "the real abstract"
+
+
+def test_extract_subject_returns_none_without_document_record_row():
+    assert extract_subject("2:T5,<p>x</p>\n") is None

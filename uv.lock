@@ -1097,10 +1097,6 @@ dev = [
     { name = "mypy" },
     { name = "pytest" },
     { name = "ruff" },
-]
-
-[package.dev-dependencies]
-dev = [
     { name = "types-jsonschema" },
 ]
 
@@ -1113,8 +1109,6 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5" },
+    { name = "types-jsonschema", marker = "extra == 'dev'", specifier = ">=4.26.0.20260518" },
 ]
 provides-extras = ["dev"]
-
-[package.metadata.requires-dev]
-dev = [{ name = "types-jsonschema", specifier = ">=4.26.0.20260518" }]

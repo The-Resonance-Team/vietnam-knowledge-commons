@@ -9,8 +9,7 @@ RECORDS = [
         "title": "Thông tư 02/2016/TT-BCT của Bộ Công thương",
         "subject": "Thông tư số 02/2016/TT-BCT quy định về nguyên tắc điều hành hạn ngạch nhập"
         " khẩu muối",
-        "body": "Bộ Công Thương ban hành Thông tư quy định về nguyên tắc điều hành nhập khẩu"
-        " muối.",
+        "body": "Bộ Công Thương ban hành Thông tư quy định về nguyên tắc điều hành nhập khẩu muối.",
     },
     {
         "canonical_id": "vnkc:legal-doc:100186",

@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
 """Fetch raw body/subject payloads for vbpl.vn legal documents.
 
-vbpl.vn's detail pages are client-rendered: a plain GET only returns SSR
-`<head>` metadata (title, SEO description, dates) — the document body is
-fetched by the page's own JS via a second request. So each record costs two
-sequential HTTP requests:
-
-    GET  <official_url>                        -> page_html (subject source)
-    POST <official_url>  (next-action header)   -> body_rsc  (body source)
-
-See parser.py for why the POST looks the way it does, and for turning these
-raw payloads into body/subject text.
+vbpl.vn's detail pages are client-rendered: the document itself (body text
+and vbpl's own structured metadata, including a subject-bearing title/docAbs)
+is fetched by the page's own JS as one POST to the *same* official_url, with
+a `next-action` header. See parser.py for why the POST looks the way it does,
+and for extracting body/subject text from its response.
 
 Read-only, polite: one request in flight at a time (scraping-plan.md: no
 parallel requests to a single domain), rate-limited, checksummed,
 provenance-tracked. Resume mode: skips canonical_ids already saved under
 --output-dir, so this can be run repeatedly until all records are fetched.
+A record whose fetch fails after retries is logged and skipped, not fatal --
+it stays unfetched and is retried on the next run.
 
 Usage:
     python -m vnknowledge.sources.vbpl.fetch_documents \\
@@ -49,13 +46,17 @@ def doc_id_from_canonical_id(canonical_id: str) -> str:
 
 
 def _request_with_retries(
-    client: httpx.Client, method: str, url: str, **kwargs: Any
+    client: httpx.Client,
+    method: str,
+    url: str,
+    sleep: Callable[[float], None],
+    **kwargs: Any,
 ) -> httpx.Response:
     delays: Iterable[float] = (0.0, *RETRY_DELAYS)
     last_error: httpx.HTTPError | None = None
     for delay in delays:
         if delay:
-            time.sleep(delay)
+            sleep(delay)
         try:
             response = client.request(method, url, **kwargs)
             response.raise_for_status()
@@ -69,17 +70,16 @@ def _request_with_retries(
 def fetch_raw(
     client: httpx.Client, record: dict[str, Any], sleep: Callable[[float], None]
 ) -> dict[str, Any]:
-    """Two sequential requests (GET page, POST body) for one corpus record."""
+    """One POST request for one corpus record -- its response carries both the
+    body and vbpl's own document metadata (see parser.py)."""
     url = record["official_url"]
     doc_id = doc_id_from_canonical_id(record["canonical_id"])
-
-    get_response = _request_with_retries(client, "GET", url)
-    sleep(RATE_LIMIT_DELAY)
 
     post_response = _request_with_retries(
         client,
         "POST",
         url,
+        sleep,
         headers={
             "next-action": BODY_ACTION_ID,
             "accept": "text/x-component",
@@ -95,7 +95,6 @@ def fetch_raw(
         "canonical_id": record["canonical_id"],
         "official_url": url,
         "retrieved_at": datetime.now(UTC).isoformat(),
-        "page_html": get_response.text,
         "body_rsc": post_response.text,
         "content_checksum": sha256_hex(post_response.content),
     }
@@ -119,7 +118,11 @@ def run(
         out_path = output_dir / f"{doc_id}.json"
         if out_path.exists():
             continue
-        raw = fetch_raw(client, record, sleep)
+        try:
+            raw = fetch_raw(client, record, sleep)
+        except httpx.HTTPError as error:
+            print(f"  skip {record['canonical_id']}: {error}")
+            continue
         out_path.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
         fetched += 1
     return fetched

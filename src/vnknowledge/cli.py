@@ -4,10 +4,15 @@ import argparse
 import sys
 from pathlib import Path
 
+# Mirrors vnknowledge.mcp.server.DEFAULT_CORPUS/DEFAULT_FULLTEXT as string
+# literals, rather than importing them, so `vnkc <anything else>` doesn't pay
+# the cost of importing the mcp package (build_parser() runs on every
+# invocation, so a module-level or in-function import there isn't lazy).
+_DEFAULT_CORPUS = "datasets/legal-corpus/releases/v0.1.0/legal-corpus.json"
+_DEFAULT_FULLTEXT = "datasets/legal-corpus/releases/v0.2.0/legal-corpus-fulltext.json"
+
 
 def build_parser() -> argparse.ArgumentParser:
-    from vnknowledge.mcp.server import DEFAULT_CORPUS, DEFAULT_FULLTEXT
-
     parser = argparse.ArgumentParser(
         prog="vnkc",
         description="Vietnam Knowledge Commons CLI",
@@ -23,11 +28,9 @@ def build_parser() -> argparse.ArgumentParser:
     serve_parser = mcp_sub.add_parser(
         "serve", help="Run the legal-doc search MCP server over stdio"
     )
+    serve_parser.add_argument("--corpus", default=_DEFAULT_CORPUS, help="Path to legal-corpus.json")
     serve_parser.add_argument(
-        "--corpus", default=str(DEFAULT_CORPUS), help="Path to legal-corpus.json"
-    )
-    serve_parser.add_argument(
-        "--fulltext", default=str(DEFAULT_FULLTEXT), help="Path to legal-corpus-fulltext.json"
+        "--fulltext", default=_DEFAULT_FULLTEXT, help="Path to legal-corpus-fulltext.json"
     )
 
     return parser

@@ -9,7 +9,6 @@ RAW_WITH_BODY = {
     "canonical_id": "vnkc:legal-doc:100024",
     "official_url": "https://vbpl.vn/van-ban/chi-tiet/example--100024",
     "retrieved_at": "2026-07-29T00:00:00+00:00",
-    "page_html": "<html></html>",
     "body_rsc": '0:["$@1",["x",null]]\n2:Te,<p>muối.</p>',
     "content_checksum": "sha256:" + "0" * 64,
 }

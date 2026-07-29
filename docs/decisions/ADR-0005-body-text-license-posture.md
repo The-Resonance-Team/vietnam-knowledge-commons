@@ -33,6 +33,14 @@ This does not extend to non-`moj-vbpl` sources, vbpl.vn's page presentation/desi
 editorial commentary the portal adds beyond the document text itself. Each source keeps
 its own `license_status`, decided on its own facts, per ADR-0003's per-source model.
 
+ADR-0003 and DATA_LICENSES.md's "Professional review" section gate the first public
+**content** release on the eight `legal-and-licensing.md` review items generally, separately
+from any single source's `license_status` value. This ADR is the deliberate, source-specific
+exercise of that gate for `moj-vbpl`'s body/subject text: the maintainer reviewed the §1
+opinion and chose to proceed for this source now, rather than leave it pending. It does not
+discharge the general gate for any other source, and does not stand in for the professional
+review itself.
+
 ## Consequences
 
 - `registry/sources.yaml` → `moj-vbpl.license_status: verified-open`, with a note citing

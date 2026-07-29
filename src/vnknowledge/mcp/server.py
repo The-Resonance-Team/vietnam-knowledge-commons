@@ -38,8 +38,10 @@ def load_records(corpus_path: Path, fulltext_path: Path) -> list[dict[str, Any]]
             {
                 "canonical_id": record["canonical_id"],
                 "title": meta.get("title", ""),
-                "subject": record.get("subject", ""),
+                "subject": record.get("subject") or meta.get("subject_slug", ""),
                 "body": record["body"],
+                "document_number": meta.get("document_number", ""),
+                "issuing_authority_code": meta.get("issuing_authority_code", ""),
             }
         )
     return records
