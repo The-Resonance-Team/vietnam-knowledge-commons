@@ -1,0 +1,291 @@
+# Controlled vocabulary: jurisdictions
+# Geographic/administrative scope a document applies to
+version: 1
+generated: "2026-07-29"
+
+jurisdictions:
+  - code: "national"
+    name_vi: "Toàn quốc"
+    name_en: "National"
+    level: national
+
+  # Post-2025 restructuring: 34 provinces
+  - code: "province:Ha Noi"
+    name_vi: "Thành phố Hà Nội"
+    name_en: "Ha Noi"
+    level: provincial
+
+  - code: "province:Ho Chi Minh City"
+    name_vi: "Thành phố Hồ Chí Minh"
+    name_en: "Ho Chi Minh City"
+    level: provincial
+
+  - code: "province:Da Nang"
+    name_vi: "Thành phố Đà Nẵng"
+    name_en: "Da Nang"
+    level: provincial
+
+  - code: "province:Hai Phong"
+    name_vi: "Thành phố Hải Phòng"
+    name_en: "Hai Phong"
+    level: provincial
+
+  - code: "province:Can Tho"
+    name_vi: "Thành phố Cần Thơ"
+    name_en: "Can Tho"
+    level: provincial
+
+  - code: "province:Thai Nguyen"
+    name_vi: "Tỉnh Thái Nguyên"
+    name_en: "Thai Nguyen"
+    level: provincial
+
+  - code: "province:Quang Ninh"
+    name_vi: "Tỉnh Quảng Ninh"
+    name_en: "Quang Ninh"
+    level: provincial
+
+  - code: "province:Bac Ninh"
+    name_vi: "Tỉnh Bắc Ninh"
+    name_en: "Bac Ninh"
+    level: provincial
+
+  - code: "province:Hung Yen"
+    name_vi: "Tỉnh Hưng Yên"
+    name_en: "Hung Yen"
+    level: provincial
+
+  - code: "province:Ha Nam"
+    name_vi: "Tỉnh Hà Nam"
+    name_en: "Ha Nam"
+    level: provincial
+
+  - code: "province:Nam Dinh"
+    name_vi: "Tỉnh Nam Định"
+    name_en: "Nam Dinh"
+    level: provincial
+
+  - code: "province:Thanh Hoa"
+    name_vi: "Tỉnh Thanh Hóa"
+    name_en: "Thanh Hoa"
+    level: provincial
+
+  - code: "province:Nghe An"
+    name_vi: "Tỉnh Nghệ An"
+    name_en: "Nghe An"
+    level: provincial
+
+  - code: "province:Ha Tinh"
+    name_vi: "Tỉnh Hà Tĩnh"
+    name_en: "Ha Tinh"
+    level: provincial
+
+  - code: "province:Quang Binh"
+    name_vi: "Tỉnh Quảng Bình"
+    name_en: "Quang Binh"
+    level: provincial
+
+  - code: "province:Quang Tri"
+    name_vi: "Tỉnh Quảng Trị"
+    name_en: "Quang Tri"
+    level: provincial
+
+  - code: "province:Thua Thien Hue"
+    name_vi: "Tỉnh Thừa Thiên Huế"
+    name_en: "Thua Thien Hue"
+    level: provincial
+
+  - code: "province:Quang Nam"
+    name_vi: "Tỉnh Quảng Nam"
+    name_en: "Quang Nam"
+    level: provincial
+
+  - code: "province:Quang Ngai"
+    name_vi: "Tỉnh Quảng Ngãi"
+    name_en: "Quang Ngai"
+    level: provincial
+
+  - code: "province:Binh Dinh"
+    name_vi: "Tỉnh Bình Định"
+    name_en: "Binh Dinh"
+    level: provincial
+
+  - code: "province:Phu Yen"
+    name_vi: "Tỉnh Phú Yên"
+    name_en: "Phu Yen"
+    level: provincial
+
+  - code: "province:Khanh Hoa"
+    name_vi: "Tỉnh Khánh Hòa"
+    name_en: "Khanh Hoa"
+    level: provincial
+
+  - code: "province:Ninh Thuan"
+    name_vi: "Tỉnh Ninh Thuận"
+    name_en: "Ninh Thuan"
+    level: provincial
+
+  - code: "province:Binh Thuan"
+    name_vi: "Tỉnh Bình Thuận"
+    name_en: "Binh Thuan"
+    level: provincial
+
+  - code: "province:Lam Dong"
+    name_vi: "Tỉnh Lâm Đồng"
+    name_en: "Lam Dong"
+    level: provincial
+
+  - code: "province:Binh Phuoc"
+    name_vi: "Tỉnh Bình Phước"
+    name_en: "Binh Phuoc"
+    level: provincial
+
+  - code: "province:Tay Ninh"
+    name_vi: "Tỉnh Tây Ninh"
+    name_en: "Tay Ninh"
+    level: provincial
+
+  - code: "province:Dong Nai"
+    name_vi: "Tỉnh Đồng Nai"
+    name_en: "Dong Nai"
+    level: provincial
+
+  - code: "province:Ba Ria-Vung Tau"
+    name_vi: "Tỉnh Bà Rịa - Vũng Tàu"
+    name_en: "Ba Ria-Vung Tau"
+    level: provincial
+
+  - code: "province:Long An"
+    name_vi: "Tỉnh Long An"
+    name_en: "Long An"
+    level: provincial
+
+  - code: "province:Tien Giang"
+    name_vi: "Tỉnh Tiền Giang"
+    name_en: "Tien Giang"
+    level: provincial
+
+  - code: "province:Vinh Long"
+    name_vi: "Tỉnh Vĩnh Long"
+    name_en: "Vinh Long"
+    level: provincial
+
+  - code: "province:Dong Thap"
+    name_vi: "Tỉnh Đồng Tháp"
+    name_en: "Dong Thap"
+    level: provincial
+
+  - code: "province:An Giang"
+    name_vi: "Tỉnh An Giang"
+    name_en: "An Giang"
+    level: provincial
+
+  - code: "province:Kien Giang"
+    name_vi: "Tỉnh Kiên Giang"
+    name_en: "Kien Giang"
+    level: provincial
+
+  - code: "province:Ca Mau"
+    name_vi: "Tỉnh Cà Mau"
+    name_en: "Ca Mau"
+    level: provincial
+
+  - code: "province:Bac Lieu"
+    name_vi: "Tỉnh Bạc Liêu"
+    name_en: "Bac Lieu"
+    level: provincial
+
+  - code: "province:Soc Trang"
+    name_vi: "Tỉnh Sóc Trăng"
+    name_en: "Soc Trang"
+    level: provincial
+
+  - code: "province:Tra Vinh"
+    name_vi: "Tỉnh Trà Vinh"
+    name_en: "Tra Vinh"
+    level: provincial
+
+  - code: "province:Ben Tre"
+    name_vi: "Tỉnh Bến Tre"
+    name_en: "Ben Tre"
+    level: provincial
+
+  - code: "province:Phu Tho"
+    name_vi: "Tỉnh Phú Thọ"
+    name_en: "Phu Tho"
+    level: provincial
+
+  - code: "province:Vinh Phuc"
+    name_vi: "Tỉnh Vĩnh Phúc"
+    name_en: "Vinh Phuc"
+    level: provincial
+
+  - code: "province:Ho Binh"
+    name_vi: "Tỉnh Hòa Bình"
+    name_en: "Ho Binh"
+    level: provincial
+
+  - code: "province:Son La"
+    name_vi: "Tỉnh Sơn La"
+    name_en: "Son La"
+    level: provincial
+
+  - code: "province:Dien Bien"
+    name_vi: "Tỉnh Điện Biên"
+    name_en: "Dien Bien"
+    level: provincial
+
+  - code: "province:Lai Chau"
+    name_vi: "Tỉnh Lai Châu"
+    name_en: "Lai Chau"
+    level: provincial
+
+  - code: "province:Lao Cai"
+    name_vi: "Tỉnh Lào Cai"
+    name_en: "Lao Cai"
+    level: provincial
+
+  - code: "province:Yen Bai"
+    name_vi: "Tỉnh Yên Bái"
+    name_en: "Yen Bai"
+    level: provincial
+
+  - code: "province:Tuyen Quang"
+    name_vi: "Tỉnh Tuyên Quang"
+    name_en: "Tuyen Quang"
+    level: provincial
+
+  - code: "province:Bac Giang"
+    name_vi: "Tỉnh Bắc Giang"
+    name_en: "Bac Giang"
+    level: provincial
+
+  - code: "province:Lang Son"
+    name_vi: "Tỉnh Lạng Sơn"
+    name_en: "Lang Son"
+    level: provincial
+
+  - code: "province:Cao Bang"
+    name_vi: "Tỉnh Cao Bằng"
+    name_en: "Cao Bang"
+    level: provincial
+
+  - code: "province:Bac Kan"
+    name_vi: "Tỉnh Bắc Kạn"
+    name_en: "Bac Kan"
+    level: provincial
+
+  - code: "province:Thai Binh"
+    name_vi: "Tỉnh Thái Bình"
+    name_en: "Thai Binh"
+    level: provincial
+
+  - code: "province:Hai Duong"
+    name_vi: "Tỉnh Hải Dương"
+    name_en: "Hai Duong"
+    level: provincial
+
+  - code: "province:Binh Duong"
+    name_vi: "Tỉnh Bình Dương"
+    name_en: "Binh Duong"
+    level: provincial

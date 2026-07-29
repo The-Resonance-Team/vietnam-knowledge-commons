@@ -1,0 +1,58 @@
+{
+  "total_records": 27910,
+  "by_document_type": {
+    "circular": 10571,
+    "decision": 8781,
+    "decree": 2939,
+    "joint-circular": 2146,
+    "resolution": 1138,
+    "directive": 833,
+    "official-dispatch": 546,
+    "law": 345,
+    "consolidated-document": 246,
+    "promulgation-order": 195,
+    "ordinance": 79,
+    "historic-ordinance": 76,
+    "code": 7,
+    "other": 6,
+    "treaty": 2
+  },
+  "by_authority": {
+    "QĐ-TTg": 2755,
+    "NĐ-CP": 2649,
+    "TT-BTC": 2230,
+    "QĐ-BTC": 819,
+    "TT-BGDĐT": 591,
+    "TT-NHNN": 536,
+    "TT-BLĐTBXH": 499,
+    "TT-BGTVT": 492,
+    "TT-BTNMT": 487,
+    "TT-BCT": 484,
+    "TT-BYT": 468,
+    "QĐ-BCN": 430,
+    "TTg": 417,
+    "TT-BNNPTNT": 373,
+    "TCT": 371,
+    "QĐ-BNN": 353,
+    "TT-BCA": 346,
+    "TT-BQP": 330,
+    "NQ-CP": 327,
+    "CT-TTg": 308
+  },
+  "by_source": {
+    "moj-vbpl": 27910
+  },
+  "by_fetch_status": {
+    "fetched": 17905,
+    "discovered": 10005
+  },
+  "by_jurisdiction": {
+    "national": 27908,
+    "provincial": 2
+  },
+  "date_range": {
+    "earliest": "1890-05-19",
+    "latest": "2026-07-23"
+  },
+  "generated_at": "2026-07-29T02:43:45.067602+00:00"
+}

@@ -1,0 +1,8 @@
+version: 1
+pipeline: official-forms
+description: Normalize official form records
+
+steps:
+  - name: validate-schema
+    description: Validate against official-form.schema.json
+    schema: schemas/official-form.schema.json

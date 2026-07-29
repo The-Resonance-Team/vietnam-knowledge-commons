@@ -1,0 +1,14 @@
+{
+  "licenses": [
+    {
+      "id": "reference-only",
+      "applies_to": "source-data",
+      "attribution": "Ministry of Justice \u2014 vbpl.vn"
+    },
+    {
+      "id": "CC-BY-4.0",
+      "applies_to": "derived-datasets"
+    }
+  ],
+  "generated_at": "2026-07-29T02:43:45.072526+00:00"
+}

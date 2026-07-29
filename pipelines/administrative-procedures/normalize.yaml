@@ -1,0 +1,11 @@
+version: 1
+pipeline: administrative-procedures
+description: Normalize administrative procedure records
+
+steps:
+  - name: normalize-field-names
+    description: Map Vietnamese field names to schema fields
+
+  - name: validate-schema
+    description: Validate against administrative-procedure.schema.json
+    schema: schemas/administrative-procedure.schema.json

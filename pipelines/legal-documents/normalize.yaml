@@ -1,0 +1,23 @@
+version: 1
+pipeline: legal-documents
+description: Normalize raw legal document records
+
+steps:
+  - name: parse-title
+    description: Extract document type, number, issuing authority from citation title
+    source_field: title
+    target_fields:
+      - document_type
+      - document_number
+      - issuing_authority
+
+  - name: normalize-dates
+    description: Parse and normalize date fields
+    source_fields:
+      - ngay_ban_hanh
+      - ngay_hieu_luc
+      - ngay_cong_bao
+
+  - name: validate-schema
+    description: Validate against legal-document.schema.json
+    schema: schemas/legal-document.schema.json

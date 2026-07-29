@@ -1,0 +1,86 @@
+# Controlled vocabulary: document types
+# Maps Vietnamese title prefixes to canonical types
+# Code = prefix of citation title; English = schema enum value
+version: 1
+generated: "2026-07-29"
+
+document_types:
+  - code: "Hiến pháp"
+    english: "constitution"
+    description: "Constitutional law"
+    issuing_level: national
+
+  - code: "Luật"
+    english: "law"
+    description: "National Assembly legislation"
+    issuing_level: national
+
+  - code: "Bộ luật"
+    english: "code"
+    description: "Comprehensive legal code"
+    issuing_level: national
+
+  - code: "Pháp lệnh"
+    english: "ordinance"
+    description: "Standing Committee ordinance"
+    issuing_level: national
+
+  - code: "Nghị định"
+    english: "decree"
+    description: "Government implementation regulation"
+    issuing_level: government
+
+  - code: "Nghị quyết"
+    english: "resolution"
+    description: "Resolution of the National Assembly or Government"
+    issuing_level: mixed
+
+  - code: "Quyết định"
+    english: "decision"
+    description: "Administrative decision"
+    issuing_level: mixed
+
+  - code: "Chỉ thị"
+    english: "directive"
+    description: "Policy directive"
+    issuing_level: government
+
+  - code: "Thông báo"
+    english: "notice"
+    description: "Official notice"
+    issuing_level: mixed
+
+  - code: "Công điện"
+    english: "official-dispatch"
+    description: "Official dispatch from Government"
+    issuing_level: government
+
+  - code: "Thông tư"
+    english: "circular"
+    description: "Ministerial-level guidance"
+    issuing_level: ministry
+
+  - code: "Thông tư liên tịch"
+    english: "joint-circular"
+    description: "Joint ministerial circular"
+    issuing_level: ministry
+
+  - code: "Công văn"
+    english: "official-letter"
+    description: "Official correspondence"
+    issuing_level: mixed
+
+  - code: "Tuyên bố"
+    english: "declaration"
+    description: "Official declaration"
+    issuing_level: national
+
+  - code: "Hiệp định"
+    english: "treaty"
+    description: "International treaty or agreement"
+    issuing_level: national
+
+  - code: "Công báo"
+    english: "gazette-issue"
+    description: "Official gazette publication"
+    issuing_level: government

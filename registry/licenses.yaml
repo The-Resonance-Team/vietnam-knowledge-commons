@@ -1,0 +1,48 @@
+# Controlled vocabulary: licenses
+# SPDX identifiers for standard licenses
+# Project-specific terms for non-standard source licenses
+version: 1
+generated: "2026-07-29"
+
+licenses:
+  # Standard licenses (SPDX)
+  - id: "Apache-2.0"
+    spdx: "Apache-2.0"
+    applies_to: code
+    name_en: "Apache License 2.0"
+
+  - id: "CC-BY-4.0"
+    spdx: "CC-BY-4.0"
+    applies_to: derived-datasets
+    name_en: "Creative Commons Attribution 4.0"
+
+  - id: "CC-BY-SA-4.0"
+    spdx: "CC-BY-SA-4.0"
+    applies_to: derived-datasets
+    name_en: "Creative Commons Attribution-ShareAlike 4.0"
+
+  - id: "CC0-1.0"
+    spdx: "CC0-1.0"
+    applies_to: derived-datasets
+    name_en: "Creative Commons Zero"
+
+  - id: "MIT"
+    spdx: "MIT"
+    applies_to: code
+    name_en: "MIT License"
+
+  # Project-specific (non-SPDX)
+  - id: "reference-only"
+    applies_to: source-data
+    name_en: "Reference Only"
+    description: >
+      Default for Vietnamese government sources with no explicit license.
+      Data may be viewed and cited but redistribution rights are unclear.
+      Always resolve citations back to Tier A sources.
+
+  - id: "permission-required"
+    applies_to: source-data
+    name_en: "Permission Required"
+    description: >
+      Commercial or restricted sources. Data may not be redistributed.
+      Use for discovery and citation only.

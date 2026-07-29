@@ -9,13 +9,13 @@ the ones we have deliberately retired.
 ### Records and provenance
 
 **Source record**:
-One row as a scraper observed it, before any interpretation. Lives under
-`scripts/ingest/output/`, never in `data/`.
-_Avoid_: raw doc, scraped doc
+One row as a scraper observed it, before any interpretation. Lives under `data/raw/` or
+`data/interim/`, ephemeral — may be deleted after processing. Never in `datasets/`.
+_Avoid_: raw doc, scraped doc, draft
 
 **Legal document**:
-One published, schema-conforming record in `data/legal-docs/`. Its identity is the source
-page it came from, not the number printed on it.
+One published, schema-conforming record. Its identity is the source page it came from,
+not the number printed on it.
 _Avoid_: doc, legal doc record
 
 **Fetched record**:
@@ -50,14 +50,14 @@ rather than fact — it can be absent or unparseable, and is never an identity k
 
 **Document type**:
 What kind of instrument this is — circular, decree, resolution. Named by the **prefix** of
-the citation title. Recorded in the canonical English vocabulary of
+the citation title. Controlled vocabulary in `registry/document-types.yaml`; validated by
 `schemas/legal-document.schema.json`.
 _Avoid_: category, doc class
 
 **Issuing authority**:
 The body that issued the document. Named by the **suffix** of the document number
 (`TT-BYT` → Ministry of Health) — a different signal from document type, and never
-inferred from the type.
+inferred from the type. Controlled vocabulary in `registry/authorities.yaml`.
 _Avoid_: issuing body, publisher
 
 **Issuing authority code**:
@@ -74,6 +74,37 @@ _Avoid_: region, locality, area
 **Predecessor / successor**:
 The relationship between administrative units across a merger, split, or rename. Never
 "parent/child" — that is the containment hierarchy, a different relationship.
+
+### Datasets and publication
+
+**Dataset**:
+A published, versioned collection of structured records. Lives under `datasets/`. Immutable
+once released — changes produce a new release, not a mutation.
+_Avoid_: data, corpus
+
+**Release**:
+A specific versioned snapshot of a dataset. Contains `manifest.json`, `statistics.json`,
+`sources.json`, `licenses.json`, `checksums.sha256`. Once published, never mutated.
+_Avoid_: version, snapshot
+
+### Registry
+
+**Registry**:
+The controlled vocabularies that normalize raw data into canonical terms. Lives under
+`registry/`. Contains `sources.yaml`, `authorities.yaml`, `jurisdictions.yaml`,
+`document-types.yaml`, `licenses.yaml`.
+_Avoid_: vocabulary, controlled list
+
+**Source (registry entry)**:
+A record in `registry/sources.yaml` describing an upstream data source — its URL, license,
+access method, and reliability tier. Not the same as a "source record" (scraped data).
+_Avoid_: upstream, provider
+
+**Jurisdiction**:
+The geographic or administrative scope a document applies to. Controlled vocabulary in
+`registry/jurisdictions.yaml`. Distinct from issuing authority — a document can be issued
+by the Ministry of Health but apply to a specific province.
+_Avoid_: region, locality, scope
 
 ## Notes
 

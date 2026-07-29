@@ -1,0 +1,18 @@
+version: 1
+pipeline: legal-documents
+description: Ingest legal documents from upstream sources
+
+phases:
+  ingest:
+    description: Fetch documents from source URLs
+    source: registry/sources.yaml
+    output: data/raw/
+
+  validate:
+    description: Normalize to schema and validate
+    schema: schemas/legal-document.schema.json
+    output: data/interim/
+
+  publish:
+    description: Transform to dataset format and release
+    output: datasets/legal-corpus/

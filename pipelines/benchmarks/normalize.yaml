@@ -1,0 +1,7 @@
+version: 1
+pipeline: benchmarks
+description: Normalize benchmark records
+
+steps:
+  - name: validate
+    description: Validate benchmark format

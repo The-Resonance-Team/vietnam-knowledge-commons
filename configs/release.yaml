@@ -1,0 +1,23 @@
+version: 1
+description: Release process configuration
+
+versioning:
+  scheme: semver
+  initial_version: "0.1.0"
+  bump_rules:
+    patch: "metadata-only changes, typo fixes, provenance updates"
+    minor: "new records added, schema field additions"
+    major: "schema breaking changes, record removal"
+
+release_checks:
+  - schema_validation_pass
+  - no_placeholder_values
+  - provenance_complete
+  - checksums_generated
+
+artifacts:
+  - manifest.json
+  - statistics.json
+  - sources.json
+  - licenses.json
+  - checksums.sha256
