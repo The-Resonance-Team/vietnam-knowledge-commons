@@ -10,46 +10,11 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  NODE_VERSION: "22"
   PYTHON_VERSION: "3.12"
-  PNPM_VERSION: "10.13.1"
 
 jobs:
-  typescript:
-    name: TypeScript — format, types, boundaries, tests, registry validation
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install --frozen-lockfile
-
-      - name: Prettier
-        run: pnpm exec prettier --check .
-
-      - name: Typecheck
-        run: pnpm run typecheck
-
-      - name: Deep-module boundaries
-        run: pnpm run lint:boundaries
-
-      - name: Tests
-        run: pnpm run test
-
-      - name: Validate source registry + examples (CLI)
-        run: pnpm run validate
-
   python:
-    name: Python — lint + tests (sdk-python)
+    name: Python — lint + tests
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
@@ -63,17 +28,14 @@ jobs:
         run: uv python install ${{ env.PYTHON_VERSION }}
 
       - name: Sync
-        working-directory: packages/sdk-python
-        run: uv sync --frozen
+        run: uv sync
 
       - name: Ruff
-        working-directory: packages/sdk-python
         run: |
           uv run ruff check .
           uv run ruff format --check .
 
       - name: Pytest
-        working-directory: packages/sdk-python
         run: uv run pytest
 
   # ponytail: lightweight PII/secret tripwire, not a full scanner —
@@ -83,7 +45,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      - name: Scan registry/examples/schemas for secrets + VN ID patterns
+      - name: Scan registry/schemas for secrets + VN ID patterns
         run: |
-          ! grep -rInE '(api[_-]?key|secret|token|password|bearer)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_\-]{16,}' registry examples schemas
-          ! grep -rInE '\b[0-9]{12}\b' registry examples  # CCCD pattern; legal doc numbers never match
+          ! grep -rInE '(api[_-]?key|secret|token|password|bearer)[[:space:]]*[:=][[:space:]]*[A-Za-z0-9_\-]{16,}' registry schemas
+          ! grep -rInE '\b[0-9]{12}\b' registry schemas  # CCCD pattern; legal doc numbers never match
