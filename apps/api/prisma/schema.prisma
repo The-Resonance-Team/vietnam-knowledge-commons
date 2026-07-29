@@ -2,12 +2,14 @@
 // Two domains: Administrative units + Legal corpus
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client"
+  output        = "../generated/prisma"
+  moduleFormat  = "cjs"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  // url is now in prisma.config.ts
 }
 
 // ============ Administrative Units ============

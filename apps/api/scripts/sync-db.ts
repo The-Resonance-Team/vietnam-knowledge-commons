@@ -1,7 +1,17 @@
+import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
 
-const prisma = new (require("@prisma/client").PrismaClient)();
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { PrismaClient } = require("../generated/prisma/client");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { PrismaPg } = require("@prisma/adapter-pg");
+
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+});
+
+const prisma = new PrismaClient({ adapter });
 
 const DATA_DIR = path.join(__dirname, "../../../data");
 

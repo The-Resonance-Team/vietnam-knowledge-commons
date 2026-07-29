@@ -53,7 +53,8 @@ export class McpController {
       res.write(`data: ${JSON.stringify({ type: "result", data: result })}\n\n`);
       res.end();
     } catch (error) {
-      res.write(`data: ${JSON.stringify({ type: "error", message: error.message })}\n\n`);
+      const message = error instanceof Error ? error.message : "Unknown error";
+      res.write(`data: ${JSON.stringify({ type: "error", message })}\n\n`);
       res.end();
     }
   }
