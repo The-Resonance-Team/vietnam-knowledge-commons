@@ -4,14 +4,12 @@
   "title": "LegalDocument",
   "description": "A versioned Vietnamese legal or administrative instrument with full temporal and relationship metadata.",
   "type": "object",
+  "_required_note": "document_number, issuing_authority and issue_date were required until ADR-0004. They are not universally knowable from source: issue_date is absent on records discovered via listing pages but never fetched, document_number on records whose page title carries no parseable number, and issuing_authority is only derivable as a raw code (see issuing_authority_code). Requiring them truncated the corpus rather than improving it.",
   "required": [
     "canonical_id",
-    "document_number",
     "title",
     "document_type",
-    "issuing_authority",
     "jurisdiction",
-    "issue_date",
     "status",
     "language",
     "official_url",
@@ -42,8 +40,34 @@
         "directive",
         "official-dispatch",
         "treaty",
+        "consolidated-document",
+        "promulgation-order",
+        "historic-ordinance",
         "other"
-      ]
+      ],
+      "description": "Canonical English vocabulary. schema.prisma mirrors these as Vietnamese slugs (circular=thong_tu, decree=nghi_dinh, consolidated-document=van_ban_hop_nhat, ...); this list is authoritative per ADR-0002."
+    },
+    "document_type_basis": {
+      "type": "string",
+      "enum": ["title_prefix", "number_suffix", "fallback"],
+      "description": "How document_type was derived. The Vietnamese title prefix names the type; the number suffix names the issuing body. Orthogonal signals, so the prefix is authoritative."
+    },
+    "document_number_raw": {
+      "type": "string",
+      "description": "Unparsed number token, kept when it failed validation rather than guessed at (e.g. 'số', 'TC/QÐ/TCCB')."
+    },
+    "issuing_authority_code": {
+      "type": "string",
+      "description": "Verbatim body token from the document number, e.g. 'TT-BYT'. Not resolved to a display name: 1,106 distinct tokens exist and the 30 most common cover only 80% of records."
+    },
+    "subject_slug": {
+      "type": "string",
+      "description": "The document's topic, de-diacriticized, from the source URL. `title` on this corpus is a citation ('Thông tư 28/2026/TT-BYT của Bộ Y tế') and carries no subject matter."
+    },
+    "fetch_status": {
+      "type": "string",
+      "enum": ["fetched", "discovered"],
+      "description": "'discovered' = found on a listing page but the detail page was never retrieved; such records have a title but no dates and no body."
     },
     "issuing_authority": { "type": "string" },
     "jurisdiction": { "type": "string", "description": "e.g. 'national' or 'province:<name>'." },

@@ -1,0 +1,20 @@
+version: 1
+description: Deduplication configuration
+
+strategy:
+  primary_key: source_url
+  fallback_key: canonical_id
+
+conflict_resolution:
+  when: same_document_different_fetches
+  action: latest_fetch_wins
+  merge_fields:
+    - title
+    - document_number
+    - dates
+    - body_hash
+
+discovered_vs_fetched:
+  discovered_record_upgraded_to: fetched
+  when: detail_page_is_fetched
+  action: merge_discovered_metadata_into_fetched

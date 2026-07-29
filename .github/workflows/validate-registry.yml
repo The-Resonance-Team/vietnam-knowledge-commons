@@ -1,0 +1,22 @@
+name: Validate Registry
+
+on:
+  push:
+    paths:
+      - "registry/**"
+  pull_request:
+    paths:
+      - "registry/**"
+  schedule:
+    - cron: "0 6 * * 1" # Weekly Monday 06:00 UTC
+
+jobs:
+  validate:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml jsonschema
+      - run: python scripts/validate_registry.py

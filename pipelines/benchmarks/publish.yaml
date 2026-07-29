@@ -1,0 +1,9 @@
+version: 1
+pipeline: benchmarks
+description: Publish evaluation benchmarks
+
+output:
+  directory: datasets/evaluation-benchmarks/
+  formats:
+    - jsonl
+    - parquet

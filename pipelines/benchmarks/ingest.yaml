@@ -1,0 +1,11 @@
+version: 1
+pipeline: benchmarks
+description: Build evaluation benchmarks from processed datasets
+
+inputs:
+  - datasets/legal-corpus/
+  - datasets/administrative-procedures/
+  - datasets/official-forms/
+
+output:
+  directory: datasets/evaluation-benchmarks/

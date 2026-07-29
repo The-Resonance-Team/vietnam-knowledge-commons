@@ -1,0 +1,23 @@
+version: 1
+description: Data quality configuration
+
+rules:
+  schema_validation:
+    enabled: true
+    mode: strict # strict = reject on any violation; lenient = log warnings
+
+  deduplication:
+    enabled: true
+    strategy: source_url # identity key per ADR-0004
+    conflict_resolution: latest_fetch_wins
+
+  completeness:
+    required_fields:
+      - title
+      - source_url
+      - canonical_id
+    optional_fields_must_exist: false # omit rather than placeholder
+
+  temporal:
+    date_format: "YYYY-MM-DD"
+    unknown_dates: omit # never fill with placeholder

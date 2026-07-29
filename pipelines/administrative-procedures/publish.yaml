@@ -1,0 +1,9 @@
+version: 1
+pipeline: administrative-procedures
+description: Publish administrative procedures as a dataset
+
+output:
+  directory: datasets/administrative-procedures/
+  formats:
+    - json
+    - parquet

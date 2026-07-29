@@ -1,0 +1,17 @@
+version: 1
+pipeline: legal-documents
+description: Publish legal documents as a dataset release
+
+output:
+  directory: datasets/legal-corpus/
+  formats:
+    - json # Full records, sharded
+    - parquet # Tabular for data analysis
+
+manifest:
+  include:
+    - manifest.json
+    - statistics.json
+    - sources.json
+    - licenses.json
+    - checksums.sha256

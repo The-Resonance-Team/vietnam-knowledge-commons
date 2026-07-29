@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "schema": "legal-document.schema.json",
+  "total_records": 27910,
+  "files": {
+    "legal-corpus.csv": {
+      "size_bytes": 21720660,
+      "sha256": "08f7199ba09a4b05b85f719f3e289e5440460f068aec4b447b57cad5372c0573"
+    },
+    "legal-corpus.parquet": {
+      "size_bytes": 8049508,
+      "sha256": "7f8e18acccf3eb4cf5b9620ae883b2cb27d36c22c6be187c07fa741774d677a8"
+    },
+    "legal-corpus.jsonl": {
+      "size_bytes": 31850364,
+      "sha256": "3a790c7f08c4ed9bbc8cacb7e8ea8b1cdfb8e56ab37c5d9e775754ff56dc979b"
+    },
+    "legal-corpus.json": {
+      "size_bytes": 41549579,
+      "sha256": "320bfe2448012128e9fd79e60fab1421797ad1c273bec27659e7e803cc964699"
+    }
+  },
+  "generated_at": "2026-07-29T02:43:45.072613+00:00"
+}

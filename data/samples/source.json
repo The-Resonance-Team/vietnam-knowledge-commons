@@ -1,0 +1,32 @@
+{
+  "id": "moj-vbpl",
+  "name_vi": "Cơ sở dữ liệu pháp luật quốc gia",
+  "name_en": "National Database of Legal Normative Documents",
+  "publisher": "Bộ Tư pháp",
+  "authority": "Ministry of Justice",
+  "url": "https://vbpl.vn/",
+  "tier": "A",
+  "domains": ["law"],
+  "jurisdiction": "national",
+  "document_types": ["law", "resolution", "decree", "circular", "decision"],
+  "access_method": "html",
+  "api": {
+    "status": "no",
+    "url": null,
+    "notes": "No public API. Sitemap index available for crawl-based discovery."
+  },
+  "update_frequency": "daily",
+  "tos_url": null,
+  "robots_txt": {
+    "reviewed": true,
+    "allows_scraping": "partial",
+    "notes": "Sitemap index accessible; deep crawl may trigger rate limits."
+  },
+  "license_status": "reference-only",
+  "attribution": "Bộ Tư pháp nước CHXHCN Việt Nam — vbpl.vn",
+  "pii_risk": "none",
+  "stability": "high",
+  "last_verified": "2026-07-27",
+  "confidence": "verified",
+  "notes": "Phase 0 example. Tier A authoritative primary source for Vietnamese legal documents."
+}

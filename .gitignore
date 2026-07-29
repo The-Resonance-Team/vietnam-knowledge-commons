@@ -1,9 +1,46 @@
-node_modules/
-dist/
-.venv/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+.venv/
 .pytest_cache/
 .ruff_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Data (ephemeral — published data lives in datasets/)
+data/raw/
+data/interim/
+data/canonical/
+data/derived/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Scraper output (raw, ephemeral)
+.scratch/
+.firecrawl/
+
+# Generated
+generated/
+
+# Coverage
 coverage/
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# Scratch
+*.tmp
+*.bak

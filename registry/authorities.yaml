@@ -1,0 +1,117 @@
+# Controlled vocabulary: issuing authorities
+# Derived from sources.yaml, mapped from document number suffixes
+# Format: code -> display name, level, jurisdiction
+version: 1
+generated: "2026-07-29"
+
+authorities:
+  # National Assembly
+  - code: "QH"
+    name_vi: "Quốc hội"
+    name_en: "National Assembly"
+    level: national
+
+  # President
+  - code: "CT"
+    name_vi: "Chủ tịch nước"
+    name_en: "President"
+    level: national
+
+  # Government
+  - code: "CP"
+    name_vi: "Chính phủ"
+    name_en: "Government"
+    level: national
+
+  # Prime Minister
+  - code: "TTg"
+    name_vi: "Thủ tướng Chính phủ"
+    name_en: "Prime Minister"
+    level: national
+
+  # Ministries
+  - code: "TT-BTP"
+    name_vi: "Bộ Tư pháp"
+    name_en: "Ministry of Justice"
+    level: ministry
+
+  - code: "TT-BYT"
+    name_vi: "Bộ Y tế"
+    name_en: "Ministry of Health"
+    level: ministry
+
+  - code: "TT-BGDĐT"
+    name_vi: "Bộ Giáo dục và Đào tạo"
+    name_en: "Ministry of Education and Training"
+    level: ministry
+
+  - code: "TT-BTC"
+    name_vi: "Bộ Tài chính"
+    name_en: "Ministry of Finance"
+    level: ministry
+
+  - code: "TT-BNNPTNT"
+    name_vi: "Bộ Nông nghiệp và Phát triển nông thôn"
+    name_en: "Ministry of Agriculture and Rural Development"
+    level: ministry
+
+  - code: "TT-BCT"
+    name_vi: "Bộ Công Thương"
+    name_en: "Ministry of Industry and Trade"
+    level: ministry
+
+  - code: "TT-BXD"
+    name_vi: "Bộ Xây dựng"
+    name_en: "Ministry of Construction"
+    level: ministry
+
+  - code: "TT-BVHTTDL"
+    name_vi: "Bộ Văn hóa, Thể thao và Du lịch"
+    name_en: "Ministry of Culture, Sports and Tourism"
+    level: ministry
+
+  - code: "TT-BVHTTDLCN"
+    name_vi: "Bộ Văn hóa, Thể thao và Du lịch"
+    name_en: "Ministry of Culture, Sports and Tourism"
+    level: ministry
+
+  - code: "TT-BCA"
+    name_vi: "Bộ Công an"
+    name_en: "Ministry of Public Security"
+    level: ministry
+
+  - code: "TT-BNG"
+    name_vi: "Bộ Ngoại giao"
+    name_en: "Ministry of Foreign Affairs"
+    level: ministry
+
+  - code: "TT-BNV"
+    name_vi: "Bộ Nội vụ"
+    name_en: "Ministry of Home Affairs"
+    level: ministry
+
+  - code: "TT-BNNMT"
+    name_vi: "Bộ Nông nghiệp và Môi trường"
+    name_en: "Ministry of Agriculture and Environment"
+    level: ministry
+
+  - code: "TT-KHCN"
+    name_vi: "Bộ Khoa học và Công nghệ"
+    name_en: "Ministry of Science and Technology"
+    level: ministry
+
+  # Provincial People's Committee
+  - code: "UBND-TPHN"
+    name_vi: "Ủy ban nhân dân Thành phố Hà Nội"
+    name_en: "People's Committee of Ha Noi"
+    level: provincial
+
+  - code: "UBND-TPHCM"
+    name_vi: "Ủy ban nhân dân Thành phố Hồ Chí Minh"
+    name_en: "People's Committee of Ho Chi Minh City"
+    level: provincial
+
+  - code: "UBND-TPDN"
+    name_vi: "Ủy ban nhân dân Thành phố Đà Nẵng"
+    name_en: "People's Committee of Da Nang"
+    level: provincial

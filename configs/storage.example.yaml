@@ -1,0 +1,20 @@
+version: 1
+description: Storage configuration (copy to storage.yaml and fill in)
+
+storage:
+  git:
+    enabled: true
+    description: "JSON in git = source of truth (ADR-0002)"
+    path: data/
+
+  postgres:
+    enabled: false
+    host: localhost
+    port: 5432
+    database: vnkc
+    description: "Query cache for search API"
+
+  r2:
+    enabled: false
+    bucket: vnkc-data
+    description: "Cloudflare R2 for file storage (PDFs, fulltext)"

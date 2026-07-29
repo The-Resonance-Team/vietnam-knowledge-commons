@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "legal-document-fulltext.schema.json",
+  "title": "LegalDocumentFulltext",
+  "description": "Full text of a legal document (body, and subject where extractable), published separately from LegalDocument per DATA_POLICY.md's source-vs-derived separation and ADR-0005's license posture. One record per canonical_id; canonical_id is a foreign key into legal-corpus.json, not an independent identity.",
+  "type": "object",
+  "required": ["canonical_id", "body", "version", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "canonical_id": {
+      "type": "string",
+      "pattern": "^vnkc:legal-doc:[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Must match a canonical_id in the corresponding legal-corpus.json release."
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Full text of the document, extracted verbatim from its official page. One flat field; article/clause segmentation is not attempted (see CONTEXT.md)."
+    },
+    "subject": {
+      "type": "string",
+      "description": "What the document is actually about, extracted verbatim from a specific structural span of the source page. Omitted (not null) when no such span was found — consumers fall back to the metadata record's subject_slug."
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "VNKC record version; increments on every change, never overwrites."
+    },
+    "provenance": { "$ref": "provenance.schema.json" }
+  }
+}

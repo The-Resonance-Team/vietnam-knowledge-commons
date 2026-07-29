@@ -1,0 +1,9 @@
+version: 1
+pipeline: official-forms
+description: Publish official forms as a dataset
+
+output:
+  directory: datasets/official-forms/
+  formats:
+    - json
+    - parquet
