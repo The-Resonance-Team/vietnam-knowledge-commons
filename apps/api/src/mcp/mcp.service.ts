@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import { LegalDocsService } from "../legal-docs/legal-docs.service";
-import { AdminUnitsService } from "../admin-units/admin-units.service";
+import { LegalDocsService } from "@/legal-docs/legal-docs.service";
+import { AdminUnitsService } from "@/admin-units/admin-units.service";
 
 @Injectable()
 export class McpService {
