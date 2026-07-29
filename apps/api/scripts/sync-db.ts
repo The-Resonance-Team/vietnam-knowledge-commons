@@ -1,7 +1,7 @@
 import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
-import { PrismaClient, DocumentType, DocumentScope } from "../generated/prisma/client";
+import { PrismaClient, DocumentType, DocumentScope } from "@generated/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 
 const adapter = new PrismaPg({
