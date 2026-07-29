@@ -1,0 +1,18 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# JSON — linguist-generated so GitHub doesn't count them as code
+datasets/**/*.json linguist-generated
+data/samples/**/*.json linguist-generated
+
+# CSV, JSONL, Parquet — generated data
+datasets/**/*.csv linguist-generated
+datasets/**/*.jsonl linguist-generated
+datasets/**/*.parquet linguist-generated
+
+# YAML — linguist-language for correct highlighting
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+
+# Schemas — these ARE code, keep them counted
+schemas/**/*.json -linguist-generated
