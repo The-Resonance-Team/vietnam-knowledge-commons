@@ -33,13 +33,13 @@ sources:
       reviewed: true
       allows_scraping: "partial"
       notes: "HTTP 200, 2 Disallow lines, declares Sitemap: https://vbpl.vn/sitemap.xml"
-    license_status: reference-only
+    license_status: verified-open
     attribution: Bộ Tư pháp nước CHXHCN Việt Nam — vbpl.vn
     pii_risk: none
     stability: high
     last_verified: 2026-07-27
     confidence: verified
-    notes: Official national legal DB mandated by the Law on Promulgation of Legal Normative Documents. Live 200 on 2026-07-27.
+    notes: Official national legal DB mandated by the Law on Promulgation of Legal Normative Documents. Live 200 on 2026-07-27. license_status moved from reference-only to verified-open per ADR-0005, citing docs/research/legal-and-licensing.md §1 (Art. 15.2 IP Law copyright exclusion for legal normative/administrative document text) — pending, not superseded by, the professional legal review ADR-0003 still awaits.
   - id: gov-congbao
     name_vi: Công báo Chính phủ
     name_en: Official Gazette of the Government

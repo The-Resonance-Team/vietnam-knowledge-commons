@@ -1,221 +1,144 @@
 #!/usr/bin/env python3
-"""Fetch document pages from vbpl.vn and extract metadata.
+"""Fetch raw body/subject payloads for vbpl.vn legal documents.
 
-Uses Scrapling's Fetcher for HTTP requests with:
-- Browser impersonation (TLS fingerprint)
-- Session management
-- Polite rate limiting
-- Concurrent requests (asyncio)
+vbpl.vn's detail pages are client-rendered: a plain GET only returns SSR
+`<head>` metadata (title, SEO description, dates) — the document body is
+fetched by the page's own JS via a second request. So each record costs two
+sequential HTTP requests:
 
-Read-only, polite: rate-limited, checksummed, provenance-tracked.
-Input: document_urls.json (from fetch_sitemap.py)
-Output: source_records.json (list of source-layer records)
+    GET  <official_url>                        -> page_html (subject source)
+    POST <official_url>  (next-action header)   -> body_rsc  (body source)
 
-Resume mode: skips URLs already in source_records.json. Run repeatedly
-until all URLs are processed.
+See parser.py for why the POST looks the way it does, and for turning these
+raw payloads into body/subject text.
+
+Read-only, polite: one request in flight at a time (scraping-plan.md: no
+parallel requests to a single domain), rate-limited, checksummed,
+provenance-tracked. Resume mode: skips canonical_ids already saved under
+--output-dir, so this can be run repeatedly until all records are fetched.
 
 Usage:
-    python scripts/ingest/fetch_documents.py [--limit 500] [--concurrency 5] [--output-dir scripts/ingest/output]
+    python -m vnknowledge.sources.vbpl.fetch_documents \\
+        --corpus datasets/legal-corpus/releases/v0.1.0/legal-corpus.json \\
+        --output-dir data/raw/vbpl [--limit 500]
 """
 
 import argparse
-import asyncio
-import hashlib
 import json
-import re
 import time
-from datetime import datetime, timezone
+from collections.abc import Callable, Iterable
+from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
-from scrapling.fetchers import AsyncFetcher
+import httpx
+
+from vnknowledge.common.checksums import sha256_hex
+from vnknowledge.sources.vbpl.parser import BODY_ACTION_ID
 
 RATE_LIMIT_DELAY = 1.5
-MAX_PAGES = 500
-DEFAULT_CONCURRENCY = 5
+RETRY_DELAYS = (1, 2, 4)
+USER_AGENT = (
+    "Mozilla/5.0 (compatible; VNKC-research/0.1; "
+    "+https://github.com/The-Resonance-Team/vietnam-knowledge-commons)"
+)
 
 
-def extract_metadata(page, url: str) -> dict:
-    """Extract document metadata from vbpl.vn HTML page using Scrapling parser."""
-    record = {
-        "source_url": url,
-        "title": None,
-        "document_number": None,
-        "document_type": None,
-        "issue_date": None,
-        "effective_date": None,
-        "status": "unknown",
-        "retrieved_at": datetime.now(timezone.utc).isoformat(),
+def doc_id_from_canonical_id(canonical_id: str) -> str:
+    return canonical_id.removeprefix("vnkc:legal-doc:")
+
+
+def _request_with_retries(
+    client: httpx.Client, method: str, url: str, **kwargs: Any
+) -> httpx.Response:
+    delays: Iterable[float] = (0.0, *RETRY_DELAYS)
+    last_error: httpx.HTTPError | None = None
+    for delay in delays:
+        if delay:
+            time.sleep(delay)
+        try:
+            response = client.request(method, url, **kwargs)
+            response.raise_for_status()
+            return response
+        except httpx.HTTPError as error:
+            last_error = error
+    assert last_error is not None
+    raise last_error
+
+
+def fetch_raw(
+    client: httpx.Client, record: dict[str, Any], sleep: Callable[[float], None]
+) -> dict[str, Any]:
+    """Two sequential requests (GET page, POST body) for one corpus record."""
+    url = record["official_url"]
+    doc_id = doc_id_from_canonical_id(record["canonical_id"])
+
+    get_response = _request_with_retries(client, "GET", url)
+    sleep(RATE_LIMIT_DELAY)
+
+    post_response = _request_with_retries(
+        client,
+        "POST",
+        url,
+        headers={
+            "next-action": BODY_ACTION_ID,
+            "accept": "text/x-component",
+            "content-type": "text/plain;charset=UTF-8",
+            "origin": "https://vbpl.vn",
+            "referer": url,
+        },
+        content=json.dumps([doc_id]),
+    )
+    sleep(RATE_LIMIT_DELAY)
+
+    return {
+        "canonical_id": record["canonical_id"],
+        "official_url": url,
+        "retrieved_at": datetime.now(UTC).isoformat(),
+        "page_html": get_response.text,
+        "body_rsc": post_response.text,
+        "content_checksum": sha256_hex(post_response.content),
     }
 
-    # Use Scrapling's CSS selectors
-    title_el = page.css("title")
-    if title_el:
-        record["title"] = title_el[0].text.strip()
 
-    h1_el = page.css("h1")
-    if h1_el:
-        record["title"] = h1_el[0].text.strip()
-
-    # Extract document number
-    body_text = page.text or ""
-    doc_num_match = re.search(
-        r"(\d{1,4}/\d{4}/[A-Z]{2,10}\d{0,2})", body_text, re.IGNORECASE
-    )
-    if doc_num_match:
-        record["document_number"] = doc_num_match.group(1)
-
-    # Extract dates
-    date_patterns = [
-        (r"ngày\s+(\d{1,2})\s+tháng\s+(\d{1,2})\s+năm\s+(\d{4})", "vi"),
-        (r"(\d{1,2})/(\d{1,2})/(\d{4})", "slash"),
-        (r"(\d{4})-(\d{2})-(\d{2})", "iso"),
-    ]
-    dates_found = []
-    for pattern, fmt in date_patterns:
-        for m in re.finditer(pattern, body_text):
-            try:
-                if fmt == "vi":
-                    d, mo, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
-                elif fmt == "slash":
-                    d, mo, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
-                else:
-                    y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
-                dt = datetime(y, mo, d)
-                dates_found.append(dt.strftime("%Y-%m-%d"))
-            except ValueError:
-                continue
-
-    if dates_found:
-        record["issue_date"] = dates_found[0]
-        if len(dates_found) > 1:
-            record["effective_date"] = dates_found[1]
-
-    # Detect document type
-    path = url.lower()
-    title_lower = (record.get("title") or "").lower()
-    if "luat" in path or "luật" in title_lower:
-        record["document_type"] = "law"
-    elif "nghi-dinh" in path or "nghị định" in title_lower:
-        record["document_type"] = "decree"
-    elif "quyet-dinh" in path or "quyết định" in title_lower:
-        record["document_type"] = "decision"
-    elif "thong-tu" in path or "thông tư" in title_lower:
-        record["document_type"] = "circular"
-    elif "nghi-quyet" in path or "nghị quyết" in title_lower:
-        record["document_type"] = "resolution"
-
-    return record
+def run(
+    records: list[dict[str, Any]],
+    output_dir: Path,
+    client: httpx.Client,
+    *,
+    sleep: Callable[[float], None] = time.sleep,
+    limit: int | None = None,
+) -> int:
+    """Fetch `records` not already saved under `output_dir`. Returns count fetched."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    fetched = 0
+    for record in records:
+        if limit is not None and fetched >= limit:
+            break
+        doc_id = doc_id_from_canonical_id(record["canonical_id"])
+        out_path = output_dir / f"{doc_id}.json"
+        if out_path.exists():
+            continue
+        raw = fetch_raw(client, record, sleep)
+        out_path.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
+        fetched += 1
+    return fetched
 
 
-def load_existing(output_dir: Path) -> tuple[list[dict], set[str]]:
-    """Load existing records and set of fetched URLs."""
-    path = output_dir / "source_records.json"
-    if not path.exists():
-        return [], set()
-    records = json.loads(path.read_text(encoding="utf-8"))
-    urls = {r["source_url"] for r in records if "source_url" in r}
-    return records, urls
-
-
-async def fetch_document(
-    fetcher: AsyncFetcher, url: str, semaphore: asyncio.Semaphore
-) -> tuple[dict | None, dict | None]:
-    """Fetch a single document page asynchronously."""
-    async with semaphore:
-        try:
-            await asyncio.sleep(RATE_LIMIT_DELAY)
-            page = await fetcher.get(url, stealthy_headers=True)
-            record = extract_metadata(page, url)
-            checksum = hashlib.sha256(page.text.encode("utf-8")).hexdigest()
-            record["content_checksum"] = f"sha256:{checksum}"
-            return record, None
-        except Exception as e:
-            return None, {"url": url, "error": str(e)}
-
-
-async def main_async(args):
-    """Async main loop with concurrency."""
-    output_dir = Path(args.output_dir)
-    doc_urls_path = output_dir / "document_urls.json"
-
-    if not doc_urls_path.exists():
-        print(f"Error: {doc_urls_path} not found. Run fetch_sitemap.py first.")
-        raise SystemExit(1)
-
-    all_urls = json.loads(doc_urls_path.read_text(encoding="utf-8"))
-    existing_records, fetched_urls = load_existing(output_dir)
-
-    # Filter to unfetched URLs
-    remaining = [u for u in all_urls if u["url"] not in fetched_urls]
-    to_fetch = remaining[: args.limit]
-
-    print(f"Total URLs: {len(all_urls)}")
-    print(f"Already fetched: {len(fetched_urls)}")
-    print(f"Remaining: {len(remaining)}")
-    print(f"This run: {len(to_fetch)} (concurrency: {args.concurrency})")
-
-    if not to_fetch:
-        print("\nNothing to fetch — all URLs processed.")
-        return
-
-    semaphore = asyncio.Semaphore(args.concurrency)
-    fetcher = AsyncFetcher(impersonate="chrome")
-
-    tasks = [fetch_document(fetcher, entry["url"], semaphore) for entry in to_fetch]
-    results = await asyncio.gather(*tasks, return_exceptions=True)
-
-    new_records = []
-    errors = []
-    for i, result in enumerate(results):
-        if isinstance(result, Exception):
-            print(f"  [{i + 1}/{len(to_fetch)}] Exception: {result}")
-            errors.append({"url": to_fetch[i]["url"], "error": str(result)})
-        else:
-            record, error = result
-            if record:
-                new_records.append(record)
-                print(f"  [{i + 1}/{len(to_fetch)}] ✓ {to_fetch[i]['url']}")
-            if error:
-                errors.append(error)
-                print(f"  [{i + 1}/{len(to_fetch)}] ✗ {error['url']}: {error['error']}")
-
-    # Merge with existing records
-    all_records = existing_records + new_records
-    (output_dir / "source_records.json").write_text(
-        json.dumps(all_records, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
-    if errors:
-        (output_dir / "fetch_errors.json").write_text(
-            json.dumps(errors, indent=2, ensure_ascii=False), encoding="utf-8"
-        )
-
-    print(f"\nFetched {len(new_records)} new documents, {len(errors)} errors")
-    print(f"Total records now: {len(all_records)}")
-    print(f"Remaining URLs: {len(remaining) - len(to_fetch)}")
-    if remaining and len(to_fetch) < len(remaining):
-        print("Run again to continue fetching.")
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Fetch vbpl.vn documents")
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Fetch vbpl.vn document body/subject payloads")
+    parser.add_argument("--corpus", required=True, help="Path to legal-corpus.json")
     parser.add_argument(
-        "--limit",
-        type=int,
-        default=MAX_PAGES,
-        help=f"Max pages to fetch this run (default: {MAX_PAGES})",
+        "--output-dir", default="data/raw/vbpl", help="Raw payload output directory"
     )
-    parser.add_argument(
-        "--concurrency",
-        type=int,
-        default=DEFAULT_CONCURRENCY,
-        help=f"Concurrent requests (default: {DEFAULT_CONCURRENCY})",
-    )
-    parser.add_argument(
-        "--output-dir", default="scripts/ingest/output", help="Output directory"
-    )
+    parser.add_argument("--limit", type=int, default=None, help="Max records to fetch this run")
     args = parser.parse_args()
 
-    asyncio.run(main_async(args))
+    records = json.loads(Path(args.corpus).read_text(encoding="utf-8"))
+    with httpx.Client(timeout=30, headers={"User-Agent": USER_AGENT}) as client:
+        fetched = run(records, Path(args.output_dir), client, limit=args.limit)
+
+    print(f"Fetched {fetched} new record(s) into {args.output_dir}")
 
 
 if __name__ == "__main__":

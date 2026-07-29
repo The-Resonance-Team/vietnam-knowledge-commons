@@ -2,9 +2,12 @@
 
 import argparse
 import sys
+from pathlib import Path
 
 
-def main():
+def build_parser() -> argparse.ArgumentParser:
+    from vnknowledge.mcp.server import DEFAULT_CORPUS, DEFAULT_FULLTEXT
+
     parser = argparse.ArgumentParser(
         prog="vnkc",
         description="Vietnam Knowledge Commons CLI",
@@ -15,13 +18,40 @@ def main():
     sub.add_parser("validate-record", help="Validate records against schemas")
     sub.add_parser("report-sources", help="Report on source health")
 
+    mcp_parser = sub.add_parser("mcp", help="MCP server commands")
+    mcp_sub = mcp_parser.add_subparsers(dest="mcp_command")
+    serve_parser = mcp_sub.add_parser(
+        "serve", help="Run the legal-doc search MCP server over stdio"
+    )
+    serve_parser.add_argument(
+        "--corpus", default=str(DEFAULT_CORPUS), help="Path to legal-corpus.json"
+    )
+    serve_parser.add_argument(
+        "--fulltext", default=str(DEFAULT_FULLTEXT), help="Path to legal-corpus-fulltext.json"
+    )
+
+    return parser
+
+
+def dispatch(args: argparse.Namespace) -> None:
+    if args.command == "mcp" and args.mcp_command == "serve":
+        from vnknowledge.mcp.server import serve
+
+        serve(Path(args.corpus), Path(args.fulltext))
+        return
+
+    print(f"vnkc: {args.command} — not yet implemented")
+
+
+def main() -> None:
+    parser = build_parser()
     args = parser.parse_args()
 
     if args.command is None:
         parser.print_help()
         sys.exit(1)
 
-    print(f"vnkc: {args.command} — not yet implemented")
+    dispatch(args)
     sys.exit(0)
 
 

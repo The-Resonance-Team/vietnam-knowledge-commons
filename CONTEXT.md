@@ -40,9 +40,21 @@ says nothing about what it contains. This is what the `title` field currently ho
 _Avoid_: title (unqualified — it implies subject matter this corpus does not carry)
 
 **Subject**:
-What a document is actually about. Currently survives only as a de-diacriticized URL slug
-in `subject_slug`; the real subject arrives with full text.
-_Avoid_: description, summary
+What a document is actually about, extracted verbatim from a specific structural span of
+the source page — an abstract/trích yếu field, or the document's own scope-of-application
+clause. Never generated: an invented description would not be evidence, and would not
+carry the same copyright posture as text recovered from the source. Falls back to
+`subject_slug`, the de-diacriticized URL slug, where no such span exists.
+_Avoid_: description, summary (a summary is authored, not extracted — this project does
+not author subjects)
+
+**Body**:
+The full text of a legal document, extracted verbatim from its official page. One flat
+field — article/clause segmentation is not attempted. Published separately from the
+document's metadata record, in the corpus's full-text release artifact, never inline on
+the canonical record.
+_Avoid_: content, full text (as a field name — "full text" names the release artifact;
+`body` names the field)
 
 **Document number**:
 The official number, e.g. `28/2026/TT-BYT`. Recovered by parsing, therefore evidence
