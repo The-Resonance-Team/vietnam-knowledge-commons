@@ -17,7 +17,7 @@ env:
 jobs:
   typescript:
     name: TypeScript — format, types, boundaries, tests, registry validation
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
 
@@ -50,7 +50,7 @@ jobs:
 
   python:
     name: Python — lint + tests (sdk-python)
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
 
@@ -80,7 +80,7 @@ jobs:
   # catches the two failure modes SECURITY.md cares about most.
   data-safety:
     name: Data safety — no credentials, no obvious PII in data files
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - name: Scan registry/examples/schemas for secrets + VN ID patterns
