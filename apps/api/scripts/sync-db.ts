@@ -1,11 +1,8 @@
 import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { PrismaClient } = require("../generated/prisma/client");
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { PrismaPg } = require("@prisma/adapter-pg");
+import { PrismaClient, DocumentType, DocumentScope } from "../generated/prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
 
 const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL,
@@ -19,14 +16,14 @@ const DATA_DIR = path.join(__dirname, "../../../data");
 // document_type vocabulary) — see ADR-0004. Prisma enum identifiers cannot
 // contain hyphens, so `joint-circular` is stored via @map but addressed as
 // `joint_circular` through the client.
-const toEnum = (v: string) => v.replace(/-/g, "_");
+const toEnum = (v: string) => v.replace(/-/g, "_") as DocumentType;
 
 // The schema omits fields it cannot supply rather than nulling them, so that
 // "unknown" stays distinguishable from "asserted". Absent therefore means null.
 const toDate = (v?: string | null) => (v ? new Date(v) : null);
 
 // `jurisdiction` in the published record; `scope` in the DB.
-const SCOPE: Record<string, string> = { national: "nationwide", provincial: "provincial" };
+const SCOPE: Record<string, DocumentScope> = { national: "nationwide", provincial: "provincial" };
 
 const CHUNK = 25;
 
