@@ -16,3 +16,7 @@ datasets/**/*.parquet linguist-generated
 
 # Schemas — these ARE code, keep them counted
 schemas/**/*.json -linguist-generated
+
+# Full-text release shards — large (per-shard <100MB, but hundreds of MB total
+# per release), fetched on demand via Git LFS rather than bloating clone size.
+datasets/legal-corpus/releases/*/legal-corpus-fulltext/*.json filter=lfs diff=lfs merge=lfs -text

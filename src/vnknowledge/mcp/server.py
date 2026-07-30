@@ -17,19 +17,23 @@ from vnknowledge.search.fts5 import build_index
 from vnknowledge.search.fts5 import search as fts5_search
 
 DEFAULT_CORPUS = Path("datasets/legal-corpus/releases/v0.1.0/legal-corpus.json")
-DEFAULT_FULLTEXT = Path("datasets/legal-corpus/releases/v0.2.0/legal-corpus-fulltext.json")
+DEFAULT_FULLTEXT_DIR = Path("datasets/legal-corpus/releases/v0.2.0/legal-corpus-fulltext")
 
 
-def load_records(corpus_path: Path, fulltext_path: Path) -> list[dict[str, Any]]:
+def load_records(corpus_path: Path, fulltext_dir: Path) -> list[dict[str, Any]]:
     """Join metadata (title) with fulltext (subject, body) records by canonical_id.
 
+    `fulltext_dir` holds shard-NNN.json files (see publish/legal_corpus_fulltext.py
+    -- the fulltext release is sharded to stay under GitHub's 100MB file limit).
     Only documents that have a fulltext record are indexed -- title-only
     metadata isn't useful for full-text search.
     """
     corpus = {r["canonical_id"]: r for r in json.loads(corpus_path.read_text(encoding="utf-8"))}
-    fulltext = (
-        json.loads(fulltext_path.read_text(encoding="utf-8")) if fulltext_path.exists() else []
-    )
+    fulltext = [
+        record
+        for shard_path in sorted(fulltext_dir.glob("shard-*.json"))
+        for record in json.loads(shard_path.read_text(encoding="utf-8"))
+    ]
 
     records = []
     for record in fulltext:
@@ -48,10 +52,10 @@ def load_records(corpus_path: Path, fulltext_path: Path) -> list[dict[str, Any]]
 
 
 def build_server(
-    corpus_path: Path = DEFAULT_CORPUS, fulltext_path: Path = DEFAULT_FULLTEXT
+    corpus_path: Path = DEFAULT_CORPUS, fulltext_dir: Path = DEFAULT_FULLTEXT_DIR
 ) -> MCPServer:
     server = MCPServer(name="vnkc", title="Vietnam Knowledge Commons legal document search")
-    index = build_index(load_records(corpus_path, fulltext_path))
+    index = build_index(load_records(corpus_path, fulltext_dir))
 
     @server.tool()
     def search_legal_docs(query: str, limit: int = 10) -> list[dict[str, Any]]:
@@ -61,5 +65,5 @@ def build_server(
     return server
 
 
-def serve(corpus_path: Path = DEFAULT_CORPUS, fulltext_path: Path = DEFAULT_FULLTEXT) -> None:
-    build_server(corpus_path, fulltext_path).run()
+def serve(corpus_path: Path = DEFAULT_CORPUS, fulltext_dir: Path = DEFAULT_FULLTEXT_DIR) -> None:
+    build_server(corpus_path, fulltext_dir).run()

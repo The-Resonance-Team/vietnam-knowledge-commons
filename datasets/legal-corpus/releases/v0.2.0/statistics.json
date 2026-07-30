@@ -1,0 +1,26 @@
+{
+  "total_records": 27910,
+  "records_with_body": 27215,
+  "records_with_subject": 27215,
+  "records_without_extractable_body": 695,
+  "body_coverage_by_document_type": {
+    "circular": 10461,
+    "decision": 8729,
+    "decree": 2922,
+    "joint-circular": 2085,
+    "resolution": 1134,
+    "directive": 830,
+    "law": 342,
+    "consolidated-document": 234,
+    "promulgation-order": 191,
+    "official-dispatch": 117,
+    "ordinance": 79,
+    "historic-ordinance": 76,
+    "code": 7,
+    "other": 6,
+    "treaty": 2
+  },
+  "avg_body_length_chars": 17235,
+  "shard_count": 28,
+  "generated_at": "2026-07-30T00:05:09.306166+00:00"
+}

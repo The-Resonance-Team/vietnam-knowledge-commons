@@ -9,7 +9,7 @@ from pathlib import Path
 # the cost of importing the mcp package (build_parser() runs on every
 # invocation, so a module-level or in-function import there isn't lazy).
 _DEFAULT_CORPUS = "datasets/legal-corpus/releases/v0.1.0/legal-corpus.json"
-_DEFAULT_FULLTEXT = "datasets/legal-corpus/releases/v0.2.0/legal-corpus-fulltext.json"
+_DEFAULT_FULLTEXT_DIR = "datasets/legal-corpus/releases/v0.2.0/legal-corpus-fulltext"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -30,7 +30,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     serve_parser.add_argument("--corpus", default=_DEFAULT_CORPUS, help="Path to legal-corpus.json")
     serve_parser.add_argument(
-        "--fulltext", default=_DEFAULT_FULLTEXT, help="Path to legal-corpus-fulltext.json"
+        "--fulltext",
+        default=_DEFAULT_FULLTEXT_DIR,
+        help="Path to the legal-corpus-fulltext shard directory",
     )
 
     return parser
