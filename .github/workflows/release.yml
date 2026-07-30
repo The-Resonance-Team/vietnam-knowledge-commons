@@ -28,6 +28,16 @@ env:
   PNPM_VERSION: "10.13.1"
 
 jobs:
+  # GitHub creates a run on every push for every workflow in the repo,
+  # regardless of the workflow's declared triggers. Without this always-on
+  # no-op job, every push would result in a zero-jobs run (the publish jobs
+  # below are gated on workflow_dispatch inputs, so they skip on push) and
+  # GitHub marks zero-jobs runs as failure.
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Release workflow is manual-only — trigger via the Actions tab."
+
   npm:
     if: github.event_name == 'workflow_dispatch' && inputs.publish_npm
     runs-on: ubuntu-latest
