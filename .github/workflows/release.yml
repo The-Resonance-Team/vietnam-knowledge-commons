@@ -25,7 +25,7 @@ env:
 jobs:
   npm:
     if: inputs.publish_npm
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -46,7 +46,7 @@ jobs:
 
   pypi:
     if: inputs.publish_pypi
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       id-token: write # PyPI trusted publishing
     steps:

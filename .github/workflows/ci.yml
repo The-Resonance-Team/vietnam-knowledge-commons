@@ -15,7 +15,7 @@ env:
 jobs:
   python:
     name: Python — lint + tests
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -42,7 +42,7 @@ jobs:
   # catches the two failure modes SECURITY.md cares about most.
   data-safety:
     name: Data safety — no credentials, no obvious PII in data files
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Scan registry/schemas for secrets + VN ID patterns
