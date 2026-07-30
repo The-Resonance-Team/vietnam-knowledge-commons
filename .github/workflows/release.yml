@@ -6,11 +6,9 @@ name: Release
 # changesets machinery: bump versions in package.json / pyproject.toml, tag,
 # dispatch.
 #
-# The `on` key is quoted on purpose: bare `on:` is parsed as boolean `true`
-# by YAML 1.1 (which GitHub Actions workflows can use), dropping the trigger
-# declaration entirely and making GitHub fall back to its default triggers
-# (push + pull_request). Quoting keeps the key a string.
-"on":
+# Triggered manually only via the Actions tab's "Run workflow" button. The
+# publish jobs are gated on boolean inputs so only the requested targets run.
+on:
   workflow_dispatch:
     inputs:
       publish_npm:
@@ -30,18 +28,8 @@ env:
   PNPM_VERSION: "10.13.1"
 
 jobs:
-  # Always-on no-op job. GitHub creates a validation run for any workflow file
-  # that changes in a push, regardless of the workflow's declared triggers —
-  # without this job the release workflow would fail with "no jobs to run"
-  # every time the file is edited, because the publish jobs are gated on
-  # workflow_dispatch inputs that don't exist on push events.
-  noop:
-    runs-on: ubuntu-latest
-    steps:
-      - run: 'echo "Release workflow — trigger manually via the Actions tab."'
-
   npm:
-    if: inputs.publish_npm
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_npm
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,7 +50,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   pypi:
-    if: inputs.publish_pypi
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_pypi
     runs-on: ubuntu-latest
     permissions:
       id-token: write # PyPI trusted publishing
